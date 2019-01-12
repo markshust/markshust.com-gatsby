@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
-class BlogPostTemplate extends React.Component {
+class BlogsTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteSubtitle = this.props.data.site.siteMetadata.description
@@ -15,26 +14,31 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} subtitle={siteSubtitle} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO title={post.frontmatter.title} description={post.excerpt} keywords={post.frontmatter.tags} />
         <h1>{post.frontmatter.title}</h1>
-        <p
+        <time
           style={{
-            ...scale(-1 / 5),
+            ...scale(1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginBottom: rhythm(1.5),
+            marginTop: rhythm(-0.5),
+            color: '#aaa'
           }}
+          datetime={post.frontmatter.date}
         >
           {post.frontmatter.date}
-        </p>
+        </time>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr style={{ marginBottom: rhythm(1) }} />
+        <ul>
+        {post.frontmatter.tags.map(tag => (
+          <li style={{ listStyle: 'none', display: 'inline', margin: rhythm(1) }}>
+            <Link to={`/tags/${tag}/`}>#{tag}</Link>
+          </li>
+        ))}
+        </ul>
+        <hr style={{ marginBottom: rhythm(1) }} />
         <Bio />
-
         <ul
           style={{
             display: `flex`,
@@ -64,10 +68,10 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default BlogsTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -82,6 +86,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

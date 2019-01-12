@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Avatar from '../components/Avatar'
-
 import { rhythm, scale } from '../utils/typography'
+import githubCat from '../../content/assets/github-cat.png';
 
 class Layout extends React.Component {
   render() {
@@ -87,8 +87,15 @@ class Layout extends React.Component {
       >
         {header}
         {children}
-        <footer>
-          © 1985-{new Date().getFullYear()} Mark O. Shust
+        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
+        <footer style={{ display: 'flex' }}>
+          <div style={{ flex: 2 }}>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
+          <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
+            <div style={{ flex: 1, textAlign: 'right' }}>
+              <a href="https://github.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={githubCat} style={{ maxWidth: 50 }} /></a>
+            </div>
+            <a href="mailto:mark@shust.com" style={{ flex: 1, boxShadow: 'none' }}>mark@shust.com</a>
+          </div>
         </footer>
       </div>
     )
