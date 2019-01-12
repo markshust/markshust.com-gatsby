@@ -3,7 +3,7 @@ module.exports = {
     title: `Mark O. Shust`,
     author: `Mark O. Shust`,
     description: `Thoughts on Magento, PHP, Javascript, Laravel, ReactJS, Docker, and user interface design.`,
-    siteUrl: `https://kind-liskov-dfbe80.netlify.com/`,
+    siteUrl: `https://markshust-com.netlify.com/`,
     social: {
       twitter: `markoshust`,
     },
@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/avatar.jpg`,
       },
     },
     `gatsby-plugin-offline`,
