@@ -57,7 +57,6 @@ if(isset($_POST['to'])) {
         print "Email did not send";
     }
 }
-</p>
 ```
 
 First, follow the above steps. If those still don’t work, then you need to start digging further...
