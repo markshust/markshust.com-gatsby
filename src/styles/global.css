@@ -1,4 +1,18 @@
+a, a:visited {
+  color: #0967D2;
+  box-shadow: 0 0 0 0 #0967D2;
+}
+
+a:hover {
+  color: #5CB70B;
+  box-shadow: 0 2px 0 0 currentColor;
+}
+
 .line-numbers .line-numbers-rows {
   margin-top: 0.9rem;
   padding-left: 0.9rem;
+}
+
+.main-content ul {
+  margin-left: 2rem;
 }

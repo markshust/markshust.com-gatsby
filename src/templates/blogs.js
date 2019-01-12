@@ -28,7 +28,7 @@ class BlogsTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </time>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="main-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr style={{ marginBottom: rhythm(1) }} />
         <ul>
         {post.frontmatter.tags.map(tag => (
@@ -48,18 +48,24 @@ class BlogsTemplate extends React.Component {
             padding: 0,
           }}
         >
-          <li>
+          <li style={{ flex: 1, paddingRight: '1em' }}>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
+              <>
+                <strong>Previous Post:</strong><br />
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              </>
             )}
           </li>
-          <li>
+          <li style={{ flex: 1, paddingLeft: '1em', textAlign: 'right' }}>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
+              <>
+                <strong>Next Post:</strong><br />
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              </>
             )}
           </li>
         </ul>

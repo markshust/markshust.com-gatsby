@@ -98,7 +98,9 @@ class Layout extends React.Component {
             <div style={{ flex: 1, textAlign: 'right' }}>
               <a href="https://twitter.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={twitterIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>
             </div>
-            <a href="mailto:mark@shust.com" style={{ flex: 3, boxShadow: 'none' }}>mark@shust.com</a>
+            <div style={{ flex: 3 }}>
+              <a href="mailto:mark@shust.com">mark@shust.com</a>
+            </div>
           </div>
         </footer>
       </div>

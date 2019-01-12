@@ -14,7 +14,7 @@ const TagsTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} subtitle={siteSubtitle} title={siteTitle}>
-      <h1>{tag}</h1>
+      <h1>#{tag}</h1>
       <h2 style={{
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
