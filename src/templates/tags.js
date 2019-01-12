@@ -32,7 +32,9 @@ const TagsTemplate = ({ pageContext, data, location }) => {
           )
         })}
       </ul>
-      <Link to="/tags">All tags</Link>
+      <div style={{ marginTop: rhythm(3) }}>
+        Looking for something else? <Link to="/tags">Browse all tags</Link>
+      </div>
     </Layout>
   )
 }

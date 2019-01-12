@@ -1,7 +1,7 @@
 ---
 title: "Backup an Amazon Web Services (AWS) EC2 instance to S3 and register it as an AMI"
 date: "2009-11-19T00:00:00.000Z"
-tags: ["ec2", "s3", "aws", "backups"]
+tags: ["aws", "backups", "ec2", "s3"]
 ---
 
 Here is another hot topic that seems extremely confusing from the start, but is actually very easy to implement. Amazon Web Services EC2 seems to be the most fully-featured cloud-based web services on the internet. Amazon was the first major party to rollout a massive network of VM’s in the ‘cloud’ and remains to be the highest-respected service out there for Linux computing.

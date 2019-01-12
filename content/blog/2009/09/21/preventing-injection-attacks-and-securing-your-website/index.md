@@ -1,7 +1,7 @@
 ---
 title: "Preventing injection attacks and securing your website"
 date: "2009-09-21T00:00:00.000Z"
-tags: ["xss", "php"]
+tags: ["php", "xss"]
 ---
 
 Injection attacks and vulnerabilities are extremely common, and can be prevented in just about any case with proper coding and setting permissions correctly. There are a vast array of cross-site scripting (XSS) attacks and worms out there (I’m sure you’ve stumbled on a site with the words ‘viagra’ or ‘xanax’ in the page, and it looks very out-of-place and not consistent with the site’s content). These are usually caused by bots searching the web for securities vulnerabilities.
