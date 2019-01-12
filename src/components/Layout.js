@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Avatar from '../components/Avatar'
 import { rhythm, scale } from '../utils/typography'
-import githubCat from '../../content/assets/github-cat.png';
+import githubIcon from '../../content/assets/github-icon.png';
+import twitterIcon from '../../content/assets/twitter-icon.png';
 
 class Layout extends React.Component {
   render() {
@@ -92,9 +93,12 @@ class Layout extends React.Component {
           <div style={{ flex: 2 }}>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
           <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
             <div style={{ flex: 1, textAlign: 'right' }}>
-              <a href="https://github.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={githubCat} style={{ maxWidth: 50 }} /></a>
+              <a href="https://github.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>
             </div>
-            <a href="mailto:mark@shust.com" style={{ flex: 1, boxShadow: 'none' }}>mark@shust.com</a>
+            <div style={{ flex: 1, textAlign: 'right' }}>
+              <a href="https://twitter.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={twitterIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>
+            </div>
+            <a href="mailto:mark@shust.com" style={{ flex: 3, boxShadow: 'none' }}>mark@shust.com</a>
           </div>
         </footer>
       </div>

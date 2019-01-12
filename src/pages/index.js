@@ -14,7 +14,11 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} subtitle={siteSubtitle} title={siteTitle}>
-        <SEO keywords={[`magento`, `magento 2`, `php`, `javascript`, `laravel`, `react`, `reactjs`, `docker`, `mark shust`]}/>
+        <SEO
+          title={siteTitle}
+          description={siteSubtitle}
+          keywords={[`magento`, `magento 2`, `php`, `javascript`, `laravel`, `react`, `reactjs`, `docker`, `mark shust`]}
+        />
         <hr />
         <Bio />
         {posts.map(({ node }) => {
@@ -39,7 +43,7 @@ class BlogIndex extends React.Component {
                   marginTop: rhythm(0),
                   color: '#aaa'
                 }}
-                datetime={node.frontmatter.date}
+                dateTime={node.frontmatter.date}
               >{node.frontmatter.date}</time>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>

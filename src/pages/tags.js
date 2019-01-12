@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import kebabCase from "lodash/kebabCase"
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
-import { rhythm } from '../utils/typography'
 
 const TagsPage = ({
   data: {
@@ -13,6 +12,7 @@ const TagsPage = ({
       siteMetadata: { title, description },
     },
   },
+  location
 }) => {
   return (
   <Layout location={location} subtitle={description} title={title}>

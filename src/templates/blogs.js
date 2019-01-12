@@ -24,7 +24,7 @@ class BlogsTemplate extends React.Component {
             marginTop: rhythm(-0.5),
             color: '#aaa'
           }}
-          datetime={post.frontmatter.date}
+          dateTime={post.frontmatter.date}
         >
           {post.frontmatter.date}
         </time>
@@ -32,7 +32,7 @@ class BlogsTemplate extends React.Component {
         <hr style={{ marginBottom: rhythm(1) }} />
         <ul>
         {post.frontmatter.tags.map(tag => (
-          <li style={{ listStyle: 'none', display: 'inline', margin: rhythm(1) }}>
+          <li style={{ listStyle: 'none', display: 'inline', margin: rhythm(1) }} key={tag}>
             <Link to={`/tags/${tag}/`}>#{tag}</Link>
           </li>
         ))}
