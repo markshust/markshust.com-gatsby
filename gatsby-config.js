@@ -57,13 +57,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Mark O. Shust`,
+        short_name: `Mark O. Shust`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/avatar.jpg`,
+        icon: `content/assets/rubiks.png`,
       },
     },
     `gatsby-plugin-offline`,
