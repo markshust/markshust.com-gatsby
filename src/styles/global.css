@@ -1,9 +1,9 @@
-a, a:visited {
+body a, body a:visited {
   color: #0967D2;
-  box-shadow: 0 0 0 0 #0967D2;
+  box-shadow: none;
 }
 
-a:hover {
+body a:hover {
   color: #5CB70B;
   box-shadow: 0 2px 0 0 currentColor;
 }
