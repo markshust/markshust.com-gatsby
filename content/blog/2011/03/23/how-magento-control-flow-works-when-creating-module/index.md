@@ -1,7 +1,7 @@
 ---
 title: "How the Magento control flow works when creating a module"
-date: "2011-03-23T00:00:00.000Z"
-tags: ["magento", "magento1"]
+date: "2011-03-23T09:02:00.000Z"
+tags: ["controllers", "magento", "magento1", "xml"]
 ---
 
 I would like to start some short segments on how Magento works. There seems to be very little correct information on the web, and given I just came back from <a href="http://www.magentocommerce.com/services/training" target="_blank">Magento U</a>, I figure I can start spreading all of the good news.
