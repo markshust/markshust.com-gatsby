@@ -3,7 +3,7 @@ module.exports = {
     title: `Mark O. Shust`,
     author: `Mark O. Shust`,
     description: `Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design.`,
-    siteUrl: `https://markshust-com.netlify.com`,
+    siteUrl: `https://markshust.com`,
     social: {
       twitter: `markoshust`,
     },
