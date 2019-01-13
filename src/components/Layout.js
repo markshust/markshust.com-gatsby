@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Avatar from '../components/Avatar'
 import { rhythm, scale } from '../utils/typography'
-import githubIcon from '../../content/assets/github-icon.png';
-import twitterIcon from '../../content/assets/twitter-icon.png';
+import githubIcon from '../../content/assets/github-icon.png'
+import twitterIcon from '../../content/assets/twitter-icon.png'
 
 class Layout extends React.Component {
   render() {
@@ -32,12 +32,16 @@ class Layout extends React.Component {
               {title}
             </Link>
           </h1>
-          <h2 style={{
+          <h2
+            style={{
               fontFamily: `Montserrat, sans-serif`,
               marginTop: 0,
               fontWeight: 200,
               fontSize: rhythm(1.5),
-            }}>{subtitle}</h2>
+            }}
+          >
+            {subtitle}
+          </h2>
         </>
       )
     } else {
@@ -99,14 +103,30 @@ class Layout extends React.Component {
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
         <footer style={{ display: 'flex' }}>
           <div style={{ flex: 2 }}>
-            © 1985-{new Date().getFullYear()} Mark O. Shust &mdash; <Link to={`/about`}>About</Link>
+            © 1985-{new Date().getFullYear()} Mark O. Shust &mdash;{' '}
+            <Link to={`/about`}>About</Link>
           </div>
           <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
             <div style={{ flex: 1, textAlign: 'right' }}>
-              <a href="https://github.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>
+              <a
+                href="https://github.com/markoshust"
+                target="_blank"
+                style={{ boxShadow: 'none' }}
+              >
+                <img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} />
+              </a>
             </div>
             <div style={{ flex: 1, textAlign: 'right' }}>
-              <a href="https://twitter.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={twitterIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>
+              <a
+                href="https://twitter.com/markoshust"
+                target="_blank"
+                style={{ boxShadow: 'none' }}
+              >
+                <img
+                  src={twitterIcon}
+                  style={{ maxWidth: 50, maxHeight: 25 }}
+                />
+              </a>
             </div>
             <div style={{ flex: 3 }}>
               <a href="mailto:mark@shust.com">mark@shust.com</a>

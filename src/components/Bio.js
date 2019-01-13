@@ -1,6 +1,6 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import Avatar from './Avatar';
+import Avatar from './Avatar'
 
 import { rhythm } from '../utils/typography'
 
@@ -20,7 +20,8 @@ function Bio() {
           >
             <Avatar />
             <p>
-              Written by <strong>{author}</strong>, a Magento Certified Developer & Architect in Cleveland, Ohio.
+              Written by <strong>{author}</strong>, a Magento Certified
+              Developer & Architect in Cleveland, Ohio.
               <br />
               <a href={`https://twitter.com/${social.twitter}`}>
                 Follow me on Twitter @{social.twitter}

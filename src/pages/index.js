@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -15,20 +15,38 @@ class BlogIndex extends React.Component {
     const group = data.allMarkdownRemarkGroup.group
 
     return (
-      <Layout location={this.props.location} subtitle={siteSubtitle} title={siteTitle}>
+      <Layout
+        location={this.props.location}
+        subtitle={siteSubtitle}
+        title={siteTitle}
+      >
         <SEO
           title={siteTitle}
           description={siteSubtitle}
-          keywords={[`magento`, `magento 2`, `php`, `javascript`, `laravel`, `react`, `reactjs`, `docker`, `mark shust`]}
+          keywords={[
+            `magento`,
+            `magento 2`,
+            `php`,
+            `javascript`,
+            `laravel`,
+            `react`,
+            `reactjs`,
+            `docker`,
+            `mark shust`,
+          ]}
         />
         <hr />
         <Bio />
-        <p style={{ 
-          fontFamily:`Montserrat,sans-serif`,
-          marginTop:0,
-          fontWeight:200,
-          fontSize:rhythm(1.5),
-         }}>Most Recent Blog Posts:</p>
+        <p
+          style={{
+            fontFamily: `Montserrat,sans-serif`,
+            marginTop: 0,
+            fontWeight: 200,
+            fontSize: rhythm(1.5),
+          }}
+        >
+          Most Recent Blog Posts:
+        </p>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -40,19 +58,19 @@ class BlogIndex extends React.Component {
                   fontSize: rhythm(1.25),
                 }}
               >
-                <Link to={node.fields.slug}>
-                  {title}
-                </Link>
+                <Link to={node.fields.slug}>{title}</Link>
               </h3>
               <time
-                style={{ 
+                style={{
                   display: `block`,
                   marginBottom: rhythm(0.5),
                   marginTop: rhythm(0),
-                  color: '#aaa'
+                  color: '#aaa',
                 }}
                 dateTime={node.frontmatter.date}
-              >{node.frontmatter.date}</time>
+              >
+                {node.frontmatter.date}
+              </time>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -65,12 +83,15 @@ class BlogIndex extends React.Component {
           {group.map(tag => (
             <li
               key={tag.fieldValue}
-              style={{ 
+              style={{
                 listStyle: 'none',
                 display: 'inline-block',
                 padding: '1rem',
                 fontWeight: tag.totalCount >= 5 && 'bold',
-                fontSize: tag.totalCount >= 5 ? '2rem' : tag.totalCount >= 3 && '1.5rem',
+                fontSize:
+                  tag.totalCount >= 5
+                    ? '2rem'
+                    : tag.totalCount >= 3 && '1.5rem',
               }}
             >
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
@@ -95,7 +116,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemarkEdges: allMarkdownRemark(
-      limit: 10,
+      limit: 10
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

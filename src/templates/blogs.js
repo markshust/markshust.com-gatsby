@@ -13,8 +13,16 @@ class BlogsTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} subtitle={siteSubtitle} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} keywords={post.frontmatter.tags} />
+      <Layout
+        location={this.props.location}
+        subtitle={siteSubtitle}
+        title={siteTitle}
+      >
+        <SEO
+          title={post.frontmatter.title}
+          description={post.excerpt}
+          keywords={post.frontmatter.tags}
+        />
         <h1>{post.frontmatter.title}</h1>
         <time
           style={{
@@ -22,20 +30,30 @@ class BlogsTemplate extends React.Component {
             display: `block`,
             marginBottom: rhythm(1.5),
             marginTop: rhythm(-0.5),
-            color: '#aaa'
+            color: '#aaa',
           }}
           dateTime={post.frontmatter.date}
         >
           {post.frontmatter.date}
         </time>
-        <div className="main-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          className="main-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr style={{ marginBottom: rhythm(1) }} />
         <ul>
-        {post.frontmatter.tags.map(tag => (
-          <li style={{ listStyle: 'none', display: 'inline', margin: rhythm(1) }} key={tag}>
-            <Link to={`/tags/${tag}/`}>#{tag}</Link>
-          </li>
-        ))}
+          {post.frontmatter.tags.map(tag => (
+            <li
+              style={{
+                listStyle: 'none',
+                display: 'inline',
+                margin: rhythm(1),
+              }}
+              key={tag}
+            >
+              <Link to={`/tags/${tag}/`}>#{tag}</Link>
+            </li>
+          ))}
         </ul>
         <hr style={{ marginBottom: rhythm(1) }} />
         <Bio />
@@ -51,7 +69,8 @@ class BlogsTemplate extends React.Component {
           <li style={{ flex: 1, paddingRight: '1em' }}>
             {previous && (
               <>
-                <strong>Previous Post:</strong><br />
+                <strong>Previous Post:</strong>
+                <br />
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
@@ -61,7 +80,8 @@ class BlogsTemplate extends React.Component {
           <li style={{ flex: 1, paddingLeft: '1em', textAlign: 'right' }}>
             {next && (
               <>
-                <strong>Next Post:</strong><br />
+                <strong>Next Post:</strong>
+                <br />
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>

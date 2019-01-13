@@ -1,6 +1,6 @@
-import React from "react"
+import React from 'react'
 import Layout from '../components/Layout'
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
 
 const TagsTemplate = ({ pageContext, data, location }) => {
@@ -9,18 +9,22 @@ const TagsTemplate = ({ pageContext, data, location }) => {
   const siteSubtitle = data.site.siteMetadata.description
   const siteTitle = data.site.siteMetadata.title
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
+    totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`
 
   return (
     <Layout location={location} subtitle={siteSubtitle} title={siteTitle}>
       <h1>#{tag}</h1>
-      <h2 style={{
+      <h2
+        style={{
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
           fontWeight: 200,
           fontSize: rhythm(1),
-        }}>{tagHeader}</h2>
+        }}
+      >
+        {tagHeader}
+      </h2>
       <ul>
         {edges.map(({ node }) => {
           const path = node.fields.slug
