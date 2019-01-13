@@ -52,6 +52,11 @@ blockquote {
   color: silver;
 }
 
+.main-content p code[class*="language-"], .main-content li code[class*="language-"] {
+  background-color: #E6F6FF;
+  color: #01337D;
+}
+
 .main-content ul {
   margin-left: 2rem;
 }

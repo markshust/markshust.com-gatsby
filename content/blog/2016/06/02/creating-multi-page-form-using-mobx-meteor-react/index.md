@@ -1,7 +1,7 @@
 ---
 title: "Creating a multi-page form using MobX with Meteor & React"
 date: "2016-06-02T13:58:00.000Z"
-tags: ["meteor", "mobx", "react"]
+tags: ["meteor", "mobx", "reactjs"]
 ---
 
 Mobx is a really simple state manager that can be used really nicely with React, when you don't need the complexity of a Redux implementation.

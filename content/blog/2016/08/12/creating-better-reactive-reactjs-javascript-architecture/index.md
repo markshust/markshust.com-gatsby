@@ -1,7 +1,7 @@
 ---
 title: "Creating a better reactive ReactJS JavaScript architecture"
 date: "2016-08-12T10:32:00.000Z"
-tags: ["javascript", "mobx", "react"]
+tags: ["javascript", "mobx", "reactjs"]
 ---
 
 After working through a few ReactJS JavaScript projects based in Meteor, what the ecosystem lacks is a really good architecture that will grow with you. Not only should it be adaptable and somewhat future-proof in a space that seems to be ever-changing at a rapid pace, but it lacks having an established organizational paradigm present, specifically when dealing with reactive, single-page applications.

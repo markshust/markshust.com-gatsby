@@ -1,7 +1,7 @@
 ---
 title: "Creating a Meteor + React Hello World app with FlowRouter"
 date: "2015-10-23T17:16:00.000Z"
-tags: ["meteor", "react"]
+tags: ["meteor", "reactjs"]
 ---
 
 I wanted to create a simple screencast demonstrating the use of React within a Meteor project. Here's a simple Hello World app, that uses FlowRouter for rending React components.
