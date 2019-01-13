@@ -29,6 +29,16 @@ body a:hover {
   border-bottom: 2px solid #000;
 }
 
+.gatsby-highlight-code-line {
+  background-color: #363636;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1.25em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.5em solid #0967D2;
+}
+
 .main-content :not(pre) > code[class*="language-"], .main-content code[class="language-text"] {
   padding: 0.3em 0.6em;
 }
