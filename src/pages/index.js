@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import kebabCase from "lodash/kebabCase"
 import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -10,7 +11,8 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteSubtitle = data.site.siteMetadata.description
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.allMarkdownRemarkEdges.edges
+    const group = data.allMarkdownRemarkGroup.group
 
     return (
       <Layout location={this.props.location} subtitle={siteSubtitle} title={siteTitle}>
@@ -56,9 +58,27 @@ class BlogIndex extends React.Component {
           )
         })}
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
-        <div style={{ marginTop: rhythm(3) }}>
-          Looking for something else? <Link to="/tags">Browse all tags</Link>
+        <div style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }}>
+          Browse all blog posts by tag:
         </div>
+        <ul>
+          {group.map(tag => (
+            <li
+              key={tag.fieldValue}
+              style={{ 
+                listStyle: 'none',
+                display: 'inline-block',
+                padding: '1rem',
+                fontWeight: tag.totalCount >= 5 && 'bold',
+                fontSize: tag.totalCount >= 5 ? '2rem' : tag.totalCount >= 3 && '1.5rem',
+              }}
+            >
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                #{tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Layout>
     )
   }
@@ -74,7 +94,10 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10) {
+    allMarkdownRemarkEdges: allMarkdownRemark(
+      limit: 10,
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
@@ -87,6 +110,15 @@ export const pageQuery = graphql`
             tags
           }
         }
+      }
+    }
+    allMarkdownRemarkGroup: allMarkdownRemark(
+      limit: 2000
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
       }
     }
   }

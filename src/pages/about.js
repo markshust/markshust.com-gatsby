@@ -15,7 +15,7 @@ const AboutPage = ({
   <Layout location={location} subtitle={description} title={title}>
     <h1>About</h1>
     <img src={markshustPhoto} style={{ float: 'left', padding: '0.5rem 0 0' }} />
-    <p>Mark Shust is a cerified Magento developer & architect with extended knowledge of PHP, Javascript, Laravel, ReactJS, Docker, and user interface design. He has over 15 years of web development experience in the eCommerce, real estate, business-to-business, and information technology industries. Mark is Magento Certified Developer Plus and a Zend Certified Engineer, and has a wide knowledge range of LAMP server management and open source software.</p>
+    <p>Mark Shust is a certified Magento developer & architect with extended knowledge of PHP, JavaScript, Laravel, React, Docker, and user interface design. He has over 15 years of web development experience in the eCommerce, real estate, business-to-business, and information technology industries. Mark is Magento Certified Developer Plus and a Zend Certified Engineer, and has a wide knowledge range of LAMP server management and open source software.</p>
     <p>Mark is married to his wonderful wife Juliann, and they are the proud parents of twin girls Lily Ann and Brielle. Mark lives in Northest Ohio, and is a devout Cleveland Browns fan, loves eating Chipotle burritos, playing scrabble and solving Rubix cubes. Mark loves geek-inspired technology, and enjoys living a simplistic lifestyle.</p>
   </Layout>
 )}

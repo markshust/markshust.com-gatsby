@@ -55,24 +55,31 @@ class Layout extends React.Component {
               <Avatar />
             </div>
             <div style={{ flex: 1 }}>
-              <h3
+              <div
                 style={{
                   fontFamily: `Montserrat, sans-serif`,
+                  fontWeight: 900,
+                  fontSize: rhythm(0.825),
                   marginTop: 0,
                   marginBottom: rhythm(0.25),
+                  lineHeight: 1.1,
                 }}
               >
                 {title}
-              </h3>
-              <h4 
+              </div>
+              <div
                 style={{
                   fontFamily: `Montserrat, sans-serif`,
                   marginTop: 0,
                   fontWeight: 400,
                   textTransform: 'none',
                   letterSpacing: rhythm(0.05),
-                }}>{subtitle}</h4>
+                  lineHeight: 1.1,
+                }}
+              >
+                {subtitle}
               </div>
+            </div>
           </div>
         </Link>
       )
@@ -91,7 +98,7 @@ class Layout extends React.Component {
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
         <footer style={{ display: 'flex' }}>
           <div style={{ flex: 2 }}>
-            © 1985-{new Date().getFullYear()} Mark O. Shust - <Link to={`/about`}>About</Link>
+            © 1985-{new Date().getFullYear()} Mark O. Shust &mdash; <Link to={`/about`}>About</Link>
           </div>
           <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
             <div style={{ flex: 1, textAlign: 'right' }}>

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mark O. Shust`,
     author: `Mark O. Shust`,
-    description: `Thoughts on Magento, PHP, Javascript, Laravel, React, Docker, and user interface design.`,
+    description: `Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design.`,
     siteUrl: `https://markshust-com.netlify.com`,
     social: {
       twitter: `markoshust`,
