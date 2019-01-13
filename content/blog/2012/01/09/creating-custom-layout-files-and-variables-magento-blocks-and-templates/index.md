@@ -1,7 +1,7 @@
 ---
 title: "Creating custom layout files and variables in Magento blocks and templates"
 date: "2012-01-09T11:49:00.000Z"
-tags: ["git"]
+tags: ["layout", "magento", "magento1", "xml"]
 ---
 
 Sometimes it is necessary to create a custom layout file. Other times, you may need to define and set custom variables for use in your template file. This article demonstrates the ability to do both, in hopes to clarify the "Magento XML Magic" that is going on behind the scenes.
