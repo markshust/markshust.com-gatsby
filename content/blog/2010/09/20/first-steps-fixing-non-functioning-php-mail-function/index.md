@@ -13,7 +13,11 @@ After creating and configuring a new LAMP stack, there are times where the php m
   service httpd restart
   ```
 
-- Ensure your machine has a FQDN (fully-qualified domain name). You may query the current hostname using: `hostname`
+- Ensure your machine has a FQDN (fully-qualified domain name). You may query the current hostname using:
+
+  ```bash
+  hostname
+  ```
 
 - If you are testing a new domain which is not yet configured on the server, using the default Postfix mail program, add the domain
 
@@ -23,18 +27,16 @@ After creating and configuring a new LAMP stack, there are times where the php m
 
 - Change the myhostname variable to your domain, example: `myhostname = my.foo.com`
 
-- Test the mail function using a good sendmail.php script… such as the following:
+- Test the mail function using a good sendmail.php script, such as the following:
 
-```php
+```php{numberLines: true}
 <!--
 This is a script, written and designed to test the functionality of the
 PHP mail() function on a web hosting account. I offer no warrenty with
 this script. Anyone can use and distribute the script freely.
 -->
 <title>PHP Mail() test</title>
-
 This form will attempt to send a test email. Please enter where this test should be sent to:
-
 <form action="sendmail.php" method="post" name="sendmail" data-children-count="2">
 Enter an email address: <input type="text" name="to" data-kwimpalastatus="alive" data-kwimpalaid="1547324401405-2">
 <br>

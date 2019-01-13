@@ -7,6 +7,7 @@ tags: ["magento", "magento1", "redirects", "seo"]
 By default, Magento does not automatically add on trailing url's to the end of every URL. In a database-driven cms system, you will be penalized for this by having two urls' with duplicate content:
 
 http://yourinstall.com/home
+
 http://yourinstall.com/home/
 
 In the case above, each of these url's will lead to the same content, causing search engines to spider both pages, and in turn penalizing your website for having duplicate content. You can either create a 404 error for one of the pages, or redirect everything to a standard url. Adding trailing slashes seems to have been the standard for quite a while now and is how most cms systems manage their url's. Below is a diff you can use on the .htaccess file in the root of your Magento install.

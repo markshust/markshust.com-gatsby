@@ -21,31 +21,19 @@ sudo apt-get install google-chrome-stable xorg nano
 
 After the prerequisites are installed, create a couple user-defined preference files to signal to start x and boot into Chrome.
 
-```bash
-nano ~/.bash_profile
-```
-
-```bash
+```bash:title=&Tilde;/.bash_profile
 #!/bin/bash
 startx
 ```
 
-```bash
-nano ~/.xsession
-```
-
-```bash
+```bash:title=&Tilde;/.xsession
 #!/bin/bash
 /opt/google/chrome/google-chrome
 ```
 
 The last step is to autologin the user. Make sure you enter this line correctly, otherwise you may have to install Ubuntu all over again. Yes, it’s that important. Replace ‘username’ with your username.
 
-```bash
-nano /etc/init/tty1.conf
-```
-
-```bash
+```bash:title=/etc/init/tty1.conf
 exec /bin/login -f username  /dev/tty1 2>&1
 ```
 

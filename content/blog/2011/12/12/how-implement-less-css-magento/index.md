@@ -24,7 +24,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
 
 <a href="https://github.com/markoshust/LESS-CSS-General-Mixins/blob/master/custom.less" target="_blank">Download my base LESS CSS mixin file here</a> or see below!
 
-```less
+```less:title=skin/frontend/yourpackage/yourdesign/css/custom.less
 /* Mixins */
 .border-radius (
     @radius: 5px
@@ -183,7 +183,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
     
     position: relative;
     
-    &amp;:before {
+    &:before {
         z-index: 43;
         content: "";
         background-color: @color;
@@ -216,7 +216,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
         
         -webkit-background-clip: padding-box;
         
-        &amp;:after {
+        &:after {
             content: "";
             border: @height/2 solid @color;
             border-right-color: transparent;
@@ -227,7 +227,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
             top: 0;
             right: -2 * (@height/2);
         }
-        &amp;:before {
+        &:before {
             content: "";
             border: @height/2 solid @shadow-color;
             border-right-color: transparent;
@@ -240,7 +240,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
         }
     }
     span {
-        &amp;:after {
+        &:after {
             z-index: 42;
             content: "";
             position: absolute;
@@ -254,7 +254,7 @@ Please feel free to post beneficial mixins and I will try to add them to the fil
             border-bottom-color: transparent;
             border-top-color: transparent;
         }
-        &amp;:before {
+        &:before {
             z-index: 41;
             content: "";
             position: absolute;

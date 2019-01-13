@@ -14,7 +14,9 @@ This example assumes you are rewriting the catalog product view block. To find o
 
 Let's go ahead and create your module, and setup all of the appropriate XML.
 
-```xml:title=app/etc/modules/Foo_Bar.xml
+<div class="gatsby-code-title">app/etc/modules/Foo_Bar.xml</div>
+
+```xml{numberLines: true}
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -26,7 +28,9 @@ Let's go ahead and create your module, and setup all of the appropriate XML.
 </config>
 ```
 
-```xml:title=app/code/community/Foo/Bar/etc/config.xml
+<div class="gatsby-code-title">app/code/community/Foo/Bar/etc/config.xml</div>
+
+```xml{numberLines: true}
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -67,7 +71,9 @@ Let's go ahead and create your module, and setup all of the appropriate XML.
 
 This is our custom layout XML file. We look in `app/design/frontend/base/default/layout/` for the appropriate XML handle to override. Once you find it (in this case, `catalog.xml`), take the name of the block you want to override, and reference it in your layout XML. We then use the setTemplate method using the action handle to set the appropriate template for this block.
 
-```xml:title=app/design/frontend/base/default/layout/foo/bar.xml
+<div class="gatsby-code-title">app/design/frontend/base/default/layout/foo/bar.xml</div>
+
+```xml{numberLines: true}
 <?xml version="1.0"?>
 <layout>
     <catalog_product_view>
@@ -81,7 +87,9 @@ This is our custom layout XML file. We look in `app/design/frontend/base/default
 
 Now that our XML is all taken care of, let's create our baz object by defining it within our model directory. Extending Varien_Object let's our model inherit the properties that are defined within that class.
 
-```php:title=app/code/community/Foo/Bar/Model/Baz.php
+<div class="gatsby-code-title">app/code/community/Foo/Bar/Model/Baz.php</div>
+
+```php{numberLines: true}
 <?php
 class Foo_Bar_Model_Baz extends Varien_Object
 {
@@ -92,7 +100,9 @@ Yep, that easy! Just a blank class.
 
 We then create our custom block, where we will reference the baz object we just created, and use Magento's magic setter methods to set the desired variable and it's value.
 
-```php:title=app/code/community/Foo/Bar/Block/Catalog/Product/View.php
+<div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Catalog/Product/View.php</div>
+
+```php{numberLines: true}
 <?php
 class Foo_Bar_Block_Catalog_Product_View extends Mage_Catalog_Block_Product_View
 {
@@ -109,7 +119,9 @@ class Foo_Bar_Block_Catalog_Product_View extends Mage_Catalog_Block_Product_View
 
 The final step is to retrieve the object and the appropriate variable assigned to that object, again using the singleton method, and Magento's magic getter method.
 
-```php:title=app/design/frontend/base/default/template/foo/bar/catalog/product/view.phtml
+<div class="gatsby-code-title">app/design/frontend/base/default/template/foo/bar/catalog/product/view.phtml</div>
+
+```php{numberLines: true}
 <?php
 /**
  * Magento

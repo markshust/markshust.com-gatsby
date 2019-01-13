@@ -29,6 +29,15 @@ body a:hover {
   border-bottom: 2px solid #000;
 }
 
+.main-content :not(pre) > code[class*="language-"], .main-content code[class="language-text"] {
+  padding: 0.3em 0.6em;
+}
+
+.main-content :not(pre) > code[class*="language-"] {
+  background-color: #333;
+  color: silver;
+}
+
 .main-content ul {
   margin-left: 2rem;
 }
