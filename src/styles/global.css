@@ -39,6 +39,10 @@ body a:hover {
   border-left: 0.5em solid #0967D2;
 }
 
+blockquote {
+  border-left-color: #0967D2;
+}
+
 .main-content :not(pre) > code[class*="language-"], .main-content code[class="language-text"] {
   padding: 0.3em 0.6em;
 }
