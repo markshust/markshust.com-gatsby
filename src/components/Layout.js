@@ -90,7 +90,9 @@ class Layout extends React.Component {
         {children}
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
         <footer style={{ display: 'flex' }}>
-          <div style={{ flex: 2 }}>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
+          <div style={{ flex: 2 }}>
+            © 1985-{new Date().getFullYear()} Mark O. Shust - <Link to={`/about`}>About</Link>
+          </div>
           <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
             <div style={{ flex: 1, textAlign: 'right' }}>
               <a href="https://github.com/markoshust" target="_blank" style={{ boxShadow: 'none' }}><img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} /></a>

@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from '../components/Layout'
 import kebabCase from "lodash/kebabCase"
-import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
 const TagsPage = ({
@@ -16,7 +15,6 @@ const TagsPage = ({
   return (
   <Layout location={location} subtitle={description} title={title}>
     <h1>Tags</h1>
-    <Helmet title={title} />
     <ul>
       {group.map(tag => (
         <li key={tag.fieldValue} style={{ listStyle: 'none' }}>

@@ -3,7 +3,7 @@ module.exports = {
     title: `Mark O. Shust`,
     author: `Mark O. Shust`,
     description: `Thoughts on Magento, PHP, Javascript, Laravel, React, Docker, and user interface design.`,
-    siteUrl: `https://markshust-com.netlify.com/`,
+    siteUrl: `https://markshust-com.netlify.com`,
     social: {
       twitter: `markoshust`,
     },
@@ -43,6 +43,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-sitemap`,
         ],
       },
     },
