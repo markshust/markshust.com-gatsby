@@ -21,6 +21,12 @@ class BlogIndex extends React.Component {
         />
         <hr />
         <Bio />
+        <p style={{ 
+          fontFamily:`Montserrat,sans-serif`,
+          marginTop:0,
+          fontWeight:200,
+          fontSize:rhythm(1.5),
+         }}>Most Recent Blog Posts:</p>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -49,6 +55,10 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
+        <div style={{ marginTop: rhythm(3) }}>
+          Looking for something else? <Link to="/tags">Browse all tags</Link>
+        </div>
       </Layout>
     )
   }
@@ -64,7 +74,7 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 10) {
       edges {
         node {
           excerpt
