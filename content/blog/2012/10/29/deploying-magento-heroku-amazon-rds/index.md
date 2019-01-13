@@ -10,9 +10,9 @@ Your first step is to unzip your fresh Magento install and get it on git.
 
 ```plain
 ~/Sites/$ cd magento
-~/Sites/magento/$ git init
-~/Sites/magento/$ git add .
-~/Sites/magento/$ git commit
+$ git init
+$ git add .
+$ git commit
 ```
 
 Now your Magento install should be on git and a baseline committed. I would now recommend to complete the Magento installation on your local environment, but first you need to setup your Amazon RDS instance and patch through the proper permissions. <a href="http://aws.amazon.com/rds/" target="_blank">Amazon RDS</a> is a very affordable relational database application server which you can use to host your MySQL database for Magento. The micro instance costs roughly $18/mo at the time of this posting, and should be ok for any lightly trafficked Magento installation.
@@ -40,7 +40,7 @@ Next, make sure you have your <a href="http://www.heroku.com/" target="_blank">H
 After that's setup, let's go back to our web directory and push up our new app.
 
 ```plain
-~/Sites/magento/$ heroku create
+$ heroku create
 Creating sheltered-oasis-3460... done, stack is cedar
 http://sheltered-oasis-3460 herokuapp.com/ | git@heroku.com:sheltered-oasis-3460.git
 Git remote heroku added
@@ -55,7 +55,7 @@ Database URL: mysql://magento:magento@oasis.cv8auujxhwjj.us-east-1.rds.amazonaws
 Once this is setup, go ahead and complete the install of Magento on your local environment. Once it has been installed and is now working, go ahead and commit your app/etc/local.xml file (along with any other changes you made). You then need to push up your git repo to this new app for things to push upstream.
 
 ```plain
-~/Sites/magento/$ git push heroku master
+$ git push heroku master
 The authenticity of host 'heroku.com (50.19.85.132)' can't be established.
 RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
 Are you sure you want to continue connecting (yes/no)? yes
@@ -84,7 +84,7 @@ To git@heroku.com:sheltered-oasis-3460.git
 Yay! Our git repo has now been pushed upstream to Heroku and is deployed. You can open your URL by visiting the above URL provided or by the command:
 
 ```plain
-~/Sites/magento/$ heroku open
+$ heroku open
 ```
 
 Hopefully this well debug some myths about running Magento on a Heroku instance and with Amazon RDS. This guide should be used as a starting point, as it is not complete at all and will most likely require some other modifications to make it truly production-ready. You also have access to the list of <a href="https://addons.heroku.com/" target="_blank">other Heroku Add-On's</a> including Heroku Scheduler (useful for cron tasks) and&nbsp;Redis for faster cache reads.

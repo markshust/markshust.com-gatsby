@@ -1,7 +1,7 @@
 ---
 title: "Why you shouldn't use the core diff feature of MageUpdate"
 date: "2012-11-02T11:43:00.000Z"
-tags: ["aws", "heroku", "magento", "magento1", "rds"]
+tags: ["magento", "magento1", "security"]
 ---
 
 I feel as though I have to post about this sooner rather than later. A day or two ago, Kalen of MageUpdate posted an article, <a href="http://mageupdate.blogspot.com/2012/10/magento-core-keeping-it-clean.html" target="_blank">Mage Core: Keeping It Clean</a>. The idea of the script is to check your Magento installation for properly coded modules. In theory, this is an absolutely great idea, because I can certainly attest that there is a plethora of garbage modules and extensions out there.
