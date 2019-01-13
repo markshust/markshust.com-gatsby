@@ -1,5 +1,5 @@
 ---
-title: "Creating a Node.js Server/Client with Socket.IO & MySQL"
+title: "Creating a Node.js server/client with Socket.IO & MySQL"
 date: "2013-11-07T10:08:00.000Z"
 tags: ["mysql", "nodejs", "socketio"]
 ---
