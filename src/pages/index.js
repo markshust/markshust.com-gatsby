@@ -76,16 +76,15 @@ class BlogIndex extends React.Component {
           )
         })}
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
-        <div style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }}>
+        <p style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }}>
           Browse all blog posts by tag:
-        </div>
-        <ul>
+        </p>
+        <ul className="tags">
           {group.map(tag => (
             <li
               key={tag.fieldValue}
               style={{
                 listStyle: 'none',
-                display: 'inline-block',
                 padding: '1rem',
                 fontWeight: tag.totalCount >= 5 && 'bold',
                 fontSize:

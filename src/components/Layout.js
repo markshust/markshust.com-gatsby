@@ -39,6 +39,7 @@ class Layout extends React.Component {
               fontWeight: 200,
               fontSize: rhythm(1.5),
             }}
+            className="subtitle"
           >
             {subtitle}
           </h2>
@@ -77,9 +78,9 @@ class Layout extends React.Component {
                   marginTop: 0,
                   fontWeight: 400,
                   textTransform: 'none',
-                  letterSpacing: rhythm(0.05),
                   lineHeight: 1.1,
                 }}
+                className="subtitle"
               >
                 {subtitle}
               </div>
@@ -98,15 +99,17 @@ class Layout extends React.Component {
         }}
         className="main-content"
       >
-        {header}
+        <div className="header">
+          {header}
+        </div>
         {children}
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
         <footer style={{ display: 'flex' }}>
-          <div style={{ flex: 2 }}>
-            © 1985-{new Date().getFullYear()} Mark O. Shust &mdash;{' '}
-            <Link to={`/about`}>About</Link>
+          <div style={{ flex: 2 }} className="left">
+            <span>© 1985-{new Date().getFullYear()}</span> <span>Mark O. Shust</span> <span>&mdash;{' '}
+            <Link to={`/about`}>About</Link></span>
           </div>
-          <div style={{ flex: 1, textAlign: 'right', display: 'flex' }}>
+          <div style={{ flex: 1, textAlign: 'right', display: 'flex' }} className="right">
             <div style={{ flex: 1, textAlign: 'right' }}>
               <a
                 href="https://github.com/markoshust"

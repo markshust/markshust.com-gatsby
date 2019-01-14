@@ -69,3 +69,41 @@ blockquote {
 .main-content ul {
   margin-left: 2rem;
 }
+
+ul.tags {
+  margin-left: 0;
+}
+
+.tags li {
+  margin: 1rem;
+  display: inline-block;
+}
+
+footer .left span {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 70%;
+  }
+
+  p, li, .header, footer, code {
+    font-size: 125%;
+    line-height: 1.75;
+  }
+
+  .main-content p code[class*="language-"], .main-content li code[class*="language-"] {
+    font-size: 90%;
+  }
+
+  .subtitle, blockquote {
+    font-size: 90%;
+  }
+
+  .tags li {
+    margin: 0.5rem 1rem;
+    display: block;
+  }
+}

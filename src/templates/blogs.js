@@ -41,13 +41,11 @@ class BlogsTemplate extends React.Component {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
         <hr style={{ marginBottom: rhythm(1) }} />
-        <ul>
+        <ul className="tags">
           {post.frontmatter.tags.map(tag => (
             <li
               style={{
                 listStyle: 'none',
-                display: 'inline',
-                margin: rhythm(1),
               }}
               key={tag}
             >
