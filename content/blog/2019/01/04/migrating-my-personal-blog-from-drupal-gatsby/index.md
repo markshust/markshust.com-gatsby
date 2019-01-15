@@ -91,7 +91,7 @@ I really never had much custom on my personal website, however I did wind up doi
 ...
 ```
 
-Honestly, something that really won't survive long term, but code that can be easily removed with future code is good, eh? You can check out the [tags](/tags) endpoint for how this all looks -- pretty neat, considering it took hardly any code to implement. I'm exciting about the ability to use React for custom implementations in the future.
+Honestly, something that really won't survive long term, but code that can be easily removed with future code is good, eh? You can check out the [tags](/tags) endpoint for how this all looks -- pretty neat, considering it took hardly any code to implement. I'm excited about the ability to use React for custom implementations in the future.
 
 ## Time to market
 
