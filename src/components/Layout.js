@@ -130,13 +130,16 @@ class Layout extends React.Component {
           </div>
           <div>
             <ul style={{ display: 'inline-flex', marginLeft: 0 }}>
-              <li style={{ margin: rhythm(0.5), listStyle: 'none', padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><Link to={`/about`}>About</Link></li>
-              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a></li>
-              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><a href="/rss.xml" target="_blank">RSS</a></li>
+              <li style={{ margin: rhythm(0.5), listStyle: 'none', padding: `0 ${rhythm(0.4)}` }}><Link to={`/`}>Home</Link></li>
+              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)}` }}><Link to={`/about`}>About</Link></li>
+              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)}` }}><a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a></li>
+              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)}` }}><a href="/rss.xml" target="_blank">RSS</a></li>
             </ul>
           </div>
-          <div>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
-          <div><a href="mailto:mark@shust.com">mark@shust.com</a></div>
+          <div class="bottom">
+            <div>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
+            <div><a href="mailto:mark@shust.com">mark@shust.com</a></div>
+          </div>
         </footer>
       </div>
     )
