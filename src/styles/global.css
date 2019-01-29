@@ -85,6 +85,10 @@ footer .left span {
   width: 100%;
 }
 
+footer .bottom {
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 639px) {
   html {
     font-size: 70%;
