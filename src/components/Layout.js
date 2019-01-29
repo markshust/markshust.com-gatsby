@@ -107,7 +107,10 @@ class Layout extends React.Component {
         <footer style={{ display: 'flex' }}>
           <div style={{ flex: 2 }} className="left">
             <span>© 1985-{new Date().getFullYear()}</span> <span>Mark O. Shust</span> <span>&mdash;{' '}
-            <Link to={`/about`}>About</Link></span>
+            <Link to={`/about`}>About</Link>
+            {' '}&mdash;{' '}
+            <a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a>
+            </span>
           </div>
           <div style={{ flex: 1, textAlign: 'right', display: 'flex' }} className="right">
             <div style={{ flex: 1, textAlign: 'right' }}>
