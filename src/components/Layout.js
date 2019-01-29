@@ -103,17 +103,10 @@ class Layout extends React.Component {
           {header}
         </div>
         {children}
-        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
-        <footer style={{ display: 'flex' }}>
-          <div style={{ flex: 2 }} className="left">
-            <span>© 1985-{new Date().getFullYear()}</span> <span>Mark O. Shust</span> <span>&mdash;{' '}
-            <Link to={`/about`}>About</Link>
-            {' '}&mdash;{' '}
-            <a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a>
-            </span>
-          </div>
-          <div style={{ flex: 1, textAlign: 'right', display: 'flex' }} className="right">
-            <div style={{ flex: 1, textAlign: 'right' }}>
+        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }} />
+        <footer style={{ textAlign: 'center' }}>
+          <div style={{ marginBottom: rhythm(0.5), display: 'flex', maxWidth: 200, marginLeft: 'auto', marginRight: 'auto' }}>
+            <div style={{ flex: 1 }}>
               <a
                 href="https://github.com/markoshust"
                 target="_blank"
@@ -122,7 +115,7 @@ class Layout extends React.Component {
                 <img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} />
               </a>
             </div>
-            <div style={{ flex: 1, textAlign: 'right' }}>
+            <div style={{ flex: 1 }}>
               <a
                 href="https://twitter.com/markoshust"
                 target="_blank"
@@ -134,10 +127,16 @@ class Layout extends React.Component {
                 />
               </a>
             </div>
-            <div style={{ flex: 3 }}>
-              <a href="mailto:mark@shust.com">mark@shust.com</a>
-            </div>
           </div>
+          <div>
+            <ul style={{ display: 'inline-flex', marginLeft: 0 }}>
+              <li style={{ margin: rhythm(0.5), listStyle: 'none', padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><Link to={`/about`}>About</Link></li>
+              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a></li>
+              <li style={{ margin: rhythm(0.5), padding: `0 ${rhythm(0.4)} 0 ${rhythm(0.6)}` }}><a href="/rss.xml" target="_blank">RSS</a></li>
+            </ul>
+          </div>
+          <div>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
+          <div><a href="mailto:mark@shust.com">mark@shust.com</a></div>
         </footer>
       </div>
     )
