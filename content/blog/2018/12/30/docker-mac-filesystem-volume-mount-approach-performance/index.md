@@ -119,4 +119,4 @@ What happens after we apply these updates? Our initial requests of 14 seconds dr
 
 I'm hoping this post helps put an end to filesystem performance issues on Docker for Mac. Hopefully one day, we will not even need to do this! But until then, this is a pretty solid solution that works well for the edge-cases for OSS with very large filesystems.
 
-If you wish to check out my Magento Docker development environment in it's entirety and be able to use many other bin bash helper scripts I've created to deal with common issues, check out my GitHub project at <a href="https://github.com/markoshust/docker-magento" target="_blank">markoshust/docker-magento</a>.
+If you wish to check out my Magento Docker development environment in it's entirety and be able to use many other bin bash helper scripts I've created to deal with common issues, check out my GitHub project at <a href="https://github.com/markshust/docker-magento" target="_blank">markshust/docker-magento</a>.

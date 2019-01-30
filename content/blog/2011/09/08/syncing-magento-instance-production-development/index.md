@@ -4,7 +4,7 @@ date: "2011-09-08T15:19:00.000Z"
 tags: ["backups", "magento", "magento1"]
 ---
 
-**UPDATE!** Code moved to bitbucket: <a href="https://bitbucket.org/markoshust/syncdb/src" target="_blank">https://bitbucket.org/markoshust/syncdb/src</a>
+**UPDATE!** Code moved to bitbucket: <a href="https://bitbucket.org/markshust/syncdb/src" target="_blank">https://bitbucket.org/markshust/syncdb/src</a>
 
 Often times, you need to pull down an up-to-date version of Magento from your production server to your development or staging servers. This involves:
 
@@ -68,4 +68,4 @@ Just save the file as syncdb.sh somewhere on your Mac or Linux machine (No love 
 
 **NOTE:** Updated NOV-18-2011 with multi-store support on same root domain (.yourdomain.com) and nixing https from localhost.
 
-**NOTE:** Updated AUG-13-2012 with db hostname configurability. Also, moved to bitbucket: <a href="https://bitbucket.org/markoshust/syncdb/src" target="_blank">https://bitbucket.org/markoshust/syncdb/src</a>
+**NOTE:** Updated AUG-13-2012 with db hostname configurability. Also, moved to bitbucket: <a href="https://bitbucket.org/markshust/syncdb/src" target="_blank">https://bitbucket.org/markshust/syncdb/src</a>

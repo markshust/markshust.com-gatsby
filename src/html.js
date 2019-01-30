@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
 export default class HTML extends React.Component {
   render() {
@@ -13,7 +13,11 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
-          <script async data-uid="55e59119df" src="https://f.convertkit.com/55e59119df/343250d763.js"></script>
+          <script
+            async
+            data-uid="55e59119df"
+            src="https://f.convertkit.com/55e59119df/343250d763.js"
+          />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}

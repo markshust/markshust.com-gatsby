@@ -118,4 +118,4 @@ If you need to flush the cache for any reason (if the block isn't showing or was
 
 And with a cache flush, refresh your home page and you should see Foo Bar Baz shown at the top of the main content area!
 
-We've created a <a href="https://github.com/markoshust/module-foobar" target="_blank">GitHub repository with this sample module code</a>, which will also be updated in the future with other code samples.
+We've created a <a href="https://github.com/markshust/module-foobar" target="_blank">GitHub repository with this sample module code</a>, which will also be updated in the future with other code samples.

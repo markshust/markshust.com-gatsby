@@ -22,7 +22,7 @@ The base LESS CSS file was created in the supplied format for a variety of reaso
 
 Please feel free to post beneficial mixins and I will try to add them to the file on GitHub. Happy CSS coding!
 
-<a href="https://github.com/markoshust/LESS-CSS-General-Mixins/blob/master/custom.less" target="_blank">Download my base LESS CSS mixin file here</a> or see below!
+<a href="https://github.com/markshust/LESS-CSS-General-Mixins/blob/master/custom.less" target="_blank">Download my base LESS CSS mixin file here</a> or see below!
 
 ```less:title=skin/frontend/yourpackage/yourdesign/css/custom.less
 /* Mixins */

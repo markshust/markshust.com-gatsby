@@ -24,7 +24,7 @@ Let's name our node cluster 'magento2', pick a region, and pick a type/size of '
 
 ![Launch node cluster](tutum-launch-node-cluster.png)
 
-After launching the node cluster, you'll be sent to the main 'Nodes' screen, which will show the hostname of our node cluster. Copy this down, as we'll use this later to publicly access our Magento 2 instance. The domain will look something like `8dda32f1-markoshust.node.tutum.io`. It may take up to 10 minutes for the node cluster to be deployed, so just wait until it's status is updated to 'Deployed', and then you'll know your Droplet is live.
+After launching the node cluster, you'll be sent to the main 'Nodes' screen, which will show the hostname of our node cluster. Copy this down, as we'll use this later to publicly access our Magento 2 instance. The domain will look something like `8dda32f1-markshust.node.tutum.io`. It may take up to 10 minutes for the node cluster to be deployed, so just wait until it's status is updated to 'Deployed', and then you'll know your Droplet is live.
 
 ![Node cluster deployed](tutum-node-cluster-deployed.png)
 
@@ -93,7 +93,7 @@ setup:
     - M2SETUP_DB_NAME=magento2
     - M2SETUP_DB_USER=magento2
     - M2SETUP_DB_PASSWORD=magento2
-    - M2SETUP_BASE_URL=http://8dda32f1-markoshust.node.tutum.io/
+    - M2SETUP_BASE_URL=http://8dda32f1-markshust.node.tutum.io/
     - M2SETUP_ADMIN_FIRSTNAME=Admin
     - M2SETUP_ADMIN_LASTNAME=User
     - M2SETUP_ADMIN_EMAIL=dummy@gmail.com
@@ -119,7 +119,7 @@ You can monitor the status of the installation once the 'setup' container is in 
 
 ## Installation Complete
 
-You may now visit your site at your Tutum hostname (for me, that is `http://8dda32f1-markoshust.node.tutum.io/`). Note that the first few clicks around our new Magento 2 demo store will take some time to initially load, but return visits will be much quicker. This is because the store hasn't yet been optimized & setup for production, and is really just to be used for development and/or testing purposes as the first step of deploying to a containerized architecture in the cloud.
+You may now visit your site at your Tutum hostname (for me, that is `http://8dda32f1-markshust.node.tutum.io/`). Note that the first few clicks around our new Magento 2 demo store will take some time to initially load, but return visits will be much quicker. This is because the store hasn't yet been optimized & setup for production, and is really just to be used for development and/or testing purposes as the first step of deploying to a containerized architecture in the cloud.
 
 ![Magento 2 deployed](magento-2-deployed.png)
 
@@ -141,7 +141,7 @@ When on the terminal, just enter the following command:
 head -5 app/etc/env.php
 ```
 
-This will show us the first 5 lines of app/etc/env.php file, the last of which contains our admin URL. In this case, it is `admin_18a3o6`. Let's append that to our original Tutum hostname to give us the URL of `http://8dda32f1-markoshust.node.tutum.io/admin_18a3o6`.
+This will show us the first 5 lines of app/etc/env.php file, the last of which contains our admin URL. In this case, it is `admin_18a3o6`. Let's append that to our original Tutum hostname to give us the URL of `http://8dda32f1-markshust.node.tutum.io/admin_18a3o6`.
 
 ![Tutum admin](tutum-app-etc-env-admin.png)
 

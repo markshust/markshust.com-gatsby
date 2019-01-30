@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Mark O. Shust`,
-    author: `Mark O. Shust`,
+    title: `Mark Shust`,
+    author: `Mark Shust`,
     description: `Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design.`,
     siteUrl: `https://markshust.com`,
     social: {
-      twitter: `markoshust`,
+      twitter: `markshust`,
     },
   },
   plugins: [
@@ -59,8 +59,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Mark O. Shust`,
-        short_name: `Mark O. Shust`,
+        name: `Mark Shust`,
+        short_name: `Mark Shust`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

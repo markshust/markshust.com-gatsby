@@ -28,7 +28,7 @@ On to the editor, Drupal's WYSIWYG editor left a lot to be desired; and that's a
 
 I do sort of wish I had some sort of admin/GUI in which I can write markdown and it would save the new post as a markdown file on the filesystem, then have it committed & pushed up through version control. There's no reason we can't build something to do this, so perhaps we'll have that in the near future. Until then, writing and editing locally is really pretty nice, as real-time updates are here today on my Mac and it's very easy to see exactly how my post is going to look on production before it gets published.
 
-I also love the idea of my website being open source. Notice a typo on my site? <a href="https://github.com/markoshust/markshust.com" target="_blank">Submit a PR!</a>
+I also love the idea of my website being open source. Notice a typo on my site? <a href="https://github.com/markshust/markshust.com" target="_blank">Submit a PR!</a>
 
 ## Migrating the data
 

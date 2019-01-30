@@ -18,4 +18,4 @@ https://www.airpair.com/firebase/posts/making-a-keenio-dashboard-realtime-by-int
 
 And here is the code on github:
 
-https://github.com/markoshust/firebase-keen
+https://github.com/markshust/firebase-keen

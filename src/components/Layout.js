@@ -100,16 +100,22 @@ class Layout extends React.Component {
         }}
         className="main-content"
       >
-        <div className="header">
-          {header}
-        </div>
+        <div className="header">{header}</div>
         {children}
         <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }} />
         <footer style={{ textAlign: 'center' }}>
-          <div style={{ marginBottom: rhythm(0.5), display: 'flex', maxWidth: 200, marginLeft: 'auto', marginRight: 'auto' }}>
+          <div
+            style={{
+              marginBottom: rhythm(0.5),
+              display: 'flex',
+              maxWidth: 200,
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
             <div style={{ flex: 1 }}>
               <a
-                href="https://github.com/markoshust"
+                href="https://github.com/markshust"
                 target="_blank"
                 style={{ boxShadow: 'none' }}
               >
@@ -118,7 +124,7 @@ class Layout extends React.Component {
             </div>
             <div style={{ flex: 1 }}>
               <a
-                href="https://twitter.com/markoshust"
+                href="https://twitter.com/markshust"
                 target="_blank"
                 style={{ boxShadow: 'none' }}
               >
@@ -129,28 +135,40 @@ class Layout extends React.Component {
               </a>
             </div>
             <div style={{ flex: 1 }}>
-              <a
-                href="/rss.xml"
-                target="_blank"
-                style={{ boxShadow: 'none' }}
-              >
-                <img
-                  src={rssIcon}
-                  style={{ maxWidth: 46, maxHeight: 22 }}
-                />
+              <a href="/rss.xml" target="_blank" style={{ boxShadow: 'none' }}>
+                <img src={rssIcon} style={{ maxWidth: 46, maxHeight: 22 }} />
               </a>
             </div>
           </div>
           <div>
-            <ul style={{ display: 'inline-flex', marginLeft: 0, listStyle: 'none' }}>
-              <li style={{ margin: rhythm(0.6) }}><Link to={`/`}>Home</Link></li>
-              <li style={{ margin: rhythm(0.6) }}><Link to={`/about`}>About</Link></li>
-              <li style={{ margin: rhythm(0.6) }}><a data-formkit-toggle="55e59119df" href="https://pages.convertkit.com/55e59119df/343250d763">Newsletter</a></li>
+            <ul
+              style={{
+                display: 'inline-flex',
+                marginLeft: 0,
+                listStyle: 'none',
+              }}
+            >
+              <li style={{ margin: rhythm(0.6) }}>
+                <Link to={`/`}>Home</Link>
+              </li>
+              <li style={{ margin: rhythm(0.6) }}>
+                <Link to={`/about`}>About</Link>
+              </li>
+              <li style={{ margin: rhythm(0.6) }}>
+                <a
+                  data-formkit-toggle="55e59119df"
+                  href="https://pages.convertkit.com/55e59119df/343250d763"
+                >
+                  Newsletter
+                </a>
+              </li>
             </ul>
           </div>
           <div class="bottom">
-            <div>© 1985-{new Date().getFullYear()} Mark O. Shust</div>
-            <div><a href="mailto:mark@shust.com">mark@shust.com</a></div>
+            <div>© 1985-{new Date().getFullYear()} Mark Shust</div>
+            <div>
+              <a href="mailto:mark@shust.com">mark@shust.com</a>
+            </div>
           </div>
         </footer>
       </div>

@@ -24,13 +24,13 @@ Number two, by using `window.location.reload` in the method on an Axios response
 
 Keeping the form submission process in JavaScript allows us to do interesting things, like implementing "optimistic UI" into the process. The idea here is the same idea I had a long time ago with the POS -- fake the form submission process, say it's done, and eliminate the perceived round trip by throwing it to the backend process and not block the interface at all. Now, we do have to be mindful that if things load too fast, the user may "perceive" that things are going too quick and we aren't doing enough work (yes, things can actually be too fast). However, this also provides us with other opportunities to fix this situation, such as a complex animation morphing the tweet onto the screen, or some other great UI/UX addition.
 
-Without further adieu, I loaded code up on GitHub which contains this dummy twitter app. You can check it out at <a href="https://github.com/markoshust/optimistic-ui-laravel-vue" target="_blank">https://github.com/markoshust/optimistic-ui-laravel-vue</a>. There are a lot of areas I fudged to get them loaded quicker as this isn't a real app, but you can rest assured that the concept provided therein absolutely relates to real-app usage.
+Without further adieu, I loaded code up on GitHub which contains this dummy twitter app. You can check it out at <a href="https://github.com/markshust/optimistic-ui-laravel-vue" target="_blank">https://github.com/markshust/optimistic-ui-laravel-vue</a>. There are a lot of areas I fudged to get them loaded quicker as this isn't a real app, but you can rest assured that the concept provided therein absolutely relates to real-app usage.
 
 Here's a video demonstrating the result:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MofZ3LDhiSI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-The specific code to be referenced is <a href="https://github.com/markoshust/optimistic-ui-laravel-vue/blob/master/resources/assets/js/components/TweetComponent.vue" target="_blank">https://github.com/markoshust/optimistic-ui-laravel-vue/blob/master/resources/assets/js/components/TweetComponent.vue</a>
+The specific code to be referenced is <a href="https://github.com/markshust/optimistic-ui-laravel-vue/blob/master/resources/assets/js/components/TweetComponent.vue" target="_blank">https://github.com/markshust/optimistic-ui-laravel-vue/blob/master/resources/assets/js/components/TweetComponent.vue</a>
 
 ```javascript
 <script>
