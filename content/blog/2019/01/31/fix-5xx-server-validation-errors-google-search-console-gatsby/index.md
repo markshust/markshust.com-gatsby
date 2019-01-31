@@ -8,7 +8,7 @@ Today I woke up to a new email sitting in my inbox saying "New Coverage issue de
 
 ![Coverage email](coverage-email.png)
 
-Clicking the "Fix Coverage Issues" button, I was sent into Google Search Console (you are using <a href="https://search.google.com/search-console/" target="_blank">Google Search Console</a>, right? It tells you all sorts of good and bad things happening with your web site). I then noticed that the comment URLs from my old Drupal blog were being returned as 404/500 server errors:
+Clicking the "Fix Coverage Issues" button, I was sent into Google Search Console (you are using <a href="https://search.google.com/search-console/" target="_blank">Google Search Console</a>, right? It tells you all sorts of good and bad things happening with your web site). I then noticed that the comment and newsletter URLs from my old Drupal blog were being returned as 404/500 server errors:
 
 ![Console errors](console-errors.png)
 
@@ -18,7 +18,7 @@ I had a few entries there, so just added a few more.
 
 <div class="gatsby-code-title">netlify.toml</div>
 
-```toml{6-10}
+```toml{6-15}
 [[redirects]]
   from = "/blogs/markoshust"
   to = "/"
@@ -26,6 +26,11 @@ I had a few entries there, so just added a few more.
   force = true
 [[redirects]]
   from = "/comment/*"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/newsletter/subscribe-marks-newsletter"
   to = "/"
   status = 301
   force = true
