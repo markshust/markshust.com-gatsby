@@ -164,7 +164,7 @@ class Layout extends React.Component {
               </li>
             </ul>
           </div>
-          <div class="bottom">
+          <div className="bottom">
             <div>© 1985-{new Date().getFullYear()} Mark Shust</div>
             <div>
               <a href="mailto:mark@shust.com">mark@shust.com</a>
