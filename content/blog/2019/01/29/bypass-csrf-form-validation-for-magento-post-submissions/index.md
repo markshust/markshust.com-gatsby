@@ -1,7 +1,7 @@
 ---
 title: "Bypass CSRF form validation for Magento POST submissions"
 date: "2019-01-29T17:45:00.000Z"
-tags: ["magento", "magento2", "model"]
+tags: ["magento", "magento2"]
 ---
 
 Magento implements CSRF (Cross-Site Request Forgery) tokens on form POST submissions. This is designed to prevent unwanted actions from being executed while a user is currently authenticated.
