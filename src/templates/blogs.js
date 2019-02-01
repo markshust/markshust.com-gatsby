@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import Egghead from '../components/Egghead'
+import FreeCourse from '../components/FreeCourse';
 
 class BlogsTemplate extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class BlogsTemplate extends React.Component {
           description={post.excerpt}
           keywords={post.frontmatter.tags}
         />
+        <FreeCourse />
         <h1>{post.frontmatter.title}</h1>
         <time
           style={{

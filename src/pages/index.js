@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import kebabCase from 'lodash/kebabCase'
 import { rhythm } from '../utils/typography'
+import FreeCourse from '../components/FreeCourse';
 
 class BlogIndex extends React.Component {
   render() {
@@ -37,6 +38,7 @@ class BlogIndex extends React.Component {
         />
         <hr />
         <Bio />
+        <FreeCourse style={{ marginTop: 0, marginBottom: 40 }} />
         <p
           style={{
             fontFamily: `Montserrat,sans-serif`,
