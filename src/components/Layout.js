@@ -12,6 +12,9 @@ import Spacer from './Spacer'
 
 const SignupLink = styled.a`
   color: #fff;
+  &:hover {
+    color: #0967D2;
+  }
 `
 
 const Flex = styled.div`
