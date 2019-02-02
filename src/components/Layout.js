@@ -65,9 +65,9 @@ class Layout extends React.Component {
         <TopBanner>
           Free online course!{' '}
           <strong>Setup a Magento Development Environment with Docker</strong>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Coming Soon &nbsp;&middot;&nbsp;{' '}
+          {' '}&nbsp;&nbsp;&middot;&nbsp;&nbsp;{' '}
           <SignupLink href="https://learnm2.com" target="_blank">
-            Signup Now
+            Learn More
           </SignupLink>
         </TopBanner>
         {header}
