@@ -11,4 +11,8 @@ export default styled.div`
   font-family: Ubuntu, sans-serif;
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
+  @media only screen and (max-width:980px) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 `
