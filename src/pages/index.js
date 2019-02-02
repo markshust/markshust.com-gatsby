@@ -58,7 +58,7 @@ class BlogIndex extends React.Component {
         />
         <Line />
         <SummaryBio />
-        <MostRecent>Most Recent Blog Posts:</MostRecent>
+        <MostRecent>Most recent blog posts:</MostRecent>
         {posts.map(({ node }) => {
           postCount++
           const title = node.frontmatter.title || node.fields.slug
