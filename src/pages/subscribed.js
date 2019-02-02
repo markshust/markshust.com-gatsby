@@ -15,21 +15,10 @@ const SubscribedPage = ({ data, location }) => {
         Your email is now confirmed! I'll keep you in the loop as I create new
         content.
       </p>
-      <p style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }}>
-        In the mean time... may I interest you in a blog post by tag?
-      </p>
+      <p>In the mean time... may I interest you in a blog post by tag?</p>
       <ul className="tags">
         {group.map(tag => (
-          <li
-            key={tag.fieldValue}
-            style={{
-              listStyle: 'none',
-              padding: '1rem',
-              fontWeight: tag.totalCount >= 5 && 'bold',
-              fontSize:
-                tag.totalCount >= 5 ? '2rem' : tag.totalCount >= 3 && '1.5rem',
-            }}
-          >
+          <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               #{tag.fieldValue} ({tag.totalCount})
             </Link>

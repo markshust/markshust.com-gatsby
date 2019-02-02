@@ -1,50 +1,27 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
 import Avatar from './Avatar'
-
+import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
 
-function Bio() {
+const BioWrapper = styled.div`
+  display: flex;
+  padding-bottom: ${rhythm(1)};
+  gap: ${rhythm(0.5)};
+`
+
+const AvatarWrapper = styled.div`
+  width: 50px;
+`
+
+function Bio({ style = {}, children }) {
   return (
-    <StaticQuery
-      query={bioQuery}
-      render={data => {
-        const { author, social } = data.site.siteMetadata
-        return (
-          <div
-            style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
-              lineHeight: rhythm(0.9),
-            }}
-          >
-            <Avatar />
-            <p>
-              Written by <strong>{author}</strong>, a Magento Certified
-              Developer & Architect in Cleveland, Ohio.
-              <br />
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow me on Twitter @{social.twitter}
-              </a>
-            </p>
-          </div>
-        )
-      }}
-    />
+    <BioWrapper>
+      <AvatarWrapper style={style}>
+        <Avatar />
+      </AvatarWrapper>
+      {children}
+    </BioWrapper>
   )
 }
-
-const bioQuery = graphql`
-  query BioQuery {
-    site {
-      siteMetadata {
-        author
-        social {
-          twitter
-        }
-      }
-    }
-  }
-`
 
 export default Bio

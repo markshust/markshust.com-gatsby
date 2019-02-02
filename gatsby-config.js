@@ -39,6 +39,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-reading-time`,
           'gatsby-remark-code-titles',
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -70,6 +71,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

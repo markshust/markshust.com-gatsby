@@ -1,21 +1,7 @@
 
 body {
-  background-color: #ffffff;
+  background-color: #fff;
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm20 0a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM10 37a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm10-17h20v20H20V20zm10 17a7 7 0 1 0 0-14 7 7 0 0 0 0 14z' fill='%23eeeeee' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
-}
-
-body a, body a:visited {
-  color: #0967D2;
-  box-shadow: none;
-}
-
-body a:hover {
-  color: #5CB70B;
-  box-shadow: 0 2px 0 0 currentColor;
-}
-
-.main-content {
-  background: #fff;
 }
 
 .line-numbers .line-numbers-rows {
@@ -49,10 +35,6 @@ body a:hover {
   border-left: 0.5em solid #0967D2;
 }
 
-blockquote {
-  border-left-color: #0967D2;
-}
-
 .main-content :not(pre) > code[class*="language-"], .main-content code[class="language-text"] {
   padding: 0.3em 0.6em;
 }
@@ -65,50 +47,4 @@ blockquote {
 .main-content p code[class*="language-"], .main-content li code[class*="language-"] {
   background-color: #E6F6FF;
   color: #01337D;
-}
-
-.main-content ul {
-  margin-left: 2rem;
-}
-
-ul.tags {
-  margin-left: 0;
-}
-
-.tags li {
-  margin: 1rem;
-  display: inline-block;
-}
-
-footer .left span {
-  display: block;
-  width: 100%;
-}
-
-footer .bottom {
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 639px) {
-  html {
-    font-size: 70%;
-  }
-
-  p, .main-content li, .header, footer .bottom, code {
-    font-size: 125%;
-    line-height: 1.75;
-  }
-
-  .main-content p code[class*="language-"], .main-content li code[class*="language-"] {
-    font-size: 90%;
-  }
-
-  .subtitle, blockquote {
-    font-size: 90%;
-  }
-
-  .tags li {
-    margin: 0.5rem 1rem;
-    display: block;
-  }
 }

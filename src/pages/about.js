@@ -1,7 +1,7 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 import Layout from '../components/Layout'
-import { graphql } from 'gatsby'
-import markshustPhoto from '../../content/assets/markshust-photo-1.png'
 
 const AboutPage = ({
   data: {
@@ -14,9 +14,15 @@ const AboutPage = ({
   return (
     <Layout location={location} subtitle={description} title={title}>
       <h1>About</h1>
-      <img
-        src={markshustPhoto}
-        style={{ float: 'left', padding: '0.5rem 0 0' }}
+      <StaticQuery
+        query={pageQuery}
+        render={data1 => (
+          <Image
+            fixed={data1.markshustPhoto.childImageSharp.fixed}
+            alt="Mark Shust"
+            style={{ float: 'left' }}
+          />
+        )}
       />
       <p>
         Mark Shust is a certified Magento developer & architect with extended
@@ -41,7 +47,14 @@ const AboutPage = ({
 export default AboutPage
 
 export const pageQuery = graphql`
-  query {
+  query PageQuery {
+    markshustPhoto: file(absolutePath: { regex: "/markshust-photo-1.png/" }) {
+      childImageSharp {
+        fixed(width: 350, height: 350) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title

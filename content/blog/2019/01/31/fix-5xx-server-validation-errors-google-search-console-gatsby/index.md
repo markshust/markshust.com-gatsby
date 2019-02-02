@@ -4,7 +4,7 @@ date: "2019-01-31T08:52:00.000Z"
 tags: ["gatsby", "google", "seo"]
 ---
 
-Today I woke up to a new email sitting in my inbox saying "New Coverage issue detected for site http://markshust.com/":
+Today I woke up to a new email sitting in my inbox saying "New Coverage issue detected for site http://markshust.com/:
 
 ![Coverage email](coverage-email.png)
 

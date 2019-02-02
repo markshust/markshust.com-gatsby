@@ -1,8 +1,11 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import styled from 'styled-components'
 
-import { rhythm } from '../utils/typography'
+const RoundedImage = styled(Image)`
+  border-radius: 25px;
+`
 
 function Avatar() {
   return (
@@ -11,18 +14,9 @@ function Avatar() {
       render={data => {
         const { author } = data.site.siteMetadata
         return (
-          <Image
+          <RoundedImage
             fixed={data.avatar.childImageSharp.fixed}
             alt={author}
-            style={{
-              marginRight: rhythm(1 / 2),
-              marginBottom: 0,
-              minWidth: 50,
-              borderRadius: `100%`,
-            }}
-            imgStyle={{
-              borderRadius: `50%`,
-            }}
           />
         )
       }}

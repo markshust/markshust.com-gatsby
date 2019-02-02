@@ -72,7 +72,7 @@ I really never had much custom on my personal website, however I did wind up doi
     {group.map(tag => (
         <li
         key={tag.fieldValue}
-        style={{  }}
+        style={{ 
             listStyle: 'none',
             display: 'inline-block',
             padding: '1rem',

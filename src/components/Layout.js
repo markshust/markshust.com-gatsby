@@ -1,10 +1,42 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Avatar from '../components/Avatar'
-import { rhythm, scale } from '../utils/typography'
-import githubIcon from '../../content/assets/github-icon.png'
-import twitterIcon from '../../content/assets/twitter-icon.png'
-import rssIcon from '../../content/assets/rss-icon.svg'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
+import MainContent from './MainContent'
+import HomeHeader from './HomeHeader'
+import TopBanner from './TopBanner'
+import styled from 'styled-components'
+import Line from './Line'
+import { rhythm } from '../utils/typography'
+import HeaderBio from './HeaderBio'
+import Spacer from './Spacer'
+
+const SignupLink = styled.a`
+  color: #fff;
+`
+
+const Flex = styled.div`
+  display: flex;
+  width: 200px;
+  margin: 0 auto;
+`
+
+const Flex1 = styled.div`
+  flex: 1;
+  text-align: center;
+`
+
+const Copyright = styled.div`
+  text-align: center;
+  padding: ${rhythm(2)} 0;
+  font-size: 0.9rem;
+  color: #616e7c;
+`
+
+const LinkList = styled.ul`
+  margin: ${rhythm(2)} 0;
+  list-style: none;
+  text-align: center;
+`
 
 class Layout extends React.Component {
   render() {
@@ -14,166 +46,132 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <>
-          <h1
-            style={{
-              ...scale(1.5),
-              marginBottom: rhythm(0.5),
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h1>
-          <h2
-            style={{
-              fontFamily: `Montserrat, sans-serif`,
-              marginTop: 0,
-              fontWeight: 200,
-              fontSize: rhythm(1.5),
-            }}
-            className="subtitle"
-          >
-            {subtitle}
-          </h2>
-        </>
+        <HomeHeader>
+          <h1>{title}</h1>
+          <h3 className="subtitle">{subtitle}</h3>
+        </HomeHeader>
       )
     } else {
       header = (
-        <Link
-          style={{
-            boxShadow: `none`,
-            textDecoration: `none`,
-            color: `inherit`,
-          }}
-          to={`/`}
-        >
-          <div style={{ display: 'flex' }}>
-            <div style={{ width: 'auto' }}>
-              <Avatar />
-            </div>
-            <div style={{ flex: 1 }}>
-              <div
-                style={{
-                  fontFamily: `Montserrat, sans-serif`,
-                  fontWeight: 900,
-                  fontSize: rhythm(0.825),
-                  marginTop: 0,
-                  marginBottom: rhythm(0.25),
-                  lineHeight: 1.1,
-                }}
-              >
-                {title}
-              </div>
-              <div
-                style={{
-                  fontFamily: `Montserrat, sans-serif`,
-                  marginTop: 0,
-                  fontWeight: 400,
-                  textTransform: 'none',
-                  lineHeight: 1.1,
-                }}
-                className="subtitle"
-              >
-                {subtitle}
-              </div>
-            </div>
-          </div>
-        </Link>
+        <>
+          <Spacer />
+          <HeaderBio />
+        </>
       )
     }
+
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(36),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-        className="main-content"
-      >
-        <div className="header">{header}</div>
+      <MainContent>
+        <TopBanner>
+          Free online course!{' '}
+          <strong>Setup a Magento Development Environment with Docker</strong>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Coming Soon &nbsp;&middot;&nbsp;{' '}
+          <SignupLink href="https://learnm2.com" target="_blank">
+            Signup Now
+          </SignupLink>
+        </TopBanner>
+        {header}
         {children}
-        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }} />
-        <footer style={{ textAlign: 'center' }}>
-          <div
-            style={{
-              marginBottom: rhythm(0.5),
-              display: 'flex',
-              maxWidth: 200,
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
-          >
-            <div style={{ flex: 1 }}>
+        <Line />
+        <footer>
+          <LinkList>
+            <li>
+              <Link to={`/`}>Home</Link>
+            </li>
+            <li>
+              <Link to={`/about`}>About</Link>
+            </li>
+            <li>
               <a
-                href="https://github.com/markshust"
-                target="_blank"
-                style={{ boxShadow: 'none' }}
+                data-formkit-toggle="55e59119df"
+                href="https://pages.convertkit.com/55e59119df/343250d763"
               >
-                <img src={githubIcon} style={{ maxWidth: 50, maxHeight: 25 }} />
+                Newsletter
               </a>
-            </div>
-            <div style={{ flex: 1 }}>
+            </li>
+          </LinkList>
+          <StaticQuery
+            query={layoutQuery}
+            render={data => (
+              <Flex>
+                <Flex1>
+                  <a href="https://github.com/markshust" target="_blank">
+                    <Image
+                      fixed={data.githubIcon.childImageSharp.fixed}
+                      alt="GitHub"
+                    />
+                  </a>
+                </Flex1>
+                <Flex1>
+                  <a href="https://twitter.com/markshust" target="_blank">
+                    <Image
+                      fixed={data.twitterIcon.childImageSharp.fixed}
+                      alt="Twitter"
+                    />
+                  </a>
+                </Flex1>
+                <Flex1>
+                  <a href="/rss.xml" target="_blank">
+                    <Image
+                      fixed={data.rssIcon.childImageSharp.fixed}
+                      alt="RSS"
+                    />
+                  </a>
+                </Flex1>
+              </Flex>
+            )}
+          />
+          <Copyright>
+            <div>
+              © 1985-{new Date().getFullYear()} Mark Shust &nbsp;&middot;&nbsp;{' '}
               <a
-                href="https://twitter.com/markshust"
+                href="http://www.zend.com/en/yellow-pages/ZEND014633"
                 target="_blank"
-                style={{ boxShadow: 'none' }}
               >
-                <img
-                  src={twitterIcon}
-                  style={{ maxWidth: 50, maxHeight: 25 }}
-                />
+                ZCE
+              </a>
+              ,{' '}
+              <a
+                href="https://u.magento.com/certification/directory/dev/883/"
+                target="_blank"
+              >
+                MCD+
               </a>
             </div>
-            <div style={{ flex: 1 }}>
-              <a href="/rss.xml" target="_blank" style={{ boxShadow: 'none' }}>
-                <img src={rssIcon} style={{ maxWidth: 46, maxHeight: 22 }} />
-              </a>
-            </div>
-          </div>
-          <div>
-            <ul
-              style={{
-                display: 'inline-flex',
-                marginLeft: 0,
-                listStyle: 'none',
-              }}
-            >
-              <li style={{ margin: rhythm(0.6) }}>
-                <Link to={`/`}>Home</Link>
-              </li>
-              <li style={{ margin: rhythm(0.6) }}>
-                <Link to={`/about`}>About</Link>
-              </li>
-              <li style={{ margin: rhythm(0.6) }}>
-                <a
-                  data-formkit-toggle="55e59119df"
-                  href="https://pages.convertkit.com/55e59119df/343250d763"
-                >
-                  Newsletter
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="bottom">
-            <div>© 1985-{new Date().getFullYear()} Mark Shust</div>
             <div>
               <a href="mailto:mark@shust.com">mark@shust.com</a>
             </div>
-          </div>
+          </Copyright>
         </footer>
-      </div>
+      </MainContent>
     )
   }
 }
+
+const layoutQuery = graphql`
+  query LayoutQuery {
+    githubIcon: file(absolutePath: { regex: "/github-icon.png/" }) {
+      childImageSharp {
+        fixed(width: 25, height: 25) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    twitterIcon: file(absolutePath: { regex: "/twitter-icon.png/" }) {
+      childImageSharp {
+        fixed(width: 25, height: 25) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    rssIcon: file(absolutePath: { regex: "/rss-icon.png/" }) {
+      childImageSharp {
+        fixed(width: 22, height: 22) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default Layout

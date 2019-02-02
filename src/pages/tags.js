@@ -17,17 +17,7 @@ const TagsPage = ({
       <h1>Tags</h1>
       <ul>
         {group.map(tag => (
-          <li
-            key={tag.fieldValue}
-            style={{
-              listStyle: 'none',
-              display: 'inline-block',
-              padding: '1rem',
-              fontWeight: tag.totalCount >= 5 && 'bold',
-              fontSize:
-                tag.totalCount >= 5 ? '2rem' : tag.totalCount >= 3 && '1.5rem',
-            }}
-          >
+          <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               #{tag.fieldValue} ({tag.totalCount})
             </Link>

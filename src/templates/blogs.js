@@ -1,11 +1,37 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
-import { rhythm, scale } from '../utils/typography'
 import Egghead from '../components/Egghead'
-import FreeCourse from '../components/FreeCourse';
+import SummaryBio from '../components/SummaryBio'
+import Spacer from '../components/Spacer'
+import styled from 'styled-components'
+import { rhythm } from '../utils/typography'
+import DateAndReadingTime from '../components/DateAndReadingTime'
+
+const TagList = styled.ul`
+  list-style: none;
+  margin: 0 -${rhythm(0.75)} ${rhythm(0.75)};
+  padding: ${rhythm(1)};
+  background: #f5f7fa;
+`
+
+const TagListItem = styled.li`
+  display: inline-block;
+  padding: ${rhythm(0.5)} ${rhythm(0.5)} 0;
+`
+
+const UnorderedList = styled.ul`
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  gap: ${rhythm(1)};
+`
+
+const ListItem = styled.li`
+  padding: ${rhythm(0.25)} 0;
+  flex: 1;
+`
 
 class BlogsTemplate extends React.Component {
   render() {
@@ -25,51 +51,30 @@ class BlogsTemplate extends React.Component {
           description={post.excerpt}
           keywords={post.frontmatter.tags}
         />
-        <FreeCourse />
+        <Spacer />
         <h1>{post.frontmatter.title}</h1>
-        <time
-          style={{
-            ...scale(1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1.5),
-            marginTop: rhythm(-0.5),
-            color: '#aaa',
-          }}
-          dateTime={post.frontmatter.date}
-        >
-          {post.frontmatter.date}
-        </time>
+        <DateAndReadingTime
+          date={post.frontmatter.date}
+          readingTime={post.fields.readingTime.text}
+        />
+        <Spacer />
         <div
           className="main-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
-        <hr style={{ marginBottom: rhythm(1) }} />
-        <ul className="tags">
+        <TagList>
           {post.frontmatter.tags.map(tag => (
-            <li
-              style={{
-                listStyle: 'none',
-              }}
-              key={tag}
-            >
+            <TagListItem key={tag}>
               <Link to={`/tags/${tag}/`}>#{tag}</Link>
-            </li>
+            </TagListItem>
           ))}
-        </ul>
-        <hr style={{ marginBottom: rhythm(1) }} />
-        <Bio />
+        </TagList>
+        <SummaryBio />
+        <Spacer />
+        <Spacer />
         <Egghead />
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-            marginLeft: 0,
-          }}
-        >
-          <li style={{ flex: 1, paddingRight: '1em' }}>
+        <UnorderedList>
+          <ListItem>
             {previous && (
               <>
                 <strong>Previous Post:</strong>
@@ -79,8 +84,8 @@ class BlogsTemplate extends React.Component {
                 </Link>
               </>
             )}
-          </li>
-          <li style={{ flex: 1, paddingLeft: '1em', textAlign: 'right' }}>
+          </ListItem>
+          <ListItem style={{ textAlign: 'right' }}>
             {next && (
               <>
                 <strong>Next Post:</strong>
@@ -90,8 +95,8 @@ class BlogsTemplate extends React.Component {
                 </Link>
               </>
             )}
-          </li>
-        </ul>
+          </ListItem>
+        </UnorderedList>
       </Layout>
     )
   }
@@ -116,6 +121,11 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

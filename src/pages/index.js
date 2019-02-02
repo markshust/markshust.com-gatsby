@@ -1,11 +1,31 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Bio from '../components/Bio'
+import SummaryBio from '../components/SummaryBio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import kebabCase from 'lodash/kebabCase'
+import Line from '../components/Line'
+import Time from '../components/Time'
+import BlogTitle from '../components/BlogTitle'
+import BlogWrapper from '../components/BlogWrapper'
+import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
-import FreeCourse from '../components/FreeCourse';
+import Spacer from '../components/Spacer'
+import DateAndReadingTime from '../components/DateAndReadingTime'
+
+const MostRecent = styled.div`
+  margin: ${rhythm(0.75)} 0;
+  font-size: 1.5rem;
+`
+
+const UnorderedList = styled.ul`
+  margin: 0 -${rhythm(0.5)};
+`
+
+const ListItem = styled.li`
+  display: inline-block;
+  padding: 0 ${rhythm(0.5)};
+`
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,6 +34,7 @@ class BlogIndex extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemarkEdges.edges
     const group = data.allMarkdownRemarkGroup.group
+    let postCount = 0
 
     return (
       <Layout
@@ -36,71 +57,48 @@ class BlogIndex extends React.Component {
             `mark shust`,
           ]}
         />
-        <hr />
-        <Bio />
-        <FreeCourse style={{ marginTop: 0, marginBottom: 40 }} />
-        <p
-          style={{
-            fontFamily: `Montserrat,sans-serif`,
-            marginTop: 0,
-            fontWeight: 200,
-            fontSize: rhythm(1.5),
-          }}
-        >
-          Most Recent Blog Posts:
-        </p>
+        <Line />
+        <SummaryBio />
+        <MostRecent>Most Recent Blog Posts:</MostRecent>
         {posts.map(({ node }) => {
+          postCount++
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                  fontFamily: `Montserrat, sans-serif`,
-                  fontSize: rhythm(1.25),
-                }}
-              >
+            <BlogWrapper key={node.fields.slug} odd={postCount % 2}>
+              <BlogTitle>
                 <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <time
-                style={{
-                  display: `block`,
-                  marginBottom: rhythm(0.5),
-                  marginTop: rhythm(0),
-                  color: '#aaa',
-                }}
-                dateTime={node.frontmatter.date}
-              >
-                {node.frontmatter.date}
-              </time>
+              </BlogTitle>
+              <DateAndReadingTime
+                date={node.frontmatter.date}
+                readingTime={node.fields.readingTime.text}
+              />
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            </BlogWrapper>
           )
         })}
-        <hr style={{ marginTop: rhythm(2), marginBottom: rhythm(1) }} />
-        <p style={{ marginTop: rhythm(2), marginBottom: rhythm(2) }}>
-          Browse all blog posts by tag:
-        </p>
-        <ul className="tags">
+        <Spacer />
+        <MostRecent>Browse all blog posts by tag:</MostRecent>
+        <UnorderedList>
           {group.map(tag => (
-            <li
+            <ListItem
               key={tag.fieldValue}
               style={{
-                listStyle: 'none',
-                padding: '1rem',
-                fontWeight: tag.totalCount >= 5 && 'bold',
                 fontSize:
-                  tag.totalCount >= 5
-                    ? '2rem'
-                    : tag.totalCount >= 3 && '1.5rem',
+                  tag.totalCount > 7
+                    ? '2em'
+                    : tag.totalCount > 2
+                    ? '1.5em'
+                    : '1em',
               }}
             >
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                 #{tag.fieldValue} ({tag.totalCount})
               </Link>
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </UnorderedList>
+        <Spacer />
+        <Spacer />
       </Layout>
     )
   }
@@ -125,6 +123,9 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
