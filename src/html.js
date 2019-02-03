@@ -13,11 +13,7 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
-          <script
-            async
-            data-uid="55e59119df"
-            src="https://f.convertkit.com/55e59119df/343250d763.js"
-          />
+          <script src="https://f.convertkit.com/ckjs/ck.5.js" />
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}

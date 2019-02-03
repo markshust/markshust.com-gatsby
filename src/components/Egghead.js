@@ -7,7 +7,7 @@ import { rhythm } from '../utils/typography'
 const Wrapper = styled.div`
   padding: ${rhythm(2.5)} ${rhythm(0.5)} ${rhythm(1.5)};
   background: #bae3ff;
-  margin: -${rhythm(1.5)} -${rhythm(3 / 4)} ${rhythm(1.5)};
+  margin: -${rhythm(0.5)} -${rhythm(3 / 4)} 0;
   text-align: center;
 `
 

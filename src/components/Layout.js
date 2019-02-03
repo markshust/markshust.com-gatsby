@@ -3,19 +3,11 @@ import { Link, StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import MainContent from './MainContent'
 import HomeHeader from './HomeHeader'
-import TopBanner from './TopBanner'
 import styled from 'styled-components'
 import Line from './Line'
 import { rhythm } from '../utils/typography'
 import HeaderBio from './HeaderBio'
 import Spacer from './Spacer'
-
-const SignupLink = styled.a`
-  color: #fff;
-  &:hover {
-    color: #0967D2;
-  }
-`
 
 const Flex = styled.div`
   display: flex;
@@ -65,14 +57,6 @@ class Layout extends React.Component {
 
     return (
       <MainContent>
-        <TopBanner>
-          Free online course!{' '}
-          <strong>Setup a Magento Development Environment with Docker</strong>
-          {' '}&nbsp;&nbsp;&middot;&nbsp;&nbsp;{' '}
-          <SignupLink href="https://learnm2.com" target="_blank">
-            Learn More
-          </SignupLink>
-        </TopBanner>
         {header}
         {children}
         <Line />
@@ -85,12 +69,7 @@ class Layout extends React.Component {
               <Link to={`/about`}>About</Link>
             </li>
             <li>
-              <a
-                data-formkit-toggle="55e59119df"
-                href="https://pages.convertkit.com/55e59119df/343250d763"
-              >
-                Newsletter
-              </a>
+              <Link to={`/newsletter`}>Newsletter</Link>
             </li>
           </LinkList>
           <StaticQuery
