@@ -24,9 +24,9 @@ const AboutPage = ({
       <StyledImage src={markshustPhoto} alt="Mark Shust" />
       <p>
         Mark Shust is a certified Magento developer & architect with extended
-        knowledge of PHP, JavaScript, Laravel, React, Docker, and user interface
-        design. He has over 15 years of web development experience in the
-        eCommerce, real estate, business-to-business, and information technology
+        knowledge of PHP, JavaScript, Laravel, React, Docker, and UI/UX design.
+        He has over 15 years of web development experience in the eCommerce,
+        real estate, business-to-business, and information technology
         industries. Mark is Magento Certified Developer Plus and a Zend
         Certified Engineer, and has a wide knowledge range of LAMP server
         management and open source software.

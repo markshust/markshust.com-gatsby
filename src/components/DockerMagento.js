@@ -15,6 +15,13 @@ const SignupLink = styled.a`
     color: #0967d2;
   }
   cursor: pointer;
+  display: inline-block;
+  margin-top: 6px;
+  @media only screen and (max-width: 768px) {
+    display: block;
+    max-width: 300px;
+    margin: 6px auto 0;
+  }
 `
 
 const Dev = styled.div`
@@ -26,7 +33,7 @@ const DockerMagento = () => (
     <Dev>Are you a Magento developer?</Dev>
     Free online course!{' '}
     <strong>Setup a Magento 2 Development Environment with Docker</strong>{' '}
-    &nbsp;&nbsp;&middot;&nbsp;&nbsp;{' '}
+    &nbsp;&nbsp;&nbsp;&nbsp;
     <SignupLink href="https://learnm2.com" target="_blank">
       Learn More
     </SignupLink>

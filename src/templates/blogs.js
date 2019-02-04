@@ -45,10 +45,14 @@ class BlogsTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     let isDocker = false
     let isMagento = false
+    let isNodejs = false
 
     post.frontmatter.tags.map(tag => {
       if (tag === 'docker') {
         isDocker = true
+      }
+      if (tag === 'nodejs') {
+        isNodejs = true
       }
       if (tag === 'magento' || tag === 'magento1' || tag === 'magento2') {
         isMagento = true
@@ -86,7 +90,7 @@ class BlogsTemplate extends React.Component {
         </TagList>
         <SummaryBio />
         <Spacer />
-        {isDocker ? <Egghead /> : <Newsletter />}
+        {isDocker || isNodejs ? <Egghead /> : <Newsletter />}
         <Spacer />
         <UnorderedList>
           <ListItem>
