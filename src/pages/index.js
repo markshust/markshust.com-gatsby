@@ -42,7 +42,8 @@ class BlogIndex extends React.Component {
         title={siteTitle}
       >
         <SEO
-          title={siteTitle}
+          title='Mark Shust - Certified Magento Developer &amp; Architect in Cleveland, OH'
+          overrideTitle
           description={siteSubtitle}
           keywords={[
             `magento`,
