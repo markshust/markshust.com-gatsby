@@ -13,6 +13,8 @@ const Title = styled.div`
 
 const Subtitle = styled.div`
   color: #1f2933;
+  font-family: Ubuntu, sans-serif;
+  font-size: 1.1rem;
   margin-top: -${rhythm(0.25)};
 `
 
