@@ -18,7 +18,7 @@ Some time has passed, and I've been primarily a Magento developer for the last 8
 
 > *Magento (as well as some other platforms) are still very hard to learn.*
 
-**I believe my biggest strength is the ability to convey complex information simply.** My blog has been a testament to that over the years. I've always enjoyed writing technical blogs, mainly as a reference for myself, but realized others found the posts helpful as well. Over the last couple years, I've also created <a href="https://egghead.io/instructors/mark-shust" target="_blank">a handful of screencast lessons & courses on Egghead</a> (with more to soon come), which have provided me with an alternative method of helping others. I'm a very visual learner myself, so this method of learning has always resonated with me.
+**I believe one of my biggest strengths is the ability to convey complex information simply.** My blog has been a testament to that over the years. I've always enjoyed writing technical blogs, mainly as a reference for myself, but realized others found the posts helpful as well. Over the last couple years, I've also created <a href="https://egghead.io/instructors/mark-shust" target="_blank">a handful of screencast lessons & courses on Egghead</a> (with more to soon come), which have provided me with an alternative method of helping others. I'm a very visual learner myself, so this method of learning has always resonated with me.
 
 The itch has gotten me again, and I realized something: **I'm an educator** 👨‍🏫. I always believed in the back of my head that I would be a teacher of sorts, but the traditional education schooling system has never resonated with me (I believe in certifications and doing real, actual work as opposed to getting degrees in isolation). So as of today, I'll be devoting just about my entire time creating:
 
@@ -36,8 +36,9 @@ My first soirée into this is developing a curriculum and screencast course abou
 
 <p>
 <a href="https://learnm2.com/" target="_blank"><img src="magento2-docker-dev-960-740.jpg" alt="Setup a Magento 2 Development Environment with Docker" /></a>
-The screencast course will be completely free, and you can <a href="https://learnm2.com" target="_blank">signup here to be notified when it gets released</a>.
 </p>
+
+The screencast course will be completely free, and you can <a href="https://learnm2.com" target="_blank">signup here to be notified when it gets released</a>.
 
 I currently run <a href="https://github.com/markshust/docker-magento" target="_blank">the most starred GitHub repo for Magento & Docker</a>, however I know it can be difficult for some programmers to understand how to setup a new Magento project with Docker, and the few intracacies of running a development environment within it.
 
