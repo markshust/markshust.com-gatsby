@@ -14,6 +14,11 @@
   status = 301
   force = true
 [[redirects]]
+  from = "/magento-extensions/*"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
   from = "https://markshust-com.netlify.com/*"
   to = "https://markshust.com/:splat"
   status = 301
