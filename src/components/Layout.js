@@ -122,6 +122,13 @@ class Layout extends React.Component {
               >
                 MCD+
               </a>
+              ,{' '}
+              <a
+                href="https://u.magento.com/certification/directory/dev/883/"
+                target="_blank"
+              >
+                M2CSS
+              </a>
             </div>
             <div>
               <a href="mailto:mark@shust.com">mark@shust.com</a>

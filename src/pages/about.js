@@ -27,9 +27,9 @@ const AboutPage = ({
         knowledge of PHP, JavaScript, Laravel, React, Docker, and UI/UX design.
         He has over 15 years of web development experience in the eCommerce,
         real estate, business-to-business, and information technology
-        industries. Mark is Magento Certified Developer Plus and a Zend
-        Certified Engineer, and has a wide knowledge range of LAMP server
-        management and open source software.
+        industries. Mark is a Zend Certified Engineer, a Magento Certified
+        Developer Plus, and a Magento 2 Certified Solution Specialist, and has a
+        wide knowledge range of LAMP server management and open source software.
       </p>
       <p>
         Mark is married to his wonderful wife Juliann, and they are the proud
