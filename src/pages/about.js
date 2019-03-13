@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import markshustPhoto from '../../content/assets/markshust-photo-1.png'
 import styled from 'styled-components'
