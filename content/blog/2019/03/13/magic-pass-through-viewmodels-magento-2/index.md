@@ -102,7 +102,7 @@ Another is to not use `view_model` as an argument name or `$viewModel` as a vari
 
 I do not believe using many ViewModels within one phtml file is bad practice at all, as it keeps every ViewModel small and easy to maintain. You absolutely need to type hint your ViewModels within your phtml file though:
 
-```/** @var \Foo\Customer\ViewModel\Session $customerSession */```
+```/** @var \Magento\Customer\Model\Session $customerSession */```
 
 There's one "gotcha" here -- we'll typehint to the original class (`\Magento\Customer\Model\Session`), not the pass-through ViewModel. This ensures command+clicks and intellicompletes map to the correct original class. Without doing this, it would be very hard to find out where code is coming from and make it extremely difficult to debug issues, especially in cases where many ViewModels exist.
 
