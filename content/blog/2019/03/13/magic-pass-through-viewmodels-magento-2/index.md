@@ -104,7 +104,7 @@ I do not believe using many ViewModels within one phtml file is bad practice at 
 
 ```/** @var \Magento\Customer\Model\Session $customerSession */```
 
-There's one "gotcha" here -- we'll typehint to the original class (`\Magento\Customer\Model\Session`), not the pass-through ViewModel. This ensures command+clicks and intellicompletes map to the correct original class. Without doing this, it would be very hard to find out where code is coming from and make it extremely difficult to debug issues, especially in cases where many ViewModels exist.
+There's one "gotcha" here -- we'll typehint to the original class (`\Magento\Customer\Model\Session`), not the pass-through ViewModel. This ensures command+clicks and intellicompletes map to the correct original class. Note that we are still using `customer_session_view_model` and `getCustomerSessionViewModel()`, to make sure the developer knows that the model is coming from a ViewModel, not a Block class. Typehints ensure it's easy to find out where code is coming from and make it much easier to debug issues, especially in cases where many ViewModels exist.
 
 Of course, if you find yourself seemingly using too many ViewModels, your block most likely needs to be broken down into multiple child blocks, as template files should always be pretty small so they are easy to maintain and reason about.
 
