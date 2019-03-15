@@ -40,26 +40,26 @@ This module will be simple and contain just one ViewModel for this demo:
 <?php
 namespace Foo\Customer\ViewModel;
 
-use Magento\Customer\Model\Session as Object;
+use Magento\Customer\Model\Session as Generic;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Session implements ArgumentInterface
 {
-    private $object;
+    private $generic;
 
-    public function __construct(Object $object)
+    public function __construct(Generic $generic)
     {
-        $this->object = $object;
+        $this->generic = $generic;
     }
 
     public function __call($method, $args)
     {
-        return $this->object->$method(...$args);
+        return $this->generic->$method(...$args);
     }
 }
 ```
 
-What we are doing here is just using DI to instantiate the `Magento\Customer\Model\Session` object,  then use `__call` to "pass-through" calls made to this ViewModel to this customer session object. This is the ViewModel in it's entirety. Note how I'm also naming the `$object` here -- this is purely so we can copy/paste this file over and over again and we just need to change the namespace, class name & imported class for each ViewModel, then we're done.
+What we are doing here is just using DI to instantiate the `Magento\Customer\Model\Session` object,  then use `__call` to "pass-through" calls made to this ViewModel to this customer session object. This is the ViewModel in it's entirety. Note how I'm also naming the `$generic` here -- this is purely so we can copy/paste this file over and over again and we just need to change the namespace, class name & imported class for each ViewModel, then we're done.
 
 Now, say we are programmatically adding an `authlinks` block to the `layout/default.xml` file of our theme:
 
