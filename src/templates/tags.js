@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { Link, graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
+import SEO from '../components/seo'
 import Spacer from '../components/Spacer'
 
 const TagsTemplate = ({ pageContext, data, location }) => {
@@ -12,9 +13,16 @@ const TagsTemplate = ({ pageContext, data, location }) => {
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } tagged with "${tag}"`
+  const title = `${tag} - Mark Shust`
 
   return (
     <Layout location={location} subtitle={siteSubtitle} title={siteTitle}>
+      <SEO
+        title={title}
+        overrideTitle
+        description={tagHeader}
+        keywords={[tag, `mark shust`]}
+      />
       <Spacer />
       <h1>#{tag}</h1>
       <h2>{tagHeader}</h2>

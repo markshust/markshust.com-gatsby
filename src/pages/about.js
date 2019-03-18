@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import markshustPhoto from '../../content/assets/markshust-photo-1.png'
+import SEO from '../components/seo'
 import styled from 'styled-components'
 
 const StyledImage = styled.img`
@@ -20,6 +21,22 @@ const AboutPage = ({
 }) => {
   return (
     <Layout location={location} subtitle={description} title={title}>
+      <SEO
+        title="About Mark Shust"
+        overrideTitle
+        description={description}
+        keywords={[
+          `magento`,
+          `magento 2`,
+          `php`,
+          `javascript`,
+          `laravel`,
+          `react`,
+          `reactjs`,
+          `docker`,
+          `mark shust`,
+        ]}
+      />
       <h1>About</h1>
       <StyledImage src={markshustPhoto} alt="Mark Shust" />
       <p>

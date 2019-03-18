@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Mark Shust`,
+    title: `Mark Shust's Blog Posts`,
     author: `Mark Shust`,
     description: `Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and UI/UX design`,
     siteUrl: `https://markshust.com`,

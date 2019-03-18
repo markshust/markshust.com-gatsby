@@ -41,7 +41,7 @@ class BlogsTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteSubtitle = this.props.data.site.siteMetadata.description
-    const siteTitle = this.props.data.site.siteMetadata.title
+    const siteTitle = 'Mark Shust'
     const { previous, next } = this.props.pageContext
     let isDocker = false
     let isMagento = false

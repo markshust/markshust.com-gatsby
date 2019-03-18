@@ -32,7 +32,7 @@ function HeaderBio() {
           <StyledLink to={`/`}>
             <Bio style={{ paddingTop: rhythm(0.5) }}>
               <div>
-                <Title>{title}</Title>
+                <Title>Mark Shust</Title>
                 <Subtitle>{description}</Subtitle>
               </div>
             </Bio>

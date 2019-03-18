@@ -42,7 +42,7 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <HomeHeader>
-          <h1>{title}</h1>
+          <h1>Mark Shust</h1>
           <h3 className="subtitle">{subtitle}</h3>
         </HomeHeader>
       )
