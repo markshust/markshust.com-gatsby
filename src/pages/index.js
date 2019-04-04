@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 import SummaryBio from '../components/SummaryBio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
@@ -59,6 +60,24 @@ class BlogIndex extends React.Component {
         />
         <Line />
         <SummaryBio />
+        <MostRecent>Most recent course:</MostRecent>
+        <BlogWrapper odd={true}>
+          <BlogTitle>
+            <a
+              href="https://courses.markshust.com/p/setup-magento-2-development-environment-docker"
+              target="_blank"
+            >
+              <Image
+                fixed={data.course.childImageSharp.fixed}
+                alt="Setup a Magento 2 Development Environment with Docker"
+              />
+              <br />
+              Setup a Magento 2 Development Environment with Docker
+            </a>
+          </BlogTitle>
+        </BlogWrapper>
+        <Spacer />
+        <Spacer />
         <MostRecent>Most recent blog posts:</MostRecent>
         {posts.map(({ node }) => {
           postCount++
@@ -142,6 +161,17 @@ export const pageQuery = graphql`
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
+      }
+    }
+    course: file(
+      absolutePath: {
+        regex: "/setup-a-magento-2-development-environment-with-docker.png/"
+      }
+    ) {
+      childImageSharp {
+        fixed(width: 360, height: 256) {
+          ...GatsbyImageSharpFixed
+        }
       }
     }
   }
