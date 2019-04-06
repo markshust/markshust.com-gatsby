@@ -12,6 +12,7 @@ import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
 import Spacer from '../components/Spacer'
 import DateAndReadingTime from '../components/DateAndReadingTime'
+import DockerMagento from '../components/DockerMagento'
 
 const MostRecent = styled.div`
   margin: ${rhythm(0.75)} 0;
@@ -61,22 +62,7 @@ class BlogIndex extends React.Component {
         <Line />
         <SummaryBio />
         <MostRecent>Most recent course:</MostRecent>
-        <BlogWrapper odd={true}>
-          <BlogTitle>
-            <a
-              href="https://courses.markshust.com/p/setup-magento-2-development-environment-docker"
-              target="_blank"
-            >
-              <Image
-                fixed={data.course.childImageSharp.fixed}
-                alt="Setup a Magento 2 Development Environment with Docker"
-              />
-              <br />
-              Setup a Magento 2 Development Environment with Docker
-            </a>
-          </BlogTitle>
-        </BlogWrapper>
-        <Spacer />
+        <DockerMagento />
         <Spacer />
         <MostRecent>Most recent blog posts:</MostRecent>
         {posts.map(({ node }) => {
@@ -134,7 +120,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemarkEdges: allMarkdownRemark(
-      limit: 10
+      limit: 5
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
