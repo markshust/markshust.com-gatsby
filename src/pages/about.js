@@ -40,7 +40,7 @@ const AboutPage = ({
       <h1>About</h1>
       <StyledImage src={markshustPhoto} alt="Mark Shust" />
       <p>
-        Mark Shust is a 3x Certified Magento Developer & Architect with extended
+        Mark Shust is a Certified Magento Developer & Architect with extended
         knowledge of PHP, JavaScript, Laravel, React, Docker, and user interface
         design. He has nearly 20 years of web development experience in the
         eCommerce, real estate, business-to-business, and information technology
