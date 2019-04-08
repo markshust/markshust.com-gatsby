@@ -28,3 +28,8 @@
   to = "https://markshust.com/"
   status = 301
   force = true
+[[redirects]]
+  from = "https://markshust.com/courses/*"
+  to = "https://courses.markshust.com/"
+  status = 301
+  force = true
