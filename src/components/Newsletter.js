@@ -4,7 +4,7 @@ import { rhythm } from '../utils/typography'
 import * as EmailValidator from 'email-validator'
 
 const Wrapper = styled.div`
-  background: #bae3ff;
+  background: #b6e0fe;
   margin: 0 -${rhythm(0.75)};
   padding: ${rhythm(1.25)} 0 ${rhythm(0.5)};
 `
@@ -34,9 +34,10 @@ const EmailInput = styled.input`
 
 const Submit = styled.button`
   color: rgb(255, 255, 255);
-  background-color: rgb(9, 103, 210);
+  background-color: #2680c2;
   border-radius: 25px;
   font-weight: 700;
+  box-shadow: 0px 1px 5px #4098d7;
 `
 
 const Guarantee = styled.div`

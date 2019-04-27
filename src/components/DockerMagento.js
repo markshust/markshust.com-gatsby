@@ -6,19 +6,22 @@ import Image from 'gatsby-image'
 import { rhythm } from '../utils/typography'
 
 const SignupLink = styled.a`
-  background: #5cb70b;
+  background: #3ebd93;
   border: 0;
   border-radius: 25px;
   padding: ${rhythm(0.35)} ${rhythm(0.75)};
-  color: #fff;
+  color: #effcf6;
   font-weight: bold;
   text-decoration: none;
   &:hover {
-    color: #0967d2;
+    background: hsl(160, 51%, 55%);
+    color: #effcf6;
   }
   cursor: pointer;
   display: inline-block;
   margin-top: 6px;
+  box-shadow: 0px 1px 5px #0f609b;
+  transition: all 300ms ease-in-out;
   @media only screen and (max-width: 768px) {
     display: block;
     max-width: 300px;

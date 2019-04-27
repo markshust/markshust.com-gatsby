@@ -69,6 +69,7 @@ class BlogsTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.excerpt}
           keywords={post.frontmatter.tags}
+          canonical={post.frontmatter.canonical}
         />
         {isMagento && <DockerMagento />}
         <h1>{post.frontmatter.title}</h1>
@@ -89,7 +90,6 @@ class BlogsTemplate extends React.Component {
           ))}
         </TagList>
         <SummaryBio />
-        <Spacer />
         {isDocker || isNodejs ? <Egghead /> : <Newsletter />}
         <Spacer />
         <UnorderedList>
@@ -140,6 +140,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         tags
+        canonical
       }
       fields {
         readingTime {

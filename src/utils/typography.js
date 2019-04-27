@@ -31,12 +31,6 @@ const typography = new Typography({
       fontSize: '2rem',
       fontWeight: 400,
     },
-    a: {
-      color: '#0967D2',
-    },
-    'a:hover,a:active': {
-      color: '#5CB70B',
-    },
     [MOBILE_MEDIA_QUERY]: {
       html: {
         fontSize: `${(15 / 16) * 100}%`,

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 function SEO({
+  canonical,
   description,
   lang,
   meta,
@@ -23,6 +24,11 @@ function SEO({
             htmlAttributes={{ lang }}
             title={title}
             titleTemplate={overrideTitle ? `%s` : `%s | ${siteTitle}`}
+            link={
+              canonical && [
+                { rel: 'canonical', key: canonical, href: canonical },
+              ]
+            }
             meta={[
               {
                 name: `description`,
@@ -80,6 +86,7 @@ SEO.defaultProps = {
 }
 
 SEO.propTypes = {
+  canonical: PropTypes.string,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,

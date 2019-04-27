@@ -33,6 +33,23 @@ const LinkList = styled.ul`
   text-align: center;
 `
 
+const Middot = styled.span`
+  padding: 0 0.5rem;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+const Certifications = styled.span`
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+`
+
+const Email = styled.div`
+  margin-top: 1rem;
+`
+
 class Layout extends React.Component {
   render() {
     const { location, subtitle, title, children } = this.props
@@ -108,38 +125,41 @@ class Layout extends React.Component {
           />
           <Copyright>
             <div>
-              © 1985-{new Date().getFullYear()} Mark Shust &nbsp;&middot;&nbsp;{' '}
-              <a
-                href="http://www.zend.com/en/yellow-pages/ZEND014633"
-                target="_blank"
-              >
-                ZCE
-              </a>
-              ,{' '}
-              <a
-                href="https://u.magento.com/certification/directory/dev/883/"
-                target="_blank"
-              >
-                MCD+
-              </a>
-              ,{' '}
-              <a
-                href="https://u.magento.com/certification/directory/dev/883/"
-                target="_blank"
-              >
-                M2CSS
-              </a>
-              ,{' '}
-              <a
-                href="https://u.magento.com/certification/directory/dev/883/"
-                target="_blank"
-              >
-                M2CAD
-              </a>
+              © 1985-{new Date().getFullYear()} Mark Shust
+              <Middot>&middot;</Middot>
+              <Certifications>
+                <a
+                  href="http://www.zend.com/en/yellow-pages/ZEND014633"
+                  target="_blank"
+                >
+                  ZCE
+                </a>
+                ,{' '}
+                <a
+                  href="https://u.magento.com/certification/directory/dev/883/"
+                  target="_blank"
+                >
+                  MCD+
+                </a>
+                ,{' '}
+                <a
+                  href="https://u.magento.com/certification/directory/dev/883/"
+                  target="_blank"
+                >
+                  M2CSS
+                </a>
+                ,{' '}
+                <a
+                  href="https://u.magento.com/certification/directory/dev/883/"
+                  target="_blank"
+                >
+                  M2CAD
+                </a>
+              </Certifications>
             </div>
-            <div>
+            <Email>
               <a href="mailto:mark@shust.com">mark@shust.com</a>
-            </div>
+            </Email>
           </Copyright>
         </footer>
       </MainContent>
