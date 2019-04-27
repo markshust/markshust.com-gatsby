@@ -13,6 +13,35 @@ a:hover, a:active {
   color: #38BEC9;
 }
 
+a.button {
+  background: #3ebd93;
+  border: 0;
+  border-radius: 25px;
+  padding: 0.595rem 1.275rem;
+  color: #effcf6;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 6px;
+  box-shadow: 0px 1px 5px #0f609b;
+  transition: all 300ms ease-in-out;
+  font-family: Ubuntu,sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+  a.button {
+    display: block;
+    max-width: 300px;
+    margin: 6px auto 0;
+  }
+}
+
+a.button:hover {
+  background: hsl(160, 51%, 55%);
+  color: #effcf6;
+}
+
 .line-numbers .line-numbers-rows {
   margin-top: 0.9rem;
   padding-left: 0.9rem;

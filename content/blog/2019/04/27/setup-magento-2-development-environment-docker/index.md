@@ -27,7 +27,7 @@ I hope this is just the start of many screencast courses I can make over time. Y
 
 <div style="text-align: center; margin-bottom: 2rem;">
 <h3 style="margin: 0.5rem;">Setup a Magento 2 Development Environment with Docker</h3>
-<a href="https://learnm2.com/p/setup-magento-2-development-environment-docker" target="_blank" class="DockerMagento__SignupLink-hYVKxh ddjNtF">Free Course! Enroll Now</a>
+<a href="https://learnm2.com/p/setup-magento-2-development-environment-docker" target="_blank" class="button">Free Course! Enroll Now</a>
 </a>
 </div>
 

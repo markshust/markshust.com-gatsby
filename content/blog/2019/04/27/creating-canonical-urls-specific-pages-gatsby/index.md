@@ -67,9 +67,9 @@ Then, add the `link` attribute to the `Helmet` component within this file. We'll
              title={title}
              titleTemplate={overrideTitle ? `%s` : `%s | ${siteTitle}`}
 +            link={
-+              canonical && [
-+                { rel: 'canonical', key: canonical, href: canonical },
-+              ]
++              canonical
++                ? [{ rel: 'canonical', key: canonical, href: canonical }]
++                : []
 +            }
              meta={[
                {
