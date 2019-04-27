@@ -75,7 +75,10 @@ const DockerMagento = ({ data }) => (
         <Dev>Setup a Magento 2 Development Environment with Docker</Dev>
         <Flex>
           <LeftCol>
-            <a href="https://learnm2.com" target="_blank">
+            <a
+              href="https://learnm2.com/p/setup-magento-2-development-environment-docker"
+              target="_blank"
+            >
               <Image
                 fixed={data.course.childImageSharp.fixed}
                 alt="Setup a Magento 2 Development Environment with Docker"
@@ -88,7 +91,10 @@ const DockerMagento = ({ data }) => (
               easiest way to install and manage configuration for just about any
               Magento project.
             </Text>
-            <SignupLink href="https://learnm2.com" target="_blank">
+            <SignupLink
+              href="https://learnm2.com/p/setup-magento-2-development-environment-docker"
+              target="_blank"
+            >
               Free Course! Enroll Now
             </SignupLink>
           </RightCol>

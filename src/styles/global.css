@@ -8,6 +8,7 @@ a {
   color: #2680C2;
   transition: all 300ms ease-in-out;
 }
+
 a:hover, a:active {
   color: #38BEC9;
 }
