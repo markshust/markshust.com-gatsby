@@ -84,5 +84,6 @@ module.exports = {
         siteUrl: `https://markshust.com`,
       },
     },
+    `gatsby-plugin-twitter`,
   ],
 }
