@@ -28,7 +28,7 @@ _Technical Track_
 
 Not all developers advance to a senior-level position, and that's completely ok. The mid-level developer is the workhorse developer who gets most of the real, actual work done! They can take a given task, work with project managers on any questions needed to accomplish the task, and work with minimal supervision to get things done.
 
-The mid-level developer should still have a strong desire to learn, which is probably a trait that aligns with all positions on the technical track. Web development, and computing in general, is an industry of constant change. That said, the breadth of knowledge is what separates a mid-level developer from a senior developer
+The mid-level developer should still have a strong desire to learn, which is probably a trait that aligns with all positions on the technical track. Web development, and computing in general, is an industry of constant change. That said, the breadth of knowledge is what separates a mid-level developer from a senior developer.
 
 Just staying at a mid-level developer position does not guarantee a senior-level position after a few years. In fact, most of the promotions I've seen over the years of mid-levels to seniors have been unwarranted. It's ok to stay at a mid-level developer position and to keep a development role at that position, as long as your desired to learn and passion does not vanquish.
 
