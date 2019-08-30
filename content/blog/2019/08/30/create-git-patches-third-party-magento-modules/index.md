@@ -122,7 +122,7 @@ Now that the file is on VCS and committed, we can edit and save the file with ou
 Then commit the file:
 
 ```plain
-git commit -am "Fix Firebear Select return type delcaration"
+git commit -am "Fix Firebear Select return type declaration"
 ```
 
 By doing this, we created a history in Git with the exact changeset we need. We can then use the `git format-patch` command to create our patch:
@@ -131,7 +131,7 @@ By doing this, we created a history in Git with the exact changeset we need. We 
 git format-patch -1 HEAD
 ```
 
-This command creates a patch file containing the diff of the last created commit. For me, running this command created a file in the root of my source directory named `0001-Fix-Firebear-Select-return-type-delcaration.patch`. Let's move this file to `m2-hotfixes` directory, which is the location Magento Cloud looks for Magento 2 patches. If you don't already have a folder with that name, go ahead and create one. I use the `m2-hotfixes` directory name for all patches to be consistent, whether or not it's a Magento Cloud project.
+This command creates a patch file containing the diff of the last created commit. For me, running this command created a file in the root of my source directory named `0001-Fix-Firebear-Select-return-type-declaration.patch`. Let's move this file to `m2-hotfixes` directory, which is the location Magento Cloud looks for Magento 2 patches. If you don't already have a folder with that name, go ahead and create one. I use the `m2-hotfixes` directory name for all patches to be consistent, whether or not it's a Magento Cloud project.
 
 We are now done with our ephemeral git branch and can delete it. Let's now checkout the main `develop` branch (or in this case, the `integration` branch for Magento Cloud projects), then delete the fix branch.
 
@@ -143,7 +143,7 @@ git branch -D feature/fix-firebear-select-return-type
 We should now be back to where we started, with `vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php` back to the original file without the return type declaration. Now we can test if our patch file works by running the command:
 
 ```plain
-git apply m2-hotfixes/0001-Fix-Firebear-Select-return-type-delcaration.patch
+git apply m2-hotfixes/0001-Fix-Firebear-Select-return-type-declaration.patch
 ```
 
 If we now check the file `vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php`, we should see the return type declaration being added.
