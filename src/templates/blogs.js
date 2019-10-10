@@ -10,10 +10,11 @@ import styled from 'styled-components'
 import { rhythm } from '../utils/typography'
 import DateAndReadingTime from '../components/DateAndReadingTime'
 import DockerMagento from '../components/DockerMagento'
+import BeginningMagentoInline from '../components/BeginningMagentoInline'
 
 const TagList = styled.ul`
   list-style: none;
-  margin: 0 -${rhythm(0.75)} ${rhythm(0.75)};
+  margin: 0 -${rhythm(0.75)} 0;
   padding: ${rhythm(1)};
   background: #f5f7fa;
 `
@@ -42,12 +43,15 @@ class BlogsTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteSubtitle = this.props.data.site.siteMetadata.description
     const siteTitle = 'Mark Shust'
-    const { previous, next } = this.props.pageContext
+    let isBeginningMagento = false
     let isDocker = false
     let isMagento = false
     let isNodejs = false
 
     post.frontmatter.tags.map(tag => {
+      if (tag === 'beginningmagento') {
+        isBeginningMagento = true
+      }
       if (tag === 'docker') {
         isDocker = true
       }
@@ -71,51 +75,33 @@ class BlogsTemplate extends React.Component {
           keywords={post.frontmatter.tags}
           canonical={post.frontmatter.canonical}
         />
-        {isMagento && <DockerMagento />}
+        <Spacer />
+        {/* {isMagento && <DockerMagento />} */}
         <h1>{post.frontmatter.title}</h1>
         <DateAndReadingTime
           date={post.frontmatter.date}
           readingTime={post.fields.readingTime.text}
         />
-        <Spacer />
         <div
           className="main-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        <SummaryBio />
+        {isBeginningMagento ? (
+          <BeginningMagentoInline />
+        ) : isDocker || isNodejs ? (
+          <Egghead />
+        ) : (
+          <Newsletter />
+        )}
         <TagList>
+          Want to read more posts like this one?
           {post.frontmatter.tags.map(tag => (
             <TagListItem key={tag}>
               <Link to={`/tags/${tag}/`}>#{tag}</Link>
             </TagListItem>
           ))}
         </TagList>
-        <SummaryBio />
-        {isDocker || isNodejs ? <Egghead /> : <Newsletter />}
-        <Spacer />
-        <UnorderedList>
-          <ListItem>
-            {previous && (
-              <>
-                <strong>Previous Post:</strong>
-                <br />
-                <Link to={previous.fields.slug} rel="prev">
-                  ← {previous.frontmatter.title}
-                </Link>
-              </>
-            )}
-          </ListItem>
-          <ListItem style={{ textAlign: 'right' }}>
-            {next && (
-              <>
-                <strong>Next Post:</strong>
-                <br />
-                <Link to={next.fields.slug} rel="next">
-                  {next.frontmatter.title} →
-                </Link>
-              </>
-            )}
-          </ListItem>
-        </UnorderedList>
       </Layout>
     )
   }

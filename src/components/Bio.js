@@ -5,7 +5,7 @@ import { rhythm } from '../utils/typography'
 
 const BioWrapper = styled.div`
   display: flex;
-  padding-bottom: ${rhythm(1)};
+  padding-top: ${rhythm(1)};
 `
 
 const AvatarWrapper = styled.div`

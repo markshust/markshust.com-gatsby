@@ -12,7 +12,7 @@ import Spacer from './Spacer'
 const Flex = styled.div`
   display: flex;
   width: 200px;
-  margin: 0 auto;
+  margin: ${rhythm(1)} auto 0;
 `
 
 const Flex1 = styled.div`
@@ -28,9 +28,13 @@ const Copyright = styled.div`
 `
 
 const LinkList = styled.ul`
-  margin: ${rhythm(2)} 0;
-  list-style: none;
+  margin: ${rhythm(2)} auto 0;
   text-align: center;
+`
+
+const LinkListItem = styled.li`
+  display: inline;
+  padding-left: ${rhythm(1)};
 `
 
 const Middot = styled.span`
@@ -66,8 +70,8 @@ class Layout extends React.Component {
     } else {
       header = (
         <>
-          <Spacer />
           <HeaderBio />
+          <Spacer />
         </>
       )
     }
@@ -79,50 +83,19 @@ class Layout extends React.Component {
         <Line />
         <footer>
           <LinkList>
-            <li>
+            <LinkListItem>
               <Link to={`/`}>Home</Link>
-            </li>
-            <li>
+            </LinkListItem>
+            <LinkListItem>
               <Link to={`/tags`}>Tags</Link>
-            </li>
-            <li>
+            </LinkListItem>
+            <LinkListItem>
               <Link to={`/about`}>About</Link>
-            </li>
-            <li>
+            </LinkListItem>
+            <LinkListItem>
               <Link to={`/newsletter`}>Newsletter</Link>
-            </li>
+            </LinkListItem>
           </LinkList>
-          <StaticQuery
-            query={layoutQuery}
-            render={data => (
-              <Flex>
-                <Flex1>
-                  <a href="https://github.com/markshust" target="_blank">
-                    <Image
-                      fixed={data.githubIcon.childImageSharp.fixed}
-                      alt="GitHub"
-                    />
-                  </a>
-                </Flex1>
-                <Flex1>
-                  <a href="https://twitter.com/markshust" target="_blank">
-                    <Image
-                      fixed={data.twitterIcon.childImageSharp.fixed}
-                      alt="Twitter"
-                    />
-                  </a>
-                </Flex1>
-                <Flex1>
-                  <a href="/rss.xml" target="_blank">
-                    <Image
-                      fixed={data.rssIcon.childImageSharp.fixed}
-                      alt="RSS"
-                    />
-                  </a>
-                </Flex1>
-              </Flex>
-            )}
-          />
           <Copyright>
             <div>
               © 1985-{new Date().getFullYear()} Mark Shust
@@ -157,6 +130,37 @@ class Layout extends React.Component {
                 </a>
               </Certifications>
             </div>
+            <StaticQuery
+              query={layoutQuery}
+              render={data => (
+                <Flex>
+                  <Flex1>
+                    <a href="https://github.com/markshust" target="_blank">
+                      <Image
+                        fixed={data.githubIcon.childImageSharp.fixed}
+                        alt="GitHub"
+                      />
+                    </a>
+                  </Flex1>
+                  <Flex1>
+                    <a href="https://twitter.com/markshust" target="_blank">
+                      <Image
+                        fixed={data.twitterIcon.childImageSharp.fixed}
+                        alt="Twitter"
+                      />
+                    </a>
+                  </Flex1>
+                  <Flex1>
+                    <a href="/rss.xml" target="_blank">
+                      <Image
+                        fixed={data.rssIcon.childImageSharp.fixed}
+                        alt="RSS"
+                      />
+                    </a>
+                  </Flex1>
+                </Flex>
+              )}
+            />
             <Email>
               <a href="mailto:mark@shust.com">mark@shust.com</a>
             </Email>
