@@ -33,7 +33,7 @@ First, we need to create the factory in the constructor:
 <?php
 public function __construct(BurritoFactory $burritoFactory)
 {
-    $this->burritoFactory = $burritoFactory.
+    $this->burritoFactory = $burritoFactory;
 }
 
 ...
