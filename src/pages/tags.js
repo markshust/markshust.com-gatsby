@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "@components/layout"
 import kebabCase from "lodash/kebabCase"
-import SEO from "../components/seo"
+import SEO from "@components/seo"
 import { Link, graphql } from "gatsby"
 
 const TagsPage = ({

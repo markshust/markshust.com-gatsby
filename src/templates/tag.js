@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "@components/layout"
 import { Link, graphql } from "gatsby"
-import SEO from "../components/seo"
+import SEO from "@components/seo"
 
 const TagsTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext

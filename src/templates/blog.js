@@ -1,13 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-import shareOnTwitter from "../../content/assets/share-on-twitter.png"
+import Bio from "@components/bio"
+import Layout from "@components/layout"
+import SEO from "@components/seo"
+import { rhythm } from "@utils/typography"
+import shareOnTwitter from "@assets/share-on-twitter.png"
 import styled from "styled-components"
-import Newsletter from "../components/newsletter"
+import Newsletter from "@components/newsletter"
 
 const Wrapper = styled.div`
   margin-top: ${rhythm(3)}

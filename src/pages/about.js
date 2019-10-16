@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "@components/layout"
+import SEO from "@components/seo"
 import styled from "styled-components"
-import markshustPhoto from "../../content/assets/markshust-photo-1.jpg"
+import markshustPhoto from "@assets/markshust-photo-1.jpg"
 
 const Wrapper = styled.div`
   display: grid;

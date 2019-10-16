@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { rhythm } from "../utils/typography"
+import { rhythm } from "@utils/typography"
 import * as EmailValidator from "email-validator"
 
 const Wrapper = styled.div`

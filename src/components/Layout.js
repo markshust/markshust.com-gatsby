@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm, scale } from "@utils/typography"
 import Image from "gatsby-image"
 
 import styled from "styled-components"
-import markshustPhoto from "../../content/assets/markshust-photo-1.jpg"
+import markshustPhoto from "@assets/markshust-photo-1.jpg"
 
 const Wrapper = styled.div`
   display: grid;

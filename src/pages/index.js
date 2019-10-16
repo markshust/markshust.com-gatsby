@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Layout from "@components/layout"
+import SEO from "@components/seo"
+import { rhythm } from "@utils/typography"
 import kebabCase from "lodash/kebabCase"
 
 class BlogIndex extends React.Component {
