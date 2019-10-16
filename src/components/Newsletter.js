@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import { rhythm } from '../utils/typography'
-import * as EmailValidator from 'email-validator'
+import React, { Component } from "react"
+import styled from "styled-components"
+import { rhythm } from "../utils/typography"
+import * as EmailValidator from "email-validator"
 
 const Wrapper = styled.div`
-  background: #b6e0fe;
   margin: 0 -${rhythm(0.75)};
-  padding: ${rhythm(1.25)} 0 ${rhythm(0.5)};
+  padding: 0 0 ${rhythm(0.5)};
 `
 
 const Form = styled.form`
@@ -14,22 +13,20 @@ const Form = styled.form`
   margin: 0 auto;
 `
 
-const H1 = styled.h1`
+const H4 = styled.h4`
   color: rgb(82, 96, 109);
-  font-size: 27px;
+  font-size: ${rhythm(1)};
   font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
 `
 
 const Subheader = styled.div`
   color: rgb(97, 110, 124);
-  font-size: 18px;
 `
 
 const EmailInput = styled.input`
   color: rgb(81, 81, 81);
-  border-color: rgb(225, 225, 225);
-  border-radius: 4px;
-  font-weight: 400;
 `
 
 const Submit = styled.button`
@@ -37,41 +34,39 @@ const Submit = styled.button`
   background-color: #2680c2;
   border-radius: 25px;
   font-weight: 700;
-  box-shadow: 0px 1px 5px #4098d7;
 `
 
 const Guarantee = styled.div`
   color: rgb(123, 135, 148);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: ${rhythm(0.5)};
 `
 
 class Newsletter extends Component {
   state = {
-    email: '',
-    emailError: '',
+    email: "",
+    emailError: "",
   }
 
   handleEmailChange = event => {
-    this.setState({ email: event.target.value, emailError: '' })
+    this.setState({ email: event.target.value, emailError: "" })
   }
 
   handleSubmit = event => {
     event.preventDefault()
 
-    this.setState({ emailError: '' })
+    this.setState({ emailError: "" })
 
     if (!this.state.email) {
-      this.setState({ emailError: 'Email is required' })
+      this.setState({ emailError: "Email is required" })
       return
     }
 
     if (EmailValidator.validate(this.state.email)) {
-      console.log('valid email')
+      console.log("valid email")
       event.currentTarget.submit()
     } else {
-      this.setState({ emailError: 'Email is invalid' })
-      console.log('invalid email')
+      this.setState({ emailError: "Email is invalid" })
+      console.log("invalid email")
     }
   }
 
@@ -91,11 +86,11 @@ class Newsletter extends Component {
           onSubmit={this.handleSubmit}
         >
           <div data-style="minimal">
-            <H1 className="formkit-header" data-element="header">
-              Join the Newsletter
-            </H1>
+            <H4 className="formkit-header" data-element="header">
+              Like this article?
+            </H4>
             <Subheader data-element="subheader" className="formkit-subheader">
-              <p>Subscribe to get my latest content by email.</p>
+              <p>Get notified when I post new ones.</p>
             </Subheader>
             <ul
               className="formkit-alert formkit-alert-error"
@@ -117,7 +112,7 @@ class Newsletter extends Component {
                   value={this.state.email}
                   onChange={this.handleEmailChange}
                 />
-                <div style={{ color: 'red' }}>{this.state.emailError}</div>
+                <div style={{ color: "red" }}>{this.state.emailError}</div>
               </div>
               <Submit
                 data-element="submit"
@@ -128,7 +123,7 @@ class Newsletter extends Component {
                   <div />
                   <div />
                 </div>
-                <span>Subscribe</span>
+                <span>Get Notified</span>
               </Submit>
             </div>
             <Guarantee data-element="guarantee" className="formkit-guarantee">

@@ -1,8 +1,7 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import { Link, graphql } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
-import { rhythm } from '../utils/typography'
+import React from "react"
+import Layout from "../components/layout"
+import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
 const SubscribedPage = ({ data, location }) => {
   const { title, description } = data.site.siteMetadata
@@ -15,7 +14,7 @@ const SubscribedPage = ({ data, location }) => {
         Your email is now confirmed! I'll keep you in the loop as I create new
         content.
       </p>
-      <p>In the mean time... may I interest you in a blog post by tag?</p>
+      <p>In the mean time... may I interest you in a blog post?</p>
       <ul className="tags">
         {group.map(tag => (
           <li key={tag.fieldValue}>

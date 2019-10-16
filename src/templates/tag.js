@@ -1,9 +1,7 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import { Link, graphql } from 'gatsby'
-import { rhythm } from '../utils/typography'
-import SEO from '../components/seo'
-import Spacer from '../components/Spacer'
+import React from "react"
+import Layout from "../components/layout"
+import { Link, graphql } from "gatsby"
+import SEO from "../components/seo"
 
 const TagsTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext
@@ -11,7 +9,7 @@ const TagsTemplate = ({ pageContext, data, location }) => {
   const siteSubtitle = data.site.siteMetadata.description
   const siteTitle = data.site.siteMetadata.title
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
+    totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
   const title = `${tag} - Mark Shust`
 
@@ -23,7 +21,6 @@ const TagsTemplate = ({ pageContext, data, location }) => {
         description={tagHeader}
         keywords={[tag, `mark shust`]}
       />
-      <Spacer />
       <h1>#{tag}</h1>
       <h2>{tagHeader}</h2>
       <ul>
@@ -37,11 +34,9 @@ const TagsTemplate = ({ pageContext, data, location }) => {
           )
         })}
       </ul>
-      <Spacer />
       <div>
         Looking for something else? <Link to="/tags">Browse all tags</Link>
       </div>
-      <Spacer />
     </Layout>
   )
 }

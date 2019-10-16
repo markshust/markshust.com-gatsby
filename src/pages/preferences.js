@@ -1,9 +1,8 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import { graphql } from 'gatsby'
-import Spacer from '../components/Spacer'
+import React from "react"
+import Layout from "../components/layout"
+import { graphql } from "gatsby"
 
-const ConfirmedPage = ({ data, location }) => {
+const SubscribedPage = ({ data, location }) => {
   const { title, description } = data.site.siteMetadata
 
   return (
@@ -15,28 +14,28 @@ const ConfirmedPage = ({ data, location }) => {
       </p>
       <div
         style={{
-          width: '100%',
+          width: "100%",
           height: 0,
-          paddingBottom: '42%',
-          position: 'relative',
+          paddingBottom: "42%",
+          position: "relative",
         }}
       >
         <iframe
           src="https://giphy.com/embed/vgwdcBACc7FdRUfqDy"
           width="100%"
           height="100%"
-          style={{ position: 'absolute' }}
+          style={{ position: "absolute" }}
           frameBorder="0"
           className="giphy-embed"
           allowFullScreen
+          title="Giphy"
         />
       </div>
-      <Spacer />
     </Layout>
   )
 }
 
-export default ConfirmedPage
+export default SubscribedPage
 
 export const pageQuery = graphql`
   query {

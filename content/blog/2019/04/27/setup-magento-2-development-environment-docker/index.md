@@ -22,13 +22,6 @@ After posting the link to it on twitter, it immediately got over 50 retweets and
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">the course is here 🥳 -- learn to Magento + Docker today with 20 free lessons. 100% free for the Magento community <a href="https://twitter.com/hashtag/magento?src=hash&amp;ref_src=twsrc%5Etfw">#magento</a> <a href="https://twitter.com/hashtag/magento2?src=hash&amp;ref_src=twsrc%5Etfw">#magento2</a> <a href="https://twitter.com/hashtag/docker?src=hash&amp;ref_src=twsrc%5Etfw">#docker</a> <a href="https://twitter.com/hashtag/php?src=hash&amp;ref_src=twsrc%5Etfw">#php</a> <a href="https://twitter.com/hashtag/xdebug?src=hash&amp;ref_src=twsrc%5Etfw">#xdebug</a> <a href="https://twitter.com/hashtag/phpstorm?src=hash&amp;ref_src=twsrc%5Etfw">#phpstorm</a> <a href="https://t.co/Y9POQpalgQ">https://t.co/Y9POQpalgQ</a> <a href="https://t.co/AWBsMfFoM4">pic.twitter.com/AWBsMfFoM4</a></p>&mdash; Mark Shust ☕️🚀 (@markshust) <a href="https://twitter.com/markshust/status/1113857371938357253?ref_src=twsrc%5Etfw">April 4, 2019</a></blockquote>
 </div>
 
-I hope this is just the start of many screencast courses I can make over time. You can signup for the course by clicking the Enroll button below:
-
-
-<div style="text-align: center; margin-bottom: 2rem;">
-<h3 style="margin: 0.5rem;">Setup a Magento 2 Development Environment with Docker</h3>
-<a href="https://learnm2.com/p/setup-magento-2-development-environment-docker" target="_blank" class="button">Free Course! Enroll Now</a>
-</a>
-</div>
+I hope this is just the start of many screencast courses I can make over time. You can <a href="https://m.academy/p/setup-magento-2-development-environment-docker" target="_blank" class="button">signup for the course by clicking here</a>.
 
 If you were just interested in the Docker configuration, feel free to visit the repo on GitHub at <a href="https://github.com/markshust/docker-magento/" target="_blank">https://github.com/markshust/docker-magento/</a>. All GitHub stars️ ⭐️ are appreciated!

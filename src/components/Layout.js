@@ -1,18 +1,44 @@
-import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
-import MainContent from './MainContent'
-import HomeHeader from './HomeHeader'
-import styled from 'styled-components'
-import Line from './Line'
-import { rhythm } from '../utils/typography'
-import HeaderBio from './HeaderBio'
-import Spacer from './Spacer'
+import React from "react"
+import { Link, StaticQuery, graphql } from "gatsby"
+
+import { rhythm, scale } from "../utils/typography"
+import Image from "gatsby-image"
+
+import styled from "styled-components"
+import markshustPhoto from "../../content/assets/markshust-photo-1.jpg"
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 280px auto;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+  }
+`
+
+const Footer = styled.footer`
+  padding: ${rhythm(2)} 0 ${rhythm(1)};
+  display: grid;
+  grid-template-columns: auto 200px;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    text-align: center;
+  }
+`
+
+const StyledImage = styled.img`
+  float: left;
+  max-width: 250px;
+  max-height: 375px;
+  margin-bottom: 0;
+`
 
 const Flex = styled.div`
   display: flex;
   width: 200px;
-  margin: ${rhythm(1)} auto 0;
+  margin: 0;
+  @media only screen and (max-width: 768px) {
+    margin: ${rhythm(1)} auto 0;
+  }
 `
 
 const Flex1 = styled.div`
@@ -20,156 +46,171 @@ const Flex1 = styled.div`
   text-align: center;
 `
 
-const Copyright = styled.div`
-  text-align: center;
-  padding: ${rhythm(2)} 0;
-  font-size: 0.9rem;
-  color: #616e7c;
-`
-
-const LinkList = styled.ul`
-  margin: ${rhythm(2)} auto 0;
-  text-align: center;
-`
-
-const LinkListItem = styled.li`
-  display: inline;
-  padding-left: ${rhythm(1)};
-`
-
-const Middot = styled.span`
-  padding: 0 0.5rem;
-  @media only screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-const Certifications = styled.span`
-  @media only screen and (max-width: 768px) {
-    display: block;
-  }
-`
-
-const Email = styled.div`
-  margin-top: 1rem;
-`
-
 class Layout extends React.Component {
   render() {
-    const { location, subtitle, title, children } = this.props
+    const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
     if (location.pathname === rootPath) {
       header = (
-        <HomeHeader>
-          <h1>Mark Shust</h1>
-          <h3 className="subtitle">{subtitle}</h3>
-        </HomeHeader>
+        <Wrapper>
+          <div>
+            <StyledImage src={markshustPhoto} alt="Mark Shust" />
+          </div>
+          <div>
+            <h1
+              style={{
+                ...scale(1.5),
+                marginBottom: rhythm(0.5),
+                marginTop: 0,
+              }}
+            >
+              <Link
+                style={{
+                  boxShadow: `none`,
+                  textDecoration: `none`,
+                  color: `inherit`,
+                }}
+                to={`/`}
+              >
+                {title}
+              </Link>
+            </h1>
+            <h1
+              style={{
+                marginTop: rhythm(0.5),
+              }}
+            >
+              Certified Magento Developer, Architect &amp; Instructor in
+              Cleveland, Ohio
+            </h1>
+            <p>
+              Hi there! My name is Mark, and this is my tiny little home on the
+              internet.
+            </p>
+            <p
+              style={{
+                marginBottom: 0,
+              }}
+            >
+              I've been a computer programmer for roughly 20 years, and love my
+              home town of Cleveland, Ohio. The focus of my career has revolved
+              around PHP and eCommerce, and more specifically the Magento
+              eCommerce framework.
+            </p>
+          </div>
+        </Wrapper>
+      )
+    } else if (location.pathname.match(/\//g).length === 5) {
+      header = (
+        <small>
+          <a href="/">Back home</a>
+        </small>
       )
     } else {
       header = (
-        <>
-          <HeaderBio />
-          <Spacer />
-        </>
+        <h3
+          style={{
+            fontFamily: `Montserrat, sans-serif`,
+            marginTop: 0,
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h3>
       )
     }
-
     return (
-      <MainContent>
-        {header}
-        {children}
-        <Line />
-        <footer>
-          <LinkList>
-            <LinkListItem>
-              <Link to={`/`}>Home</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link to={`/tags`}>Tags</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link to={`/about`}>About</Link>
-            </LinkListItem>
-            <LinkListItem>
-              <Link to={`/newsletter`}>Newsletter</Link>
-            </LinkListItem>
-          </LinkList>
-          <Copyright>
-            <div>
-              © 1985-{new Date().getFullYear()} Mark Shust
-              <Middot>&middot;</Middot>
-              <Certifications>
-                <a
-                  href="http://www.zend.com/en/yellow-pages/ZEND014633"
-                  target="_blank"
-                >
-                  ZCE
-                </a>
-                ,{' '}
-                <a
-                  href="https://u.magento.com/certification/directory/dev/883/"
-                  target="_blank"
-                >
-                  MCD+
-                </a>
-                ,{' '}
-                <a
-                  href="https://u.magento.com/certification/directory/dev/883/"
-                  target="_blank"
-                >
-                  M2CSS
-                </a>
-                ,{' '}
-                <a
-                  href="https://u.magento.com/certification/directory/dev/883/"
-                  target="_blank"
-                >
-                  M2CAD
-                </a>
-              </Certifications>
-            </div>
-            <StaticQuery
-              query={layoutQuery}
-              render={data => (
-                <Flex>
-                  <Flex1>
-                    <a href="https://github.com/markshust" target="_blank">
-                      <Image
-                        fixed={data.githubIcon.childImageSharp.fixed}
-                        alt="GitHub"
-                      />
-                    </a>
-                  </Flex1>
-                  <Flex1>
-                    <a href="https://twitter.com/markshust" target="_blank">
-                      <Image
-                        fixed={data.twitterIcon.childImageSharp.fixed}
-                        alt="Twitter"
-                      />
-                    </a>
-                  </Flex1>
-                  <Flex1>
-                    <a href="/rss.xml" target="_blank">
-                      <Image
-                        fixed={data.rssIcon.childImageSharp.fixed}
-                        alt="RSS"
-                      />
-                    </a>
-                  </Flex1>
-                </Flex>
-              )}
-            />
-            <Email>
-              <a href="mailto:mark@shust.com">mark@shust.com</a>
-            </Email>
-          </Copyright>
-        </footer>
-      </MainContent>
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(36),
+          padding: `${rhythm(1.5)} ${rhythm(1)}`,
+          background: `rgba(255, 255, 255, 1)`,
+        }}
+      >
+        <header>{header}</header>
+        <main>{children}</main>
+        <Footer>
+          <div>
+            Mark Shust &copy; 1985-{new Date().getFullYear()}{" "}
+            {location.pathname !== "/" && (
+              <>
+                {" "}
+                &nbsp;&middot;&nbsp; <a href="/">Home</a>{" "}
+              </>
+            )}
+            {location.pathname !== "/about" && (
+              <>
+                {" "}
+                &nbsp;&middot;&nbsp; <a href="/about">About</a>
+              </>
+            )}
+            &nbsp;&middot;&nbsp; <a href="mailto:mark@shust.com">Email</a>
+          </div>
+          <StaticQuery
+            query={layoutQuery}
+            render={data => (
+              <Flex>
+                <Flex1>
+                  <a
+                    href="https://github.com/markshust"
+                    target="_blank"
+                    style={{ boxShadow: "none" }}
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      fixed={data.githubIcon.childImageSharp.fixed}
+                      alt="GitHub"
+                    />
+                  </a>
+                </Flex1>
+                <Flex1>
+                  <a
+                    href="https://twitter.com/markshust"
+                    target="_blank"
+                    style={{ boxShadow: "none" }}
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      fixed={data.twitterIcon.childImageSharp.fixed}
+                      alt="Twitter"
+                    />
+                  </a>
+                </Flex1>
+                <Flex1>
+                  <a
+                    href="/rss.xml"
+                    target="_blank"
+                    style={{ boxShadow: "none" }}
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      fixed={data.rssIcon.childImageSharp.fixed}
+                      alt="RSS"
+                    />
+                  </a>
+                </Flex1>
+              </Flex>
+            )}
+          />
+        </Footer>
+      </div>
     )
   }
 }
+
+export default Layout
 
 const layoutQuery = graphql`
   query LayoutQuery {
@@ -196,5 +237,3 @@ const layoutQuery = graphql`
     }
   }
 `
-
-export default Layout

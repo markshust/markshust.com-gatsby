@@ -1,50 +1,20 @@
-import Typography from 'typography'
-import { MOBILE_MEDIA_QUERY } from 'typography-breakpoint-constants'
+import Typography from "typography"
+import Wordpress2016 from "typography-theme-wordpress-2016"
 
-const typography = new Typography({
-  baseFontSize: '16px',
-  baseLineHeight: 1.7,
-  bodyFontFamily: ['Merriweather', 'serif'],
-  googleFonts: [
-    {
-      name: 'Ubuntu',
-      styles: ['400', '700'],
+Wordpress2016.overrideThemeStyles = () => {
+  return {
+    "a.gatsby-resp-image-link": {
+      boxShadow: `none`,
     },
-    {
-      name: 'Merriweather',
-      styles: ['400'],
+    a: {
+      color: "#2780C2",
     },
-  ],
-  headerWeight: 700,
-  headerFontFamily: ['Ubuntu', 'sans-serif'],
-  overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
-    body: {
-      color: '#1F2933',
-    },
-    h1: {
-      fontSize: '3rem',
-    },
-    h2: {
-      fontSize: '2rem',
-    },
-    h3: {
-      fontSize: '2rem',
-      fontWeight: 400,
-    },
-    [MOBILE_MEDIA_QUERY]: {
-      html: {
-        fontSize: `${(15 / 16) * 100}%`,
-        lineHeight: 1.6,
-      },
-      h1: {
-        fontSize: '2rem',
-      },
-      h2: {
-        fontSize: '1.5rem',
-      },
-    },
-  }),
-})
+  }
+}
+
+delete Wordpress2016.googleFonts
+
+const typography = new Typography(Wordpress2016)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

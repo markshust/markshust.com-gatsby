@@ -10,7 +10,12 @@
   force = true
 [[redirects]]
   from = "/newsletter/subscribe-marks-newsletter"
-  to = "/newsletter/"
+  to = "/"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/newsletter"
+  to = "/"
   status = 301
   force = true
 [[redirects]]

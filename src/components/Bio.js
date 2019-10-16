@@ -1,25 +1,68 @@
-import React from 'react'
-import Avatar from './Avatar'
-import styled from 'styled-components'
-import { rhythm } from '../utils/typography'
+/**
+ * Bio component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/use-static-query/
+ */
 
-const BioWrapper = styled.div`
-  display: flex;
-  padding-top: ${rhythm(1)};
-`
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
-const AvatarWrapper = styled.div`
-  padding-right: ${rhythm(0.5)};
-`
+import { rhythm } from "../utils/typography"
 
-function Bio({ style = {}, children }) {
+const Bio = () => {
+  const data = useStaticQuery(graphql`
+    query BioQuery {
+      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+        childImageSharp {
+          fixed(width: 50, height: 50) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          author
+          description
+          social {
+            twitter
+          }
+        }
+      }
+    }
+  `)
+
+  const { author, description, social } = data.site.siteMetadata
   return (
-    <BioWrapper>
-      <AvatarWrapper style={style}>
-        <Avatar />
-      </AvatarWrapper>
-      {children}
-    </BioWrapper>
+    <div
+      style={{
+        display: `flex`,
+        marginBottom: rhythm(1),
+        marginTop: rhythm(1),
+      }}
+    >
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        alt={author}
+        style={{
+          marginRight: rhythm(1 / 2),
+          marginBottom: 0,
+          minWidth: 50,
+          borderRadius: `100%`,
+        }}
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+      <p>
+        Written by <strong>{author}</strong>, a {description}.
+        <br />
+        <a href={`https://twitter.com/${social.twitter}`}>
+          Follow me @markshust
+        </a>
+      </p>
+    </div>
   )
 }
 

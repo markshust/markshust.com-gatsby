@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Mark Shust's Blog Posts`,
+    title: `Mark Shust`,
     author: `Mark Shust`,
-    description: `Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and UI/UX design`,
-    siteUrl: `https://markshust.com`,
+    description: `Certified Magento Developer, Architect & Instructor in Cleveland, Ohio`,
+    siteUrl: `https://markshust.com/`,
     social: {
       twitter: `markshust`,
     },
@@ -40,7 +40,7 @@ module.exports = {
             },
           },
           `gatsby-remark-reading-time`,
-          'gatsby-remark-code-titles',
+          "gatsby-remark-code-titles",
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -70,20 +70,85 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Mark Shust's RSS Feed",
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Mark Shust`,
+        short_name: `Mark Shust`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `content/assets/rubiks.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://markshust.com`,
       },
     },
-    `gatsby-plugin-twitter`,
   ],
 }

@@ -1,109 +1,71 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Image from 'gatsby-image'
-import SummaryBio from '../components/SummaryBio'
-import Layout from '../components/Layout'
-import SEO from '../components/seo'
-import kebabCase from 'lodash/kebabCase'
-import Line from '../components/Line'
-import BlogTitle from '../components/BlogTitle'
-import BlogWrapper from '../components/BlogWrapper'
-import styled from 'styled-components'
-import { rhythm } from '../utils/typography'
-import Spacer from '../components/Spacer'
-import DateAndReadingTime from '../components/DateAndReadingTime'
-import DockerMagento from '../components/DockerMagento'
+import React from "react"
+import { Link, graphql } from "gatsby"
 
-const MostRecent = styled.div`
-  margin: ${rhythm(0.75)} 0;
-  font-size: 1.5rem;
-`
-
-const UnorderedList = styled.ul`
-  margin: 0 -${rhythm(0.5)};
-`
-
-const ListItem = styled.li`
-  display: inline-block;
-  padding: 0 ${rhythm(0.5)};
-`
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { rhythm } from "../utils/typography"
+import kebabCase from "lodash/kebabCase"
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
-    const siteSubtitle = data.site.siteMetadata.description
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemarkEdges.edges
-    const group = data.allMarkdownRemarkGroup.group
-    let postCount = 0
+    const posts = data.allMarkdownRemark.edges
+    const tags = data.tags.group
 
     return (
-      <Layout
-        location={this.props.location}
-        subtitle={siteSubtitle}
-        title={siteTitle}
-      >
-        <SEO
-          title="Mark Shust - Certified Magento Developer &amp; Architect in Cleveland, OH"
-          overrideTitle
-          description={siteSubtitle}
-          keywords={[
-            `magento`,
-            `magento 2`,
-            `php`,
-            `javascript`,
-            `laravel`,
-            `react`,
-            `reactjs`,
-            `docker`,
-            `mark shust`,
-          ]}
-        />
-        <Line />
-        <SummaryBio />
-        <MostRecent>Most recent course:</MostRecent>
-        <DockerMagento />
-        <Spacer />
-        <MostRecent>Most recent blog posts:</MostRecent>
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO title="All posts" />
+        <h2>Courses</h2>
+        <p>
+          Whenever I have fully grasped a concept or idea, my first inclination
+          is to share what I have learned with others. The approach which makes
+          the most sense to me is an online screencast course. My teaching style
+          aims to first and foremost explain the why, while secondly explaining
+          it in the most short and concise way possible.
+        </p>
+        <p>
+          All of the courses I have created can be viewed or purchased through
+          my online school <a href="https://m.academy">M.academy</a>.
+        </p>
+        <h2>Blogs</h2>
+        <p>
+          Since 2009 I've written about various topics and concepts in internet
+          programming, in hopes that what I've learned can be helpful to others.
+        </p>
         {posts.map(({ node }) => {
-          postCount++
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <BlogWrapper key={node.fields.slug} odd={postCount % 2}>
-              <BlogTitle>
-                <Link to={node.fields.slug}>{title}</Link>
-              </BlogTitle>
-              <DateAndReadingTime
-                date={node.frontmatter.date}
-                readingTime={node.fields.readingTime.text}
-              />
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </BlogWrapper>
+            <article key={node.fields.slug}>
+              <header>
+                <h3
+                  style={{
+                    marginBottom: rhythm(1 / 4),
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <div>
+                  {node.frontmatter.date} &nbsp; &middot; &nbsp;{` `}
+                  {node.fields.readingTime.text}
+                </div>
+              </header>
+            </article>
           )
         })}
-        <Spacer />
-        <MostRecent>Browse all blog posts by tag:</MostRecent>
-        <UnorderedList>
-          {group.map(tag => (
-            <ListItem
-              key={tag.fieldValue}
-              style={{
-                fontSize:
-                  tag.totalCount > 7
-                    ? '2em'
-                    : tag.totalCount > 2
-                    ? '1.5em'
-                    : '1em',
-              }}
-            >
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                #{tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </ListItem>
-          ))}
-        </UnorderedList>
-        <Spacer />
-        <Spacer />
+        <p style={{ marginTop: rhythm(2) }}>
+          You may also browse all blog posts by tag:
+        </p>
+        {tags.map(tag => (
+          <Link
+            to={`/tags/${kebabCase(tag.fieldValue)}/`}
+            style={{ whiteSpace: "nowrap", marginRight: rhythm(0.5) }}
+          >
+            #{tag.fieldValue} ({tag.totalCount})
+          </Link>
+        ))}
       </Layout>
     )
   }
@@ -116,16 +78,14 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        description
       }
     }
-    allMarkdownRemarkEdges: allMarkdownRemark(
-      limit: 5
+    allMarkdownRemark(
+      limit: 500
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
             readingTime {
@@ -135,29 +95,17 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            tags
           }
         }
       }
     }
-    allMarkdownRemarkGroup: allMarkdownRemark(
+    tags: allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
-      }
-    }
-    course: file(
-      absolutePath: {
-        regex: "/setup-a-magento-2-development-environment-with-docker.png/"
-      }
-    ) {
-      childImageSharp {
-        fixed(width: 360, height: 256) {
-          ...GatsbyImageSharpFixed
-        }
       }
     }
   }
