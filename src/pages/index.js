@@ -58,14 +58,15 @@ class BlogIndex extends React.Component {
         <p style={{ marginTop: rhythm(2) }}>
           You may also browse all blog posts by tag:
         </p>
-        {tags.map(tag => (
-          <Link
-            to={`/tags/${kebabCase(tag.fieldValue)}/`}
-            style={{ whiteSpace: "nowrap", marginRight: rhythm(0.5) }}
-          >
-            #{tag.fieldValue} ({tag.totalCount})
-          </Link>
-        ))}
+        <ul className="tags">
+          {tags.map(tag => (
+            <li>
+              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                #{tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Layout>
     )
   }

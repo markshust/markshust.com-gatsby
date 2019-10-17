@@ -40,7 +40,7 @@
     "react-typography": "^0.16.19",
     "styled-components": "^4.4.0",
     "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.75",
+    "typeface-ubuntu": "^0.0.65",
     "typography": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19"
   },

@@ -1,11 +1,28 @@
 import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 
-import { rhythm, scale } from "@utils/typography"
+import { rhythm } from "@utils/typography"
 import Image from "gatsby-image"
 
 import styled from "styled-components"
 import markshustPhoto from "@assets/markshust-photo-1.jpg"
+
+const MainHeader = styled.h1`
+  margin-bottom: ${rhythm(0.5)};
+  margin-top: ${rhythm(0.5)};
+  @media only screen and (min-width: 769px) {
+    font-size: ${rhythm(2)};
+  }
+`
+
+const SubHeader = styled.h1`
+  margin-top: ${rhythm(0.5)};
+  font-size: ${rhythm(1)};
+  @media only screen and (min-width: 769px) {
+    margin-top: 0;
+    font-size: ${rhythm(1.25)};
+  }
+`
 
 const Wrapper = styled.div`
   display: grid;
@@ -22,6 +39,8 @@ const Footer = styled.footer`
   @media only screen and (max-width: 768px) {
     grid-template-columns: auto;
     text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
   }
 `
 
@@ -30,6 +49,9 @@ const StyledImage = styled.img`
   max-width: 250px;
   max-height: 375px;
   margin-bottom: 0;
+  @media only screen and (max-width: 768px) {
+    max-width: 180px;
+  }
 `
 
 const Flex = styled.div`
@@ -59,13 +81,7 @@ class Layout extends React.Component {
             <StyledImage src={markshustPhoto} alt="Mark Shust" />
           </div>
           <div>
-            <h1
-              style={{
-                ...scale(1.5),
-                marginBottom: rhythm(0.5),
-                marginTop: 0,
-              }}
-            >
+            <MainHeader>
               <Link
                 style={{
                   boxShadow: `none`,
@@ -76,15 +92,11 @@ class Layout extends React.Component {
               >
                 {title}
               </Link>
-            </h1>
-            <h1
-              style={{
-                marginTop: rhythm(0.5),
-              }}
-            >
+            </MainHeader>
+            <SubHeader>
               Certified Magento Developer, Architect &amp; Instructor in
               Cleveland, Ohio
-            </h1>
+            </SubHeader>
             <p>
               Hi there! My name is Mark, and this is my tiny little home on the
               internet.
@@ -112,7 +124,6 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
             marginTop: 0,
           }}
         >
@@ -147,7 +158,8 @@ class Layout extends React.Component {
             {location.pathname !== "/" && (
               <>
                 {" "}
-                &nbsp;&middot;&nbsp; <a href="/">Home</a>{" "}
+                <span className="hide-mobile">&nbsp;&middot;&nbsp; </span>
+                <a href="/">Home</a>{" "}
               </>
             )}
             {location.pathname !== "/about" && (

@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "@components/layout"
 import { Link, graphql } from "gatsby"
 import SEO from "@components/seo"
+import { rhythm } from "@utils/typography"
 
 const TagsTemplate = ({ pageContext, data, location }) => {
   const { tag } = pageContext
@@ -23,17 +24,36 @@ const TagsTemplate = ({ pageContext, data, location }) => {
       />
       <h1>#{tag}</h1>
       <h2>{tagHeader}</h2>
-      <ul>
-        {edges.map(({ node }) => {
-          const path = node.fields.slug
-          const { title } = node.frontmatter
-          return (
-            <li key={path}>
-              <Link to={path}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
+      {edges.map(({ node }) => {
+        console.log(node.fields)
+        return (
+          <article key={node.fields.slug}>
+            <header>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  {node.frontmatter.title}
+                </Link>
+              </h3>
+              <div>
+                {node.frontmatter.date} &nbsp; &middot; &nbsp;{` `}
+                {node.fields.readingTime.text}
+              </div>
+            </header>
+          </article>
+        )
+
+        // const path = node.fields.slug
+        // const { title } = node.frontmatter
+        // return (
+        //   <li key={path}>
+        //     <Link to={path}>{title}</Link>
+        //   </li>
+        // )
+      })}
       <div>
         Looking for something else? <Link to="/tags">Browse all tags</Link>
       </div>
@@ -62,10 +82,13 @@ export const pageQuery = graphql`
         node {
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
-            tags
             title
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }

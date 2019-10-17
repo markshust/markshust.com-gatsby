@@ -18,6 +18,9 @@ const StyledImage = styled.img`
   float: left;
   max-width: 250px;
   max-height: 375px;
+  @media only screen and (max-width: 768px) {
+    max-width: 180px;
+  }
 `
 
 class AboutPage extends React.Component {
