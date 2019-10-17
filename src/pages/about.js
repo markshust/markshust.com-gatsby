@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "@components/layout"
 import SEO from "@components/seo"
 import styled from "styled-components"
-import markshustPhoto from "@assets/markshust-photo-1.jpg"
+import markshustPhoto from "@assets/markshust-photo-1-sm.jpg"
 
 const Wrapper = styled.div`
   display: grid;
@@ -16,10 +16,10 @@ const Wrapper = styled.div`
 
 const StyledImage = styled.img`
   float: left;
-  max-width: 250px;
-  max-height: 375px;
+  width: 250px;
+  height: 375px;
   @media only screen and (max-width: 768px) {
-    max-width: 180px;
+    width: 180px;
   }
 `
 

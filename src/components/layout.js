@@ -5,7 +5,7 @@ import { rhythm } from "@utils/typography"
 import Image from "gatsby-image"
 
 import styled from "styled-components"
-import markshustPhoto from "@assets/markshust-photo-1.jpg"
+import markshustPhoto from "@assets/markshust-photo-1-sm.jpg"
 
 const MainHeader = styled.h1`
   margin-bottom: ${rhythm(0.5)};
@@ -46,11 +46,11 @@ const Footer = styled.footer`
 
 const StyledImage = styled.img`
   float: left;
-  max-width: 250px;
-  max-height: 375px;
+  width: 250px;
+  height: 375px;
   margin-bottom: 0;
   @media only screen and (max-width: 768px) {
-    max-width: 180px;
+    width: 180px;
   }
 `
 
