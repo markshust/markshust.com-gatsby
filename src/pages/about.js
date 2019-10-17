@@ -20,6 +20,7 @@ const StyledImage = styled.img`
   height: 375px;
   @media only screen and (max-width: 768px) {
     width: 180px;
+    height: 270px;
   }
 `
 
