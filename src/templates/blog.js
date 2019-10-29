@@ -20,6 +20,12 @@ const Wrapper = styled.div`
   }
 `
 
+const EditOnGitHubLink = styled.a`
+  @media only screen and (max-width: 768px) {
+    display: table;
+  }
+`
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -52,8 +58,9 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date} &nbsp; &middot; &nbsp;{` `}
-              {post.fields.readingTime.text} &nbsp; &middot; &nbsp;{` `}
-              <a
+              {post.fields.readingTime.text}
+              <span className="hide-mobile">&nbsp; &middot; &nbsp;{` `}</span>
+              <EditOnGitHubLink
                 href={
                   "https://github.com/markshust/markshust.com/tree/master/content/blog" +
                   this.props.location.pathname +
@@ -62,7 +69,7 @@ class BlogPostTemplate extends React.Component {
                 target="_blank"
               >
                 Edit on GitHub
-              </a>
+              </EditOnGitHubLink>
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
