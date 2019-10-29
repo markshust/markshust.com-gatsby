@@ -46,12 +46,10 @@ const Footer = styled.footer`
 
 const StyledImage = styled.img`
   float: left;
-  width: 250px;
-  height: 375px;
   margin-bottom: 0;
   @media only screen and (max-width: 768px) {
-    width: 180px;
-    height: 270px;
+    max-width: 180px;
+    max-height: 270px;
   }
 `
 
@@ -79,7 +77,12 @@ class Layout extends React.Component {
       header = (
         <Wrapper>
           <div>
-            <StyledImage src={markshustPhoto} alt="Mark Shust" />
+            <StyledImage
+              src={markshustPhoto}
+              alt="Mark Shust"
+              width="250"
+              height="375"
+            />
           </div>
           <div>
             <MainHeader>

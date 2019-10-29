@@ -45,17 +45,6 @@ class BlogPostTemplate extends React.Component {
             >
               {postTitle}
             </h1>
-            <div
-              style={{
-                marginBottom: rhythm(0.5),
-              }}
-            >
-              {post.frontmatter.tags.map(tag => (
-                <>
-                  <Link to={`/tags/${tag}/`}>#{tag}</Link>&nbsp; &nbsp;
-                </>
-              ))}
-            </div>
             <p
               style={{
                 display: `block`,
@@ -63,7 +52,17 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date} &nbsp; &middot; &nbsp;{` `}
-              {post.fields.readingTime.text}
+              {post.fields.readingTime.text} &nbsp; &middot; &nbsp;{` `}
+              <a
+                href={
+                  "https://github.com/markshust/markshust.com/tree/master/content/blog" +
+                  this.props.location.pathname +
+                  "index.md"
+                }
+                target="_blank"
+              >
+                Edit on GitHub
+              </a>
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
