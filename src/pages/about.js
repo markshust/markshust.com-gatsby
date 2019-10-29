@@ -39,23 +39,17 @@ class AboutPage extends React.Component {
           </div>
           <div>
             <p>
-              Mark Shust is a Certified Magento Developer & Architect with
-              extended knowledge of PHP, JavaScript, Laravel, React, Docker, and
-              user interface design. He has nearly 20 years of web development
-              experience in the eCommerce, real estate, business-to-business,
-              and information technology industries. Mark is a Zend Certified
-              Engineer, a Magento Certified Developer Plus, a Magento 2
-              Certified Solution Specialist, and a Magento 2 Certified Associate
-              Developer, and has a wide knowledge range of other open source
-              software and tech stacks.
+              I've been a Magento Developer for nearly a decade, and have 20
+              years of web development experience in the eCommerce, real estate,
+              business-to-business, and information technology industries. I
+              have extended depth of PHP, JavaScript, React, Docker & Laravel,
+              as well as a breadth of knowledge of other open source software.
             </p>
             <p>
-              Mark is married to his wonderful wife Juliann, and they are the
-              proud parents of twin girls Lily Ann and Brielle. Mark lives in
-              Northest Ohio, and is a devout Cleveland Browns fan, loves eating
-              Chipotle burritos, playing scrabble and solving Rubix cubes. Mark
-              loves geek-inspired technology, and enjoys living a simplistic
-              lifestyle.
+              I'm married to my wonderful wife Juliann, and we are the proud
+              parents of twin girls Lily and Brielle. I live in Northeast Ohio
+              and love eating chipotle burritos, solving Rubik's cubes, driving
+              my 240sx and watching Cleveland Browns games.
             </p>
           </div>
         </Wrapper>
