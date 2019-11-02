@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mark Shust`,
     author: `Mark Shust`,
-    description: `Certified Magento Developer, Architect & Instructor in Cleveland, Ohio`,
+    description: `Certified Magento Developer, Architect & Teacher in Cleveland, Ohio`,
     siteUrl: `https://markshust.com/`,
     social: {
       twitter: `markshust`,

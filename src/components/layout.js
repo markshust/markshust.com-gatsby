@@ -98,7 +98,7 @@ class Layout extends React.Component {
               </Link>
             </MainHeader>
             <SubHeader>
-              Certified Magento Developer, Architect &amp; Instructor in
+              Certified Magento Developer, Architect &amp; Teacher in
               Cleveland, Ohio
             </SubHeader>
             <p>
