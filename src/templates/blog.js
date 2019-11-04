@@ -8,6 +8,7 @@ import { rhythm } from "@utils/typography"
 import shareOnTwitter from "@assets/share-on-twitter.png"
 import styled from "styled-components"
 import Newsletter from "@components/newsletter"
+import MagentoNewsletter from "../components/magentonewsletter"
 
 const Wrapper = styled.div`
   margin-top: ${rhythm(3)}
@@ -31,13 +32,15 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const postTitle = post.frontmatter.title
+    const tags = post.frontmatter.tags
+    const isMagentoPost = tags.filter(tag => tag === "magento").length > 0
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={postTitle}
           description={post.frontmatter.description || post.excerpt}
-          keywords={post.frontmatter.tags}
+          keywords={tags}
           canonical={post.frontmatter.canonical}
         />
         <article>
@@ -107,7 +110,7 @@ class BlogPostTemplate extends React.Component {
               <section
                 style={{ margin: `0 ${rhythm(1)} 0 auto`, textAlign: "center" }}
               >
-                <Newsletter />
+                {isMagentoPost ? <MagentoNewsletter /> : <Newsletter />}
               </section>
             </Wrapper>
           </footer>
