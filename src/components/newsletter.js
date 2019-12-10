@@ -25,6 +25,11 @@ const Subheader = styled.div`
   color: rgb(97, 110, 124);
 `
 
+const NameInput = styled.input`
+  color: rgb(81, 81, 81);
+  margin-bottom: 10px !important;
+`
+
 const EmailInput = styled.input`
   color: rgb(81, 81, 81);
 `
@@ -45,6 +50,7 @@ class Newsletter extends Component {
   state = {
     email: "",
     emailError: "",
+    name: "",
   }
 
   handleEmailChange = event => {
@@ -90,7 +96,7 @@ class Newsletter extends Component {
               Like this article?
             </H4>
             <Subheader data-element="subheader" className="formkit-subheader">
-              <p>Get notified when I post new ones.</p>
+              <p>I can let you know when I post new ones.</p>
             </Subheader>
             <ul
               className="formkit-alert formkit-alert-error"
@@ -103,6 +109,15 @@ class Newsletter extends Component {
               className="seva-fields formkit-fields"
             >
               <div className="formkit-field">
+                <NameInput
+                  className="formkit-input"
+                  name="fields[first_name]"
+                  placeholder="Your first name"
+                  aria-label="Your first name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleNameChange}
+                />
                 <EmailInput
                   className="formkit-input"
                   name="email_address"

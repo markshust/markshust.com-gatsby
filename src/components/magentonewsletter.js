@@ -29,6 +29,11 @@ const EmailInput = styled.input`
   color: rgb(81, 81, 81);
 `
 
+const NameInput = styled.input`
+  color: rgb(81, 81, 81);
+  margin-bottom: 10px !important;
+`
+
 const Submit = styled.button`
   color: rgb(255, 255, 255);
   background-color: #2680c2;
@@ -45,10 +50,15 @@ class MagentoNewsletter extends Component {
   state = {
     email: "",
     emailError: "",
+    name: "",
   }
 
   handleEmailChange = event => {
     this.setState({ email: event.target.value, emailError: "" })
+  }
+
+  handleNameChange = event => {
+    this.setState({ name: event.target.value })
   }
 
   handleSubmit = event => {
@@ -91,8 +101,8 @@ class MagentoNewsletter extends Component {
             </H4>
             <Subheader data-element="subheader" className="formkit-subheader">
               <p>
-                I'll send out tidbits (not more than once a week) explaining
-                Magento 2 concepts to beginners.
+                I'll let you know when I create something new related to Magento
+                including blog posts, courses & more.
               </p>
             </Subheader>
             <ul
@@ -106,6 +116,15 @@ class MagentoNewsletter extends Component {
               className="seva-fields formkit-fields"
             >
               <div className="formkit-field">
+                <NameInput
+                  className="formkit-input"
+                  name="fields[first_name]"
+                  placeholder="Your first name"
+                  aria-label="Your first name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleNameChange}
+                />
                 <EmailInput
                   className="formkit-input"
                   name="email_address"
