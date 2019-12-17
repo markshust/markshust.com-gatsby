@@ -1,6 +1,6 @@
 ---
-title: "Fixing Google Chome slow or hanging resolving host message with Docker"
-date: "2019-12-17T16:02:00.000Z"
+title: "Fixing Google Chrome slow or hanging resolving host message with Docker"
+date: "2019-12-17T16:45:00.000Z"
 tags: ["chrome", "docker"]
 ---
 
