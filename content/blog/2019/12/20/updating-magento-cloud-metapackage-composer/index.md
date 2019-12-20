@@ -48,4 +48,4 @@ After that I will run all of the setup upgrade scripts contained in the code to 
 bin/magento setup:upgrade
 ```
 
-You're code and database should now be all update to date. You'll most likely now need to start the process of testing the site and correcting any outdated code and etc. (this will take some time) before actually launching your site on the updated version.
+You're code and database should now be all update to date. You'll most likely now need to start the process of testing the site and correcting any outdated code and etc. (this will take some time) before actually launching your site on the updated version. Also, make sure to check your `m2-hotfixes` folder for patches which may be outdated and need to be removed or updated.
