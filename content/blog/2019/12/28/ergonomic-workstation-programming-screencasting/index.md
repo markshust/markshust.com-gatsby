@@ -4,7 +4,7 @@ date: "2019-12-28T13:00:00.000Z"
 tags: ["programming"]
 ---
 
-It's been almost 6 years since I wrote [A programmer's ergononic workstation](/2014/03/31/programmers-ergonomic-workstation/). A lot has changed 😃. Since that blog post I've moved to a new home, got more into screen & video casting, and wanted to expand upon on my previous workstation setup. I've learned some lessons over the years, and have tweaked my home office into what I believe to be a very comfy and ergonomically friently workstation.
+It's been almost 6 years since I wrote [A programmer's ergononic workstation](/2014/03/31/programmers-ergonomic-workstation/). A lot has changed 😃. Since that blog post I've moved to a new home, got more into screen & video casting, and wanted to expand upon on my previous workstation setup. I've learned some lessons over the years, and have tweaked my home office into what I believe to be a very comfy and ergonomically friendly workstation.
 
 ![Mark's home office](IMG_3003.jpeg)
 
