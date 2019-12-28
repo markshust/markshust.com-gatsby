@@ -4,6 +4,8 @@ date: "2014-03-31T15:23:00.000Z"
 tags: ["ergonomics"]
 ---
 
+**Note:** An updated version of this blog post is available: [The ergonomic workstation for programming and screencasting](/2019/12/28/ergonomic-workstation-programming-screencasting/).
+
 ![Desktop Computer](e45743.001.jpeg)
 
 Let’s start off by saying that I work a solid 8 to 10 hours a day on my computer, 5 or 6 days a week, as a computer programmer. These long and strenuous hours take a toll, especially when you deal with the added stresses of starting your own business, and the ability to motivate yourself when working from home. I’ve had back problems since I was about 12 years old, and it’s no coincidence that this is just about the exact time that I got my first computer, a Packard Bell Pentium Pro.
