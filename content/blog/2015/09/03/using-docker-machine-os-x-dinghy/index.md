@@ -14,7 +14,7 @@ Today, <a href="https://github.com/codekitchen/dinghy" target="_blank">Dinghy</a
 
 It's quite easy to setup and get going. If you've previously installed Dinghy, do the following:
 
-```plain
+```meta
 cd `brew --prefix`/var/dinghy/vagrant && vagrant destroy
 rm -rf `brew --prefix`/var/dinghy/vagrant
 cd ~
@@ -23,7 +23,7 @@ brew reinstall --HEAD https://github.com/codekitchen/dinghy/raw/latest/dinghy.rb
 
 If you are new to Dinghy, install it with the following:
 
-```plain
+```meta
 brew install --HEAD https://github.com/codekitchen/dinghy/raw/latest/dinghy.rb
 ```
 
@@ -31,13 +31,13 @@ brew install --HEAD https://github.com/codekitchen/dinghy/raw/latest/dinghy.rb
 
 Our next step is to create the dinghy VM. This creates a VM that is based on VirtualBox and docker machine. Please note it will take a few minutes for this command to complete:
 
-```plain
+```meta
 dinghy create --provider virtualbox
 ```
 
 After a successful VM creation, you'll receive shell output similar to the following:
 
-```plain
+```meta
 export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_CERT_PATH=/Users/your-username/.docker/machine/machines/dinghy
 export DOCKER_TLS_VERIFY=1
@@ -50,13 +50,13 @@ Be sure to add these lines to your `~/.bash_profile` file. Also, don't copy/past
 
 You may now test the installation. An easy way is to run:
 
-```plain
+```meta
 docker ps
 ```
 
 This will show all of your docker images. Let's try testing it out by dropping into a PHP shell:
 
-```plain
+```meta
 docker run -it php
 ```
 

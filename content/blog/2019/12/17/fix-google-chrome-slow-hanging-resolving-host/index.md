@@ -14,7 +14,7 @@ I dug around the internet, reading through countless articles of flushing the DN
 
 Typically with Docker, and really any other web app which needs a local domain, you'd setup new records in the `/etc/hosts` file on your Mac or Linux machine. Here's an example of that file:
 
-```plain
+```meta
 ##
 # Host Database
 #
@@ -51,7 +51,7 @@ The answer: IPv6.
 
 The fix for this is easy. All we need to do is add an IPv6 entry to our host entry:
 
-```plain
+```meta
 127.0.0.1 ::1 mysite.test
 ```
 

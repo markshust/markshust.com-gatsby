@@ -21,7 +21,7 @@ There are also coding concerns to be aware of, as someone now has full access to
 
 At the end of the day... let's put this all aside. What does this process actually do? First, it finds the version of your Magento installation. Next, it does a diff on your app/code/core directory against that versions core files. Third, well, that's it. It just diffs out some files.
 
-```plain
+```meta
 diff ~/yoursite/ ~/magento1720/
 ```
 

@@ -6,7 +6,7 @@ tags: ["git", "github", "magento", "magento2", "php"]
 
 After updating Magento to 2.3.2, I noticed the builds failing for one of my projects in Magento Cloud after pushing code up for a deployment. After checking the logs, it appeared there was an error with a third-party module, in this case Firebear's <a href="https://firebearstudio.com/improved-configurable-products-for-magento-2.html" target="_blank">Improved Configurable Product</a> module:
 
-```plain
+```meta
     [2019-08-29 14:27:04] INFO: Sample data media was not found. Skipping.  
     [2019-08-29 14:27:04] NOTICE: Running DI compilation  
     [2019-08-29 14:27:04] INFO: php ./bin/magento setup:di:compile  --ansi --no-interaction  
@@ -43,7 +43,7 @@ E: Error: Unable to build application, aborting.
 
 The line we care about here is:
 
-```plain
+```meta
 Repositories code generation... 1/7 [===>------------------]  14% 1 sec 82.5 MiBPHP Fatal error:  Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
 ```
 
@@ -83,7 +83,7 @@ From this error log, we are also aware it's triggered from the line:
 
 You'll want to checkout the same branch locally which was throwing the deployment error, and running the same line above to confirm the existance of the error. Once it's replicated locally, it can be fixed.
 
-```plain
+```meta
 bin/magento setup:di:compile --ansi --no-interaction
 Compilation was started.
 Repositories code generation... 1/7 [====>-----------------------]  14% < 1 sec 94.5 MiB
@@ -100,13 +100,13 @@ This means that we need to first get the offending file into version control. Si
 
 Let's create an ephemeral branch.
 
-```plain
+```meta
 git checkout -b feature/fix-firebear-select-return-type
 ```
 
 Then, force add the file to VCS and commit:
 
-```plain
+```meta
 git add -f vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php
 git commit -m "Initial commit of original Firebear Select file"
 ```
@@ -121,13 +121,13 @@ Now that the file is on VCS and committed, we can edit and save the file with ou
 
 Then commit the file:
 
-```plain
+```meta
 git commit -am "Fix Firebear Select return type declaration"
 ```
 
 By doing this, we created a history in Git with the exact changeset we need. We can then use the `git format-patch` command to create our patch:
 
-```plain
+```meta
 git format-patch -1 HEAD
 ```
 
@@ -135,14 +135,14 @@ This command creates a patch file containing the diff of the last created commit
 
 We are now done with our ephemeral git branch and can delete it. Let's now checkout the main `develop` branch (or in this case, the `integration` branch for Magento Cloud projects), then delete the fix branch.
 
-```plain
+```meta
 git checkout integration
 git branch -D feature/fix-firebear-select-return-type
 ```
 
 We should now be back to where we started, with `vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php` back to the original file without the return type declaration. Now we can test if our patch file works by running the command:
 
-```plain
+```meta
 git apply m2-hotfixes/0001-Fix-Firebear-Select-return-type-declaration.patch
 ```
 
@@ -152,13 +152,13 @@ If we now check the file `vendor/firebear/configurableproducts/Block/Product/Vie
 
 Now's our time to test that our update worked by executing the original command which was causing our build to fail:
 
-```plain
+```meta
 bin/magento setup:di:compile --ansi --no-interaction
 ```
 
 This command should now successfully execute, and show the expected successful output of running this command:
 
-```plain
+```meta
 Compilation was started.
 Interception cache generation... 7/7 [============================] 100% 1 min 490.0 MiB
 Generated code and dependency injection configuration successfully.

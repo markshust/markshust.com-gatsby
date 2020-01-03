@@ -36,7 +36,7 @@ Docker will work just fine on a Linux-based operating system such as Ubuntu beca
 
 Our first step is to install Docker, Docker Compose, Vagrant and VirtualBox. I prefer <a href="http://brew.sh/" target="_blank">Homebrew</a> because it's very easy to manage and update packages.
 
-```plain
+```meta
 brew update
 brew install docker
 brew install docker-compose
@@ -50,7 +50,7 @@ At Mage Inferno we started off using <a href="http://boot2docker.io/" target="_b
 
 No worries! <a href="https://github.com/codekitchen/dinghy" target="_blank">Dinghy</a> to the rescue. This application uses a modified version of Boot2Docker that uses the far superior NFS filesystem to mount remote file shares. It also has some great additions us web developers can really use, including a DNS resolution service and HTTP proxy (which also very neatly runs within it's own container in true Docker fashion). Fairly easy Magento 2 development on Docker and OS X wouldn't be possible without something like Dinghy (at least at the time of this post), so be sure to star the package on github to give the developer some kudos. Let's install Dinghy:
 
-```plain
+```meta
 brew install https://github.com/codekitchen/dinghy/raw/latest/dinghy.rb
 ```
 
@@ -70,7 +70,7 @@ If you would like to know more about each image, please click on the image names
 
 Before we continue any further, now is a good time to see if you can run a Docker image. First, you'll need to start up the Dinghy service if you haven't done so already, which will give you the ability to connect OS X to Docker.
 
-```plain
+```meta
 dinghy up
 ```
 
@@ -78,7 +78,7 @@ This is the equivalent of running `boot2docker up` or `vagrant up`. You only nee
 
 Next, we'll test our setup by starting a `mageinferno/magento2-php` container first.:
 
-```plain
+```meta
 docker run -d --name php-fpm mageinferno/magento2-php
 ```
 
@@ -86,7 +86,7 @@ This is a very simple command, which runs a container based on the `mageinferno/
 
 Next, we'll start our web server container:
 
-```plain
+```meta
 docker run -d -e VIRTUAL_HOST=mywebserver.docker --link php-fpm --name mywebserver mageinferno/magento2-nginx
 ```
 
@@ -100,7 +100,7 @@ We should now see a "404 Not Found" message from Nginx, which is our success sig
 
 We can also access the container via SSH with:
 
-```plain
+```meta
 docker exec -it mywebserver bash
 ```
 
@@ -108,19 +108,19 @@ We can now explore around the Debian system and do whatever we wish, just as we 
 
 The container will continue to run until it is stopped:
 
-```plain
+```meta
 docker stop mywebserver
 ```
 
 If we do `docker ps` now, our container appears to have been removed. However, if we execute `docker ps -a` we can see that this image is still around, but just dormant. We can bring it back to life by running:
 
-```plain
+```meta
 docker start mywebserver
 ```
 
 And we can delete it, by stopping the server and then executing a remove command:
 
-```plain
+```meta
 docker stop mywebserver
 docker rm mywebserver
 ```
@@ -135,7 +135,7 @@ The final piece of the puzzle is <a href="https://docs.docker.com/compose/" targ
 
 First, we'll create a new directory in our `~/Sites` folder with the name of our project, and go into it:
 
-```plain
+```meta
 mkdir ~/Sites/mysite
 cd ~/Sites/mysite
 ```
@@ -230,7 +230,7 @@ This file will be remotely mounted to our Docker images so GitHub can successful
 
 Now we'll run the following command to kickoff the Magento 2 installation:
 
-```plain
+```meta
 docker-compose up setup
 ```
 
@@ -240,7 +240,7 @@ When the `m2setup.sh` bash file is executed, it will start by cloning the Magent
 
 Once the Magento 2 setup process is all complete, we can create our Apache + PHP Docker container to view our new Magento 2 installation. The `-d` flag tells us to start the containers in the background and keep them running.
 
-```plain
+```meta
 docker-compose up -d app
 ```
 

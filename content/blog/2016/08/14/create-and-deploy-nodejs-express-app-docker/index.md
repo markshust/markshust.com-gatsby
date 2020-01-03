@@ -10,7 +10,7 @@ I'll show you a stupid fast and simple way to create an express app with NodeJS,
 
 Install node with n:
 
-```plain
+```meta
 npm i -g n
 n latest
 ```
@@ -21,26 +21,26 @@ Install Docker by pulling out the appropriate build from <a href="https://docs.d
 
 Let's now get our express app setup. Create a new directory and initialize your package.json file:
 
-```plain
+```meta
 mkdir test && cd test
 npm init -y
 ```
 
 Let's now install express:
 
-```plain
+```meta
 npm i -S express
 ```
 
 And set your main npm start script. Change the line that reads:
 
-```plain
+```meta
 "test": "echo \"Error: no test specified\" && exit 1"
 ```
 
 to this:
 
-```plain
+```meta
 "start": "node index.js"
 ```
 
@@ -62,7 +62,7 @@ app.listen(3000, () => console.log('Server running'));
 
 Make sure it works by executing:
 
-```plain
+```meta
 npm start
 ```
 
@@ -76,7 +76,7 @@ Now that our app is running, let's setup our Docker config.
 
 First, create a `.dockerignore` file containing one line:
 
-```plain
+```meta
 node_modules
 ```
 
@@ -107,13 +107,13 @@ The Docker instructions are pretty simple. We just copy over the package.json fi
 
 Let's build our production image:
 
-```plain
+```meta
 docker build -t test .
 ```
 
 Now, we can run our our image to test it out. We'll map port 3000 from our host to container, and run in daemon mode so it keeps running in the background:
 
-```plain
+```meta
 docker run -p 3000:3000 -d test
 ```
 

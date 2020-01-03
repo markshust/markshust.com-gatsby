@@ -10,7 +10,7 @@ The easiest task to do to get better filesystem performance in Docker is to swit
 
 The first step to do is to check that you are in fact currently not using `overlay2`. Open up command line and type:
 
-```plain
+```meta
 docker info | grep "Storage Driver"
 ```
 
@@ -22,7 +22,7 @@ Since switching filesystems will change the location of where all of the docker 
 
 You can remove all images on your machine by first stopping and removing all running containers on your machine. Then run the command:
 
-```plain
+```meta
 docker image prune -a
 ```
 
@@ -48,7 +48,7 @@ Then click Apply & Restart.
 
 After the daemon restarts, open up terminal and again type:
 
-```plain
+```meta
 docker info | grep "Storage Driver"
 ```
 

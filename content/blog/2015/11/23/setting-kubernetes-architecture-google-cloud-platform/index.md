@@ -27,13 +27,13 @@ I am also taking the cheapest route possible, as I'm sure everyone reading this 
 
 If you haven't done so already, authenticate your gcloud CLI with:
 
-```plain
+```meta
 gcloud auth login
 ```
 
 All Kubernetes setups need a container cluster. So let's set one up:
 
-```plain
+```meta
 gcloud container clusters create cluster-1 --zone us-central1-a --machine-type f1-micro`
 ```
 
@@ -41,7 +41,7 @@ This will create a container cluster with 3 nodes. Clusters are typically ran in
 
 It will take a minute or two for Google to complete setting up your cluster. But after it is, you'll be presented with a status for your nearly generated cluster:
 
-```plain
+```meta
 NAME       ZONE           MASTER_VERSION  MASTER_IP      MACHINE_TYPE  NUM_NODES  STATUS
 cluster-1  us-central1-a  1.1.2           104.197.59.43  f1-micro      3          RUNNING
 ```
@@ -73,13 +73,13 @@ There are some important things to note in this file. `apiVersion` always starts
 
 This is always how we start a Kubernetes of any "kind", just replacing the `rc.yml` with the YAML file we want to execute. Everything that will start up and run is generated from our YAML file. Kick off the pod:
 
-```plain
+```meta
 kubectl create -f pod.yml
 ```
 
 We can see the running pods by executing:
 
-```plain
+```meta
 kubectl get pod
 ```
 
@@ -116,7 +116,7 @@ spec:
 
 Then start it up:
 
-```plain
+```meta
 kubectl create -f rc.yml
 ```
 
@@ -126,7 +126,7 @@ In `spec` > `template`, we define the containers that we want to run, along with
 
 Just like pods, we can later see which replication controllers are running by executing:
 
-```plain
+```meta
 kubectl get rc
 ```
 
@@ -154,7 +154,7 @@ spec:
 
 `apiVersion`, `kind`, `metadata`.... yea, we are masters at those now. For `spec`, we define the `port` we want to expose to our cluster, with `targetPort` being the port on our pod we want to map it to. `selector` must match our replication controller and/or pods, so the service can correctly select the correct pods to use. `type` set to `LoadBalancer` is what we want to expose this service to the public, and make it accessible from the web.
 
-```plain
+```meta
 kubectl create -f service.yml
 ```
 
@@ -162,13 +162,13 @@ kubectl create -f service.yml
 
 Get the info for services:
 
-```plain
+```meta
 kubectl get service
 ```
 
 and you'll get a response like:
 
-```plain
+```meta
 NAME         CLUSTER_IP     EXTERNAL_IP      PORT(S)   SELECTOR    AGE
 kubernetes   10.167.240.1   <none>                 443/TCP   <none>            9m
 service-1    10.167.243.6   104.197.47.139   80/TCP    app=nginx   1m
@@ -176,13 +176,13 @@ service-1    10.167.243.6   104.197.47.139   80/TCP    app=nginx   1m
 
 Note the "External IP" address; this is how we find the service from the web. If you don't see anything there, issue a "describe" like below to see the specifics about what is going on:
 
-```plain
+```meta
 kubectl describe service service-1
 ```
 
 This gives us additional info:
 
-```plain
+```meta
 Name:			service-1
 Namespace:		default
 Labels:			app=nginx

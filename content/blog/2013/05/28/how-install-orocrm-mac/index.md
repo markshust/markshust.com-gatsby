@@ -12,13 +12,13 @@ As this is a very new piece of software (just released on the date this article 
 
 You really should have this installed already, but if not, go ahead and get git. I like to use <a href="http://mxcl.github.io/homebrew/" target="_blank">Home Brew</a> for managing apps such as this, so let's go ahead and install brew:
 
-```plain
+```meta
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
 
 Then install git:
 
-```plain
+```meta
 sudo brew install git
 ```
 
@@ -28,7 +28,7 @@ That's it. If you need to install it manually or are on another platform, you ca
 
 Symfony 2 (what OroCRM is built upon) uses Composer to manage it's dependencies, so let's get that installed with this nice little one-liner:
 
-```plain
+```meta
 curl -s https://getcomposer.org/installer | php
 ```
 
@@ -38,7 +38,7 @@ Now you might get a line to add detect_unicode = Off to your command line `/priv
 
 Now let's go ahead and get the actual OroCRM code. I like to place all of my websites in a subdirectory of the `~/Sites` folder, but you can place this anywhere you wish. I'll check this out to the `~/Sites/orocrm` directory:
 
-```plain
+```meta
 git clone http://gitlab.orocrm.com/crm-application.git ~/Sites/orocrm
 ```
 
@@ -50,7 +50,7 @@ OroCRM works off of YAML files, which are just glorified XML files that are easi
 
 Let's copy the base `parameters.dist.yml` file over to our new `parameters.yml` file so we can make edits to it:
 
-```plain
+```meta
 cd ~/Sites/orocrm
 cp app/config/parameters.dist.yml app/config/parameters.yml
 ```
@@ -61,7 +61,7 @@ Now open up `app/config/parameters.yml` and update all of the database params to
 
 Now that we have our YAML file configured, let's go ahead and install the depedencies with Composer. Note that I was missing the International Components of Unicode package on my Mac, and I also ran out of memory when trying to complete the installer line. So here are two prerequisites:
 
-```plain
+```meta
 sudo brew install icu4c
 ln -s /usr/local/Cellar/icu4c/__VERSION__/bin/icu-config /usr/local/bin/icu-config
 ln -s /usr/local/Cellar/icu4c/__VERSION__/include/unicode /usr/local/include/unicode
@@ -72,7 +72,7 @@ These install the needed unicode component libraries. Be sure to replace `__VERS
 
 Now that we are ready to continue, go to the root of your installation (for me it's `~/Sites/orocrm`) and run this line:
 
-```plain
+```meta
 sudo php composer.phar install
 ```
 
@@ -82,7 +82,7 @@ This will install any other packages we happen to need in order to install OroCR
 
 We are now finally all prepped and primed to install OroCRM itself. Let's go ahead and run the installer script from command line:
 
-```plain
+```meta
 sudo ./install.sh
 ```
 
@@ -92,7 +92,7 @@ Another thing I had to do is change web/.htaccess to look at app_dev.php instead
 
 For some final prep, make the cache and logs folders world writable:
 
-```plain
+```meta
 sudo chmod -R 777 ~/Sites/orocrm/app/cache
 ```
 

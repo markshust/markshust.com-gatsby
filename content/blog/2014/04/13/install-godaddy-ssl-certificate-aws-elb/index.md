@@ -10,7 +10,7 @@ Amazon Web Services (AWS) Elastic Load Balancing (ELB) is a great service that a
 
 Your first step is to generate a private key, and then a CSR from that key. Keep this key private at all times, as it is used in tandom with your public key to decode secure data.
 
-```plain
+```meta
 mkdir ~/ssl
 cd ~/ssl
 openssl req -new -newkey rsa:2048 -nodes -keyout private.pem -out csr.pem
@@ -38,7 +38,7 @@ ELB has a web-based interface where you can copy and paste the contents of the f
 
 If you want to use the AWS command line tools to install the SSL cert, run this line after configuring the AWS account on your computer, replacing www.domain.com with the name you want to use for your cert file:
 
-```plain
+```meta
 aws iam upload-server-certificate --server-certificate-name www.domain.com --certificate-body file://public.pem --private-key file://private.pem --certificate-chain file://gd_bundle-g2-g1.crt
 ```
 

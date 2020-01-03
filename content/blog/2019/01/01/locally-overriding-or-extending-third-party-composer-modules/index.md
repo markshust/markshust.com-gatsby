@@ -6,19 +6,19 @@ tags: ["composer", "magento", "magento2", "php"]
 
 Recently, I tried installing the <a href="https://marketplace.magento.com/cybersource-global-payment-management.html" target="_blank">Cybersource  module for Magento 2</a> with composer. This is typically accomplished by running one command:
 
-```plain
+```meta
 composer require cybersource/global-payment-management
 ```
 
 This specific module is actually a metapackage that installs other dependencies. The subsequent Magento command enables the modules:
 
-```plain
+```meta
 bin/magento module:enable CyberSource_AccountUpdater CyberSource_Address CyberSource_ApplePay CyberSource_Atp CyberSource_BankTransfer CyberSource_Core CyberSource_ECheck CyberSource_KlarnaFinancial CyberSource_PayPal CyberSource_SecureAcceptance CyberSource_Tax CyberSource_VisaCheckout
 ```
 
 I figured this module will pretty much work with Magento 2.3 as-is, however the Composer dependencies do not allow us to install the module. Running the `composer require` line above leads to the following error:
 
-```plain
+```meta
     - cybersource/global-payment-management 3.0.0 requires cybersource/module-bank-transfer 3.0.0 -> satisfiable by cybersource/module-bank-transfer[3.0.0].
     - Installation request for cybersource/global-payment-management ^3.0 -> satisfiable by cybersource/global-payment-management[3.0.0].
     - Conclusion: don't install magento/framework 101.0.0

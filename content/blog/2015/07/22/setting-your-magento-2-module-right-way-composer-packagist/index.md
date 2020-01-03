@@ -16,7 +16,7 @@ If you don't already have a Magento 2 development environment setup, be sure to 
 
 Our first step is to create a new folder for our module:
 
-```plain
+```meta
 mkdir module-foobar
 cd module-foobar
 ```
@@ -61,7 +61,7 @@ There are a few new things here. First, this file is named `module.xml`, not `co
 
 Let's break down this file real quick starting with this line:
 
-```plain
+```meta
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd"
 ```
 
@@ -75,7 +75,7 @@ Here, we are defining the schema that the XML file should follow. You can pretty
 
 For open source Magento modules, you'll want to go to <a href="https://packagist.org" target="_blank">https://packagist.org</a> and register your namespace & repository for easy installation. Let's first create a repository at either GitHub or Bitbucket, then we will push up our code. We want to use the Git HTTPS URL so Composer can easily download things without an SSH key.
 
-```plain
+```meta
 git init
 git add *
 git commit -m "Initial commit"
@@ -93,7 +93,7 @@ Of course you will want to change `your-name` to the name of your GitHub/Bitbuck
 
 After the package is registered at Packagist, we can easily install our module with Composer by running:
 
-```plain
+```meta
 composer require your-name/module-foobar
 ```
 
@@ -103,13 +103,13 @@ What this will do is find the Composer package we just registered, look up our G
 
 After Composer does it's stuff, we then have to let Magento know about the module. The `./bin/magento` file does all sorts of magic, including enabling our module:
 
-```plain
+```meta
 ./bin/magento module:enable YourName_FooBar
 ```
 
 We'll then execute one final command, which makes sure any installer scripts we may have execute properly and store the current data version in the `core_config_data` MySQL table:
 
-```plain
+```meta
 ./bin/magento setup:upgrade
 ```
 

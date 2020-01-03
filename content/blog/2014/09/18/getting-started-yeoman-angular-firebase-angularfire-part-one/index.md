@@ -18,7 +18,7 @@ http://nodejs.org/download/
 
 Now that we have npm, let's go ahead and install Yeoman. We'll install it globally (with the -g flag) so that it's accesible from anywhere on our system. So open up Terminal and run the following command:
 
-```plain
+```meta
 npm install -g yo
 ```
 
@@ -26,13 +26,13 @@ npm install -g yo
 
 A generator will help scaffold our projects a little quicker, and get us up and running quickly. There is one specific to AngularFire which we'll use, and also setup globally:
 
-```plain
+```meta
 npm install -g generator-angularfire
 ```
 
 Note: On Yosemite, it appears that you now also have to manually install bower and grunt-cli:
 
-```plain
+```meta
 npm install -g bower grunt-cli
 ```
 
@@ -44,13 +44,13 @@ We'll be using the awesome Firebase BaaS for our project, which you can signup f
 
 Everything we need so far is installed, so let's create our project:
 
-```plain
+```meta
 mkdir mywebapp && cd mywebapp
 ```
 
 And scaffold our project, foo, with Yeoman:
 
-```plain
+```meta
 yo angularfire foo
 ```
 
@@ -96,13 +96,13 @@ Let's see what we have so far. We use grunt to build our JavaScript project -- i
 
 We just run the `grunt` command to build:
 
-```plain
+```meta
 grunt
 ```
 
 All tests should pass. If not, use Dr. Google. And `grunt serve` to kickoff our node web server to view our app:
 
-```plain
+```meta
 grunt serve
 ```
 

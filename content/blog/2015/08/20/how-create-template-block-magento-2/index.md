@@ -12,7 +12,7 @@ Hopefully you've already read <a href="/2015/07/22/setting-your-magento-2-module
 
 First, we'll create a our module skeleton:
 
-```plain
+```meta
 mkdir -p app/code/Foo/Bar/etc
 ```
 
@@ -28,7 +28,7 @@ Next, we'll create the module definition file:
 
 With Magento 2, modules are not automatically picked up until they are enabled by command line. So let's enable the module. The `setup:upgrade` line is needed right now because of a bug in Magento 2, but this should only be needed in the future if there are database installer scripts in your module.
 
-```plain
+```meta
 ./bin/magento module:enable Foo_Bar
 ./bin/magento setup:upgrade
 ```
@@ -65,7 +65,7 @@ Now that we have programmed our block, we want to display it on the home page. T
 
 Create our folder location:
 
-```plain
+```meta
 mkdir -p app/code/Foo/Bar/view/frontend/layout
 ```
 
@@ -92,7 +92,7 @@ The `referenceContainer` element is referencing the layout container for our blo
 
 Next we'll create our folders for the template:
 
-```plain
+```meta
 mkdir -p app/code/Foo/Bar/view/frontend/templates/default
 ```
 
@@ -106,7 +106,7 @@ Then the actual template HTML file containing:
 
 If you need to flush the cache for any reason (if the block isn't showing or was previously cached), you can do so with one of the following command lines depending on what cache you want to clear. Any changes to the layout XML will always require a cache flush with the `layout` param, while the new full page cache will need to be flushed on most PHP code changes.
 
-```plain
+```meta
 ./bin/magento cache:flush --all # Flush all cache types
 ./bin/magento cache:flush layout  # Flush Layout XML
 ./bin/magento cache:flush full_page  # Flush Full Page Cache

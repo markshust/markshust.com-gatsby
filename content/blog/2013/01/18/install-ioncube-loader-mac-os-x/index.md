@@ -12,7 +12,7 @@ Next, download the version of ionCube Loader which relates to your installation.
 
 After uncompression, open the folder where the archive extracted the files. On my Mac, this was `~/Downloads/ioncube`. In this folder, there are various .so files which are the extensions related to which version of PHP you are running. You can find out which version of PHP you are running by opening up terminal and issueing the folowing a `php -v` command:
 
-```plain
+```meta
 $ php -v
 PHP 5.3.15 with Suhosin-Patch (cli) (built: Jul 31 2012 14:49:18) 
 Copyright (c) 1997-2012 The PHP Group
@@ -25,19 +25,19 @@ Open up terminal, and copy that to your PHP extension directory. You can find wh
 
 Now we know `/usr/lib/php/extensions/no-debug-non-zts-20090626/` is our PHP extension directory. So, let's copy our `ioncube_loader_dar_5.3.so` file to that directory. We need to prefix it with sudo because we need admin rights to write to this folder.
 
-```plain
+```meta
 $ sudo cp ~/Downloads/ioncube/ioncube_loader_dar_5.3.so /usr/lib/php/extensions/no-debug-non-zts/20090626/
 ```
 
 Now, add the following line to your `/etc/php.ini` file to enable the extension. Be sure when you edit the file to prefix it with sudo so you have proper write permissions, such as: `sudo vi /etc/php.ini`
 
-```plain
+```meta
 zend_extension="/usr/lib/php/extensions/no-debug-non-zts-20090626/ioncube_loader_dar_5.3.so"
 ```
 
 ionCube Loader should now be installed! Note, that it is currently not compatible with xDebug, so you need to pick which one to use and comment out the other line. Your php -v line should now read something similar to the following:
 
-```plain
+```meta
 $ php -v
 PHP 5.3.15 with Suhosin-Patch (cli) (built: Jul 31 2012 14:49:18) 
 Copyright (c) 1997-2012 The PHP Group

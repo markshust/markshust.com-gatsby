@@ -139,7 +139,7 @@ kubectl rolling-update ${CURRENT_DIR} --update-period=15s --image=${DOCKER_TAG}:
 
 It can be executed with a specific version number by running:
 
-```plain
+```meta
 ./.dockerbuilddeploy 1.0.0
 ```
 
@@ -149,7 +149,7 @@ Feel free to modify this as you wish, but generally when I say my code is done a
 
 Note that I also setup a `.dockerignore` file in my main app directory with the following:
 
-```plain
+```meta
 .meteor/local
 node_modules
 ```
@@ -158,13 +158,13 @@ We don't want to push the .meteor/local or node_modules directories, as these wi
 
 Note that we can also run our image locally, but running:
 
-```plain
+```meta
 docker run --env-file .dockerenv our-image-tag/1.0.0
 ```
 
 This runs from a `.dockerenv` file, which contains all of my environment variables:
 
-```plain
+```meta
 ROOT_URL=http://localhost
 MONGO_URL=mongodb://123.456.789.123:27017,123.456.789.124:27017/flow?replicaSet=rs0&readPreference=primaryPreferred&w=majority
 MONGO_OPLOG_URL=mongodb://oplogger:MYPASSWORD@123.456.789.123:27017,123.456.789.124:27017/local?authSource=admin

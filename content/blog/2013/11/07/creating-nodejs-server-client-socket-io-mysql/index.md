@@ -12,7 +12,7 @@ A real nice Node community is forming (and for that matter, has already formed),
 
 Node works with it's own repository of packages called npm (node package manager), sort of like Ubuntu's apt repository. Let's go ahead and install our required packages for the server, and use homebrew to install node:
 
-```plain
+```meta
 brew install node
 npm install socket.io mysql
 ```
@@ -23,20 +23,20 @@ Some tuts start on creating a client first, but I like to start with the server 
 
 We'll start by creating our MySQL database. This tutorial assumes that you have a 'root' username with no password set.
 
-```plain
+```meta
 mysql -u root -e 'CREATE DATABASE node'
 ```
 
 Then we'll populate it with some data. This should just be considered the base data that we'll start with (instead of having no records):
 
-```plain
+```meta
 mysql -u root node -e 'CREATE TABLE notes (id INT(8) NOT NULL AUTO_INCREMENT, note VARCHAR(50) NOT NULL, PRIMARY KEY (id))'
 mysql -u root node -e 'INSERT INTO notes (note) VALUES ("This is a test!", "This is another test...", "And, yet again, another...")'
 ```
 
 Let's now go ahead and create a folder to house all of our files:
 
-```plain
+```meta
 mkdir node
 cd node
 ```
@@ -109,7 +109,7 @@ io.sockets.on('connection', function(socket){
 
 At this point you can run your node server:
 
-```plain
+```meta
 node server.js
 ```
 
@@ -169,7 +169,7 @@ Open the `index.html` file in a web browser, and you should now see our MySQL da
 
 You'll see something like the following in your node server logs in your terminal window:
 
-```plain
+```meta
    debug - served static content /socket.io.js
    debug - client authorized
    info  - handshake authorized 8yYA5wvw2ItTPZ2GHoUD
@@ -187,7 +187,7 @@ Node's really nice verbose logging really tells you everything that is going on.
 
 You can now open up index.html in multiple browser windows. Every new window should connect a new socket, thus incrementating the "Users connected" part of the screen... in *each* browser window, instantaneously. Add a new note in one browser window, adds it to all other browser windows (each a socket), instantly.
 
-```plain
+```meta
     debug - websocket writing 5:::{"name":"new note","args":[{"note":"This is a random 59 note"}]}
 ```
 

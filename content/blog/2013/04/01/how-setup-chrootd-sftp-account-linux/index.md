@@ -10,7 +10,7 @@ When I went to create an SFTP account for a client, which needed to be chroot'd 
 
 You need a specific group to house all of your SFTP users. A good name would be `sftpusers`, like so:
 
-```plain
+```meta
 sudo groupadd sftpusers
 ```
 
@@ -18,7 +18,7 @@ sudo groupadd sftpusers
 
 Next, create a username for your new SFTP account. You also have to choose a subdirectory for your files to live in. In this case, that subdirectory is `public`. Note that it appears the `public` directory would live in the root of your filesystem; this isn't the case, as the front slash in this situation will reference the base directory of all of our sftpusers (just keep following me here). Our username in this case is `joebob`.
 
-```plain
+```meta
 useradd -g sftpusers -d /public -s /sbin/nologin joebob
 ```
 
@@ -30,13 +30,13 @@ Next, we need to tell SSHD to use the internal sftp for incoming connections.
 
 Open the sshd config file:
 
-```plain
+```meta
 sudo vi /etc/ssh/sshd_config
 ```
 
 Search for a line starting with Subsystem. This is the line that handles incoming connections. You can comment out the existing line, or replace it with the following:
 
-```plain
+```meta
 Subsystem sftp internal-sftp
 ```
 
@@ -44,7 +44,7 @@ Here is where the confusion kinda starts. We need to define the jail for our SFT
 
 Still in `/etc/ssh/sshd_config`, add the following to the end of the file:
 
-```plain
+```meta
 Match Group sftpusers
     ChrootDirectory /home/%u
     ForceCommand internal-sftp
@@ -57,20 +57,20 @@ I like to throw all of the users in the system into the `/home` directory, as th
 
 You can also go ahead and create that directory, along with the subdirectory we defined when setting up the user (ex. `public`):
 
-```plain
+```meta
 sudo mkdir /home/joebob
 sudo mkdir /home/joebob/public
 ```
 
 Now, on these directories, we need to set specific permissions. We actually want the /home/joebob folder to be owned by root user and group. This permission makes sure that the user is locked down to their account. So set it as so:
 
-```plain
+```meta
 sudo chown root:root /home/joebob
 ```
 
 The user's subdirectory will have different ownership permissions so they are able to read/write/execute files and folders inside their folder. So we want this directory to match the user's defined user and group:
 
-```plain
+```meta
 sudo chown joebob:sftpusers /home/joebob/public
 ```
 
@@ -78,13 +78,13 @@ sudo chown joebob:sftpusers /home/joebob/public
 
 You should now be good to go! Just restart the SSH service:
 
-```plain
+```meta
 sudo service sshd restart
 ```
 
 And test! (of course replace yourserver.com with your server domain or IP):
 
-```plain
+```meta
 sftp joebob@yourserver.com
 ```
 

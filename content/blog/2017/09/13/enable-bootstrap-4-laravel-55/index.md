@@ -8,13 +8,13 @@ Laravel 5.5 just recently got released, and ships with the current stable versio
 
 Bootstrap 4 can be easily enabled following these steps. First, remove the Laravel-supplied version of bootstrap-sass from npm:
 
-```plain
+```meta
 npm uninstall --save-dev bootstrap-sass
 ```
 
 Then install the new version of `bootstrap` from npm. Tether is no longer used with Bootstrap 4; it was replaced with Popper.js, so let's go ahead and install the `popper.js` library too:
 
-```plain
+```meta
 npm install --save-dev bootstrap@^4.0.0-beta popper.js
 ```
 
@@ -45,7 +45,7 @@ What we are doing here is changing the reference of `bootstrap-sass` (the old Bo
 
 After a recompilation of assets:
 
-```plain
+```meta
 npm run dev
 ```
 
