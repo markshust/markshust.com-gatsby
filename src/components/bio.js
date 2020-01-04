@@ -8,8 +8,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-
 import { rhythm } from "@utils/typography"
+import styled from "styled-components"
+
+const FollowMe = styled.a`
+  font-size: 0.8rem;
+  display: inline-block;
+  position: relative;
+  top: -0.5rem;
+  line-height: 1rem;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -33,13 +41,11 @@ const Bio = () => {
     }
   `)
 
-  const { author, description, social } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata
   return (
     <div
       style={{
-        display: `flex`,
-        marginBottom: rhythm(1),
-        marginTop: rhythm(1),
+        display: `inline-flex`,
       }}
     >
       <Image
@@ -55,13 +61,17 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Written by <strong>{author}</strong>, a {description}.
-        <br />
-        <a href={`https://twitter.com/${social.twitter}`}>
+      <div>
+        <div>
+          Written by <strong>{author}</strong>
+        </div>
+        <FollowMe
+          href={`https://twitter.com/${social.twitter}`}
+          target="_blank"
+        >
           Follow me @markshust
-        </a>
-      </p>
+        </FollowMe>
+      </div>
     </div>
   )
 }

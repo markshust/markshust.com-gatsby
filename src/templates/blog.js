@@ -11,7 +11,7 @@ import Newsletter from "@components/newsletter"
 import MagentoNewsletter from "../components/magentonewsletter"
 
 const Wrapper = styled.div`
-  margin-top: ${rhythm(3)}
+  margin-top: ${rhythm(3)};
   display: grid;
   grid-template-columns: 2fr 3fr;
   align-items: center;
@@ -21,7 +21,45 @@ const Wrapper = styled.div`
   }
 `
 
+const LessThan = styled.span`
+  font-size: 2rem;
+  text-align: center;
+  line-height: 0;
+  padding-bottom: 1rem;
+  display: break;
+`
+
+const Header = styled.header`
+  @media only screen and (max-width: 768px) {
+    padding-top: 1em;
+  }
+`
+
+const BackHomeWrapper = styled.small`
+  float: right;
+  position: relative;
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+`
+
+const BackHome = styled.span`
+  position: relative;
+  top: -6px;
+  padding-left: 6px;
+`
+
+const DateWrapper = styled.p`
+  display: block;
+  margin-top: ${rhythm(0.75)};
+  margin-bottom: ${rhythm(1.5)};
+  color: hsla(0, 0%, 0%, 0.3);
+`
+
 const EditOnGitHubLink = styled.a`
+  color: inherit;
   @media only screen and (max-width: 768px) {
     display: table;
   }
@@ -44,8 +82,14 @@ class BlogPostTemplate extends React.Component {
           canonical={post.frontmatter.canonical}
         />
         <article>
-          <header>
+          <Header>
             <Bio />
+            <BackHomeWrapper>
+              <a href="/">
+                <LessThan>&lt;</LessThan>
+                <BackHome>Back home</BackHome>
+              </a>
+            </BackHomeWrapper>
             <h1
               style={{
                 marginTop: rhythm(1),
@@ -54,12 +98,7 @@ class BlogPostTemplate extends React.Component {
             >
               {postTitle}
             </h1>
-            <p
-              style={{
-                display: `block`,
-                marginBottom: rhythm(1),
-              }}
-            >
+            <DateWrapper>
               {post.frontmatter.date} &nbsp; &middot; &nbsp;{` `}
               {post.fields.readingTime.text}
               <span className="hide-mobile">&nbsp; &middot; &nbsp;{` `}</span>
@@ -73,8 +112,8 @@ class BlogPostTemplate extends React.Component {
               >
                 Edit on GitHub
               </EditOnGitHubLink>
-            </p>
-          </header>
+            </DateWrapper>
+          </Header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer>
             <Wrapper>

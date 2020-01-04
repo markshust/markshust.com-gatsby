@@ -12,6 +12,9 @@ Wordpress2016.overrideThemeStyles = () => {
   }
 }
 
+Wordpress2016.baseFontSize = "19px"
+Wordpress2016.bodyColor = "hsla(0,0%,0%,0.7)"
+
 delete Wordpress2016.googleFonts
 
 const typography = new Typography(Wordpress2016)

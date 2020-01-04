@@ -101,7 +101,7 @@ class MagentoNewsletter extends Component {
             </H4>
             <Subheader data-element="subheader" className="formkit-subheader">
               <p>
-                I'll let you know when I create something new related to Magento
+                I'll let you know when I create something related to Magento
                 including blog posts, courses & more.
               </p>
             </Subheader>
@@ -149,7 +149,7 @@ class MagentoNewsletter extends Component {
               </Submit>
             </div>
             <Guarantee data-element="guarantee" className="formkit-guarantee">
-              <p>I won't send you spam. Unsubscribe at any time.</p>
+              <p>I won't send spam. Unsubscribe at any time.</p>
             </Guarantee>
           </div>
         </Form>

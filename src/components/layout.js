@@ -9,7 +9,7 @@ import markshustPhoto from "@assets/markshust-photo-1-sm.jpg"
 
 const MainHeader = styled.h1`
   margin-bottom: ${rhythm(0.5)};
-  margin-top: ${rhythm(0.5)};
+  margin-top: 0;
   @media only screen and (min-width: 769px) {
     font-size: ${rhythm(2)};
   }
@@ -18,6 +18,7 @@ const MainHeader = styled.h1`
 const SubHeader = styled.h1`
   margin-top: ${rhythm(0.5)};
   font-size: ${rhythm(1)};
+  width: 100%;
   @media only screen and (min-width: 769px) {
     margin-top: 0;
     font-size: ${rhythm(1.25)};
@@ -98,8 +99,8 @@ class Layout extends React.Component {
               </Link>
             </MainHeader>
             <SubHeader>
-              Certified Magento Developer, Architect &amp; Teacher in
-              Cleveland, Ohio
+              Certified Magento Developer, Architect &amp; Teacher in Cleveland,
+              Ohio
             </SubHeader>
             <p>
               Hi there! My name is Mark, and this is my tiny little home on the
@@ -119,11 +120,7 @@ class Layout extends React.Component {
         </Wrapper>
       )
     } else if (location.pathname.match(/\//g).length === 5) {
-      header = (
-        <small>
-          <a href="/">Back home</a>
-        </small>
-      )
+      header = null
     } else {
       header = (
         <h3
@@ -154,7 +151,7 @@ class Layout extends React.Component {
           background: `rgba(255, 255, 255, 1)`,
         }}
       >
-        <header>{header}</header>
+        {header && <header>{header}</header>}
         <main>{children}</main>
         <Footer>
           <div>
