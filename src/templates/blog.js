@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "@components/bio"
+import Logo from "@components/logo"
 import Layout from "@components/layout"
 import SEO from "@components/seo"
 import { rhythm } from "@utils/typography"
@@ -10,45 +10,10 @@ import styled from "styled-components"
 import Newsletter from "@components/newsletter"
 import MagentoNewsletter from "../components/magentonewsletter"
 
-const Wrapper = styled.div`
-  margin-top: ${rhythm(3)};
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  align-items: center;
-  justify-content: center;
-  @media only screen and (max-width: 768px) {
-    grid-template-columns: auto;
-  }
-`
-
-const LessThan = styled.span`
-  font-size: 2rem;
-  text-align: center;
-  line-height: 0;
-  padding-bottom: 1rem;
-  display: break;
-`
-
 const Header = styled.header`
   @media only screen and (max-width: 768px) {
     padding-top: 1em;
   }
-`
-
-const BackHomeWrapper = styled.small`
-  float: right;
-  position: relative;
-  @media only screen and (max-width: 768px) {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-`
-
-const BackHome = styled.span`
-  position: relative;
-  top: -6px;
-  padding-left: 6px;
 `
 
 const DateWrapper = styled.p`
@@ -83,13 +48,7 @@ class BlogPostTemplate extends React.Component {
         />
         <article>
           <Header>
-            <Bio />
-            <BackHomeWrapper>
-              <a href="/">
-                <LessThan>&lt;</LessThan>
-                <BackHome>Back home</BackHome>
-              </a>
-            </BackHomeWrapper>
+            <Logo />
             <h1
               style={{
                 marginTop: rhythm(1),
@@ -116,42 +75,47 @@ class BlogPostTemplate extends React.Component {
           </Header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer>
-            <Wrapper>
-              <section
-                style={{
-                  textAlign: "center",
-                  margin: `0 0 ${rhythm(3)}`,
-                }}
+            <section
+              style={{
+                textAlign: "center",
+                margin: `0 0 ${rhythm(2)}`,
+              }}
+            >
+              <a
+                href={
+                  "https://twitter.com/intent/tweet/?text=" +
+                  postTitle +
+                  "&url=https://markshust.com" +
+                  post.fields.slug +
+                  "&via=" +
+                  this.props.data.site.siteMetadata.social.twitter
+                }
+                style={{ boxShadow: "none" }}
               >
-                <a
-                  href={
-                    "https://twitter.com/intent/tweet/?text=" +
-                    postTitle +
-                    "&url=https://markshust.com" +
-                    post.fields.slug +
-                    "&via=" +
-                    this.props.data.site.siteMetadata.social.twitter
-                  }
-                  style={{ boxShadow: "none" }}
-                >
-                  <img
-                    src={shareOnTwitter}
-                    alt="Share On Twitter"
-                    style={{
-                      marginTop: rhythm(0.5),
-                      width: 320,
-                      maxWidth: "100%",
-                    }}
-                  />
-                  <div>Let others know about this article</div>
-                </a>
-              </section>
-              <section
-                style={{ margin: `0 ${rhythm(1)} 0 auto`, textAlign: "center" }}
-              >
-                {isMagentoPost ? <MagentoNewsletter /> : <Newsletter />}
-              </section>
-            </Wrapper>
+                <img
+                  src={shareOnTwitter}
+                  alt="Share On Twitter"
+                  style={{
+                    marginTop: rhythm(1),
+                    marginBottom: 0,
+                    width: 320,
+                    maxWidth: "100%",
+                  }}
+                />
+                <div>Let others know about this article</div>
+              </a>
+            </section>
+            <section
+              style={{
+                textAlign: "center",
+                margin: `0 -${rhythm(1)}`,
+                backgroundImage:
+                  "linear-gradient(to bottom right, rgba(84, 165, 224, 0.9), rgba(54, 115, 74, 0.9))",
+                lineHeight: "1.25rem",
+              }}
+            >
+              {isMagentoPost ? <MagentoNewsletter /> : <Newsletter />}
+            </section>
           </footer>
         </article>
       </Layout>

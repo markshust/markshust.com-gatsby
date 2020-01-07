@@ -158,18 +158,18 @@ class Layout extends React.Component {
             Mark Shust &copy; 1985-{new Date().getFullYear()}{" "}
             {location.pathname !== "/" && (
               <>
-                {" "}
-                <span className="hide-mobile">&nbsp;&middot;&nbsp; </span>
+                <span className="hide-mobile"> &nbsp;&middot;&nbsp; </span>
                 <a href="/">Home</a>{" "}
               </>
             )}
             {location.pathname !== "/about" && (
               <>
-                {" "}
-                &nbsp;&middot;&nbsp; <a href="/about">About</a>
+                <span> &nbsp;&middot;&nbsp; </span>
+                <a href="/about">About</a>
               </>
             )}
-            &nbsp;&middot;&nbsp; <a href="mailto:mark@shust.com">Email</a>
+            <span> &nbsp;&middot;&nbsp; </span>
+            <a href="mailto:mark@shust.com">Email</a>
           </div>
           <StaticQuery
             query={layoutQuery}
