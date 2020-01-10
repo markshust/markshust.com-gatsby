@@ -95,7 +95,26 @@ The last function `getAliases`, which defines aliases for this patch class. Sinc
     }
 ```
 
-One last bonus that we won't really use, but I think it's worth mentioning... if we specify a `getVersion` function, we can return a string with a version number. If the version number of the module in our database is higher than the version we specify here in our file, the patch will not execute. If it is equal to or lower than the version here, it will execute. It would seem to me that best practices would denote to not use the versioning capabilities at all, however there are certainly specific situations which will warrant versioning, possibly with complex installations or specific requirements. The format would be as follows:
+One last bonus that we won't really use, but I think it's worth mentioning... if we specify a `getVersion` function, we can return a string with a version number.
+
+If the **database version number of the module is lower than the version specified in the file**, the patch will execute.
+
+- Database Version: 2.0.4
+- File Version: 2.0.5
+- Result: 2.0.4 < 2.0.5, <span style="color: green;">patch executes!</span>
+
+If the **database version number of the module is equal to or higher than the version specified in the file**, the patch will not execute.
+
+- Database Version: 2.0.5
+- File Version: 2.0.5
+- Result: 2.0.5 = 2.0.5, <span style="color: red;">patch does not execute!</span>
+<br />
+<br />
+- Database Version: 2.0.6
+- File Version: 2.0.5
+- Result: 2.0.6 > 2.0.5, <span style="color: red;">patch does not execute!</span>
+
+It would seem to me that best practices would denote to not use the versioning capabilities at all, as only certainsituations will warrant versioning, possibly those with complex installations or specific requirements. The format would be as follows:
 
 ```php
     /**
