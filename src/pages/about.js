@@ -40,8 +40,8 @@ class AboutPage extends React.Component {
               height="375"
             />
           </div>
-          <div class="lg:col-span-2 text-lg text-gray-600">
-            <p class="mt-6">
+          <div>
+            <p>
               My passion over the last decade has revolved entirely around
               Magento. Starting with the early days of Magento 0.8, I've had a
               heavy interest in the Zend and Magento Frameworks, and have been
@@ -49,10 +49,9 @@ class AboutPage extends React.Component {
               I've held all positions within many organizations, ranging from
               junior developer to chief solution architect.
             </p>
-            <p class="mt-4">
+            <p>
               During this time I've spoken at conferences such as{" "}
               <a
-                class="text-blue-600"
                 href="https://info2.magento.com/rs/magentosoftware/images/imagine2012-barcamp-hail-or-fail.pdf"
                 target="_blank"
               >
@@ -60,7 +59,6 @@ class AboutPage extends React.Component {
               </a>{" "}
               and{" "}
               <a
-                class="text-blue-600"
                 href="https://eventil.com/events/meet-magento-ny-2015/"
                 target="_blank"
               >
@@ -69,11 +67,10 @@ class AboutPage extends React.Component {
               , and have been very outspoken in regards to following accepted
               best practices for Magento.
             </p>
-            <p class="mt-4">
+            <p>
               My numerous years of LAMP stack programming expertise have paved
               the way for me to become a{" "}
               <a
-                class="text-blue-600"
                 href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
                 target="_blank"
               >
@@ -81,7 +78,6 @@ class AboutPage extends React.Component {
               </a>{" "}
               and{" "}
               <a
-                class="text-blue-600"
                 href="https://u.magento.com/certification/directory/dev/883/"
                 target="_blank"
               >
@@ -89,7 +85,6 @@ class AboutPage extends React.Component {
               </a>
               . I love open-source software, and have maintained{" "}
               <a
-                class="text-blue-600"
                 href="https://github.com/markshust/docker-magento"
                 target='_blank"'
               >
@@ -97,15 +92,11 @@ class AboutPage extends React.Component {
               </a>{" "}
               since the release of Magento 2.
             </p>
-            <p class="mt-4">
+            <p>
               I'm married to my wonderful wife Juliann, and we are the proud
               parents of twin girls Lily and Brielle. I live in Northeast Ohio
               and love eating chipotle burritos, solving Rubik's cubes, driving{" "}
-              <a
-                class="text-blue-500"
-                href="https://www.instagram.com/markshust/"
-                target="_blank"
-              >
+              <a href="https://www.instagram.com/markshust/" target="_blank">
                 my 240sx
               </a>
               , and watching Cleveland Browns games.
