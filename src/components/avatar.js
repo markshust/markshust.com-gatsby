@@ -6,9 +6,9 @@ import { rhythm } from "@utils/typography"
 const Avatar = () => {
   const data = useStaticQuery(graphql`
     query AvatarQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/profile-400x400.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -23,7 +23,7 @@ const Avatar = () => {
       style={{
         marginRight: rhythm(1 / 2),
         marginBottom: 0,
-        minWidth: 50,
+        minWidth: 100,
         borderRadius: `100%`,
       }}
       imgStyle={{

@@ -5,7 +5,7 @@ import { rhythm } from "@utils/typography"
 import Image from "gatsby-image"
 
 import styled from "styled-components"
-import markshustPhoto from "@assets/markshust-photo-1-sm.jpg"
+import markshustPhoto from "@assets/mark-640x960.jpg"
 
 const MainHeader = styled.h1`
   margin-bottom: ${rhythm(0.5)};

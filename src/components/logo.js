@@ -9,7 +9,9 @@ const Bio = () => (
         style={{
           display: "inline-block",
           verticalAlign: "bottom",
-          height: 50,
+          fontSize: "1.2em",
+          color: "#666",
+          height: 80,
         }}
       >
         <strong>Mark Shust</strong>
