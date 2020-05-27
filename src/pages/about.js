@@ -54,6 +54,7 @@ class AboutPage extends React.Component {
               <a
                 href="https://info2.magento.com/rs/magentosoftware/images/imagine2012-barcamp-hail-or-fail.pdf"
                 target="_blank"
+                rel="noreferrer"
               >
                 Magento Imagine
               </a>{" "}
@@ -61,6 +62,7 @@ class AboutPage extends React.Component {
               <a
                 href="https://eventil.com/events/meet-magento-ny-2015/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Meet Magento New York
               </a>
@@ -73,6 +75,7 @@ class AboutPage extends React.Component {
               <a
                 href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
                 target="_blank"
+                rel="noreferrer"
               >
                 Zend Certified Engineer
               </a>{" "}
@@ -80,13 +83,15 @@ class AboutPage extends React.Component {
               <a
                 href="https://u.magento.com/certification/directory/dev/883/"
                 target="_blank"
+                rel="noreferrer"
               >
                 3x Magento Certified Developer
               </a>
               . I love open-source software, and have maintained{" "}
               <a
                 href="https://github.com/markshust/docker-magento"
-                target='_blank"'
+                target="_blank"
+                rel="noreferrer"
               >
                 the most popular development environment for Magento
               </a>{" "}
@@ -96,7 +101,11 @@ class AboutPage extends React.Component {
               I'm married to my wonderful wife Juliann, and we are the proud
               parents of twin girls Lily and Brielle. I live in Northeast Ohio
               and love eating chipotle burritos, solving Rubik's cubes, driving{" "}
-              <a href="https://www.instagram.com/markshust/" target="_blank">
+              <a
+                href="https://www.instagram.com/markshust/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 my 240sx
               </a>
               , and watching Cleveland Browns games.
@@ -113,7 +122,7 @@ class AboutPage extends React.Component {
             <a
               href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               Zend Certified Engineer (PHP5)
             </a>
@@ -124,7 +133,7 @@ class AboutPage extends React.Component {
             <a
               href="https://u.magento.com/certification/directory/dev/883/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               Magento 1 Certified Developer Plus
             </a>
@@ -135,7 +144,7 @@ class AboutPage extends React.Component {
             <a
               href="https://u.magento.com/certification/directory/dev/883/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               Magento 2 Certified Solution Specialist
             </a>
@@ -146,7 +155,7 @@ class AboutPage extends React.Component {
             <a
               href="https://u.magento.com/certification/directory/dev/883/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noreferrer"
             >
               Magento 2 Certified Associate Developer
             </a>
