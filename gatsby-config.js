@@ -159,6 +159,7 @@ module.exports = {
         extensions: ["js"],
       },
     },
-    `gatsby-plugin-force-trailing-slashes`
+    `gatsby-plugin-force-trailing-slashes`,
+    `gatsby-plugin-postcss`,
   ],
 }
