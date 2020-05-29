@@ -61,7 +61,7 @@ class BlogIndex extends React.Component {
         </p>
         <ul className="tags">
           {tags.map(tag => (
-            <li>
+            <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                 #{tag.fieldValue} ({tag.totalCount})
               </Link>
