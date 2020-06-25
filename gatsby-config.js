@@ -97,8 +97,8 @@ module.exports = {
                   custom_elements: [
                     {
                       "content:encoded": edge.node.html.replace(
-                        '<img src="/',
-                        `<img src="${site.siteMetadata.siteUrl}/`
+                        "/static/",
+                        `${site.siteMetadata.siteUrl}/static/`
                       ),
                     },
                   ],
