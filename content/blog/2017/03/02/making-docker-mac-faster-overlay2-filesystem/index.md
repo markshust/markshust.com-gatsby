@@ -38,10 +38,6 @@ The easiest way to switch to the `overlay2` filesystem with Docker for Mac is to
 }
 ```
 
-The window should look like this:
-
-![Storage Driver Overlay 2](storage-driver-overlay2.png)
-
 Then click Apply & Restart.
 
 ## Confirm Overlay2 Filesystem
