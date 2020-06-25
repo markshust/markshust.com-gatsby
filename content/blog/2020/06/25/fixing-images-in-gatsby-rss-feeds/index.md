@@ -36,7 +36,7 @@ feeds: [
 
 The value responsible for rendering HTML content is added by the `custom_elements` object property with the `"content:encoded"` property, which gets the value from `edge.node.html`.
 
-We'll need to look through this `edge.node.html` property, search for references of a relative path, and replace them with absolute paths. We can use the `siteUrl` property from the `site.siteMetadata` object as the absolute path for our images. This makes the above lines become:
+We'll need to look at this `edge.node.html` property. Every path for an image in Gatsby seems to use a `/static/` prefix. We can use `.replace` to prepend the value of `site.siteMetadata.siteUrl` to the path to make it into an absolute path. This makes the above code become:
 
 ```js
 ...
@@ -52,8 +52,8 @@ feeds: [
           custom_elements: [
             {
               "content:encoded": edge.node.html.replace(
-                '<img src="/',
-                `<img src="${site.siteMetadata.siteUrl}/`
+                '/static/',
+                `${site.siteMetadata.siteUrl}/static/`
               ),
             },
           ],
