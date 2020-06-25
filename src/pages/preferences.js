@@ -21,7 +21,7 @@ const SubscribedPage = ({ data, location }) => {
         }}
       >
         <iframe
-          src="https://giphy.com/embed/vgwdcBACc7FdRUfqDy"
+          src="https://giphy.com/embed/JDYE3DpqrW6mQ"
           width="100%"
           height="100%"
           style={{ position: "absolute" }}
