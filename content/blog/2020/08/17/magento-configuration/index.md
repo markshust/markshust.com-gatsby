@@ -1,10 +1,10 @@
 ---
-title: "Ways to create, modify & control Magento configuration"
+title: "Create, modify & manage Magento configuration"
 date: "2020-08-18T11:30:00.000Z"
 tags: ["magento", "magento2"]
 ---
 
-The Magento configuration layer appears to be simple: create a config variable, then assign it a value. Easy-peasy, right? Not so fast. Under the hood, it's actually fairly complex. Let's touch base on the different methods you can create, modify & control config values. Each has it's drawbacks & benefits, and when to use each depends on your use-case.
+The Magento configuration layer appears to be simple: create a config variable, then assign it a value. Easy-peasy, right? Not so fast. Under the hood, it's actually fairly complex. Let's touch base on the different methods you can create, modify & manage config values. Each has it's drawbacks & benefits, and when to use each depends on your use-case.
 
 ## Create configuration with XML
 
