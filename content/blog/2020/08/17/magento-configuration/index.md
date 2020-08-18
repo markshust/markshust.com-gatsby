@@ -41,6 +41,8 @@ The format of the `etc/config.xml` file is as follows:
 </config>
 ```
 
+> View & download this snippet online at [Magento 2 Snippets: Create Configuration with XML](https://mdotacademy.snippets.cc/collection/magento-2/create-configuration-xml)
+
 Note that config values apply to a scope ("stores" or "websites") or to all scopes ("default"). The "default" node is the most common usage used here, as values set here for configurations just define the default values. These values are then usually overridden using one of the below methods.
 
 The path to the configuration is set by the nesting of nodes. This allows you to organize configuration keys, which will definitely be needed due to the sheer amount of configuration objects that exist, even in an out-of-the-box installation of Magento.
