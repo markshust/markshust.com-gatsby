@@ -112,7 +112,7 @@ If you need to flush the cache for any reason (if the block isn't showing or was
 ./bin/magento cache:flush full_page  # Flush Full Page Cache
 ```
 
-![Foo bar baz title](files/foo-bar-baz-title.jpg)
+![Foo bar baz title](foo-bar-baz-title.jpg)
 
 ## Conclusion
 

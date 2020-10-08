@@ -48,6 +48,20 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [`gatsby-remark-images`],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -94,8 +108,14 @@ module.exports = {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [
+                    {
+                      "content:encoded": edge.node.html.replace(
+                        /(?<=\"|\s)\/static\//g,
+                        `${site.siteMetadata.siteUrl}\/static\/`
+                      ),
+                    },
+                  ],
                 })
               })
             },

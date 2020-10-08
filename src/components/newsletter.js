@@ -38,6 +38,11 @@ class Newsletter extends Component {
     email: "",
     emailError: "",
     name: "",
+    nameError: "",
+  }
+
+  handleNameChange = event => {
+    this.setState({ name: event.target.value, nameError: "" })
   }
 
   handleEmailChange = event => {

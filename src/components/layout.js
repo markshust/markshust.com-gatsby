@@ -45,6 +45,30 @@ const Footer = styled.footer`
   }
 `
 
+const Sticky = styled.div`
+  position: fixed;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  text-align: center;
+  background-color: #2780c2;
+  color: white;
+  border-radius: 8px;
+  border-width: 0;
+`
+
+const StickyButton = styled.a`
+  background-color: #dd6b20;
+  color: #fff;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid white;
+  display: inline-block;
+  padding: 0 10px;
+`
+
 const StyledImage = styled.img`
   float: left;
   margin-bottom: 0;
@@ -171,6 +195,15 @@ class Layout extends React.Component {
             <span> &nbsp;&middot;&nbsp; </span>
             <a href="mailto:mark@shust.com">Email</a>
           </div>
+          <Sticky>
+            I just launched a new Magento JavaScript course!{" "}
+            <StickyButton
+              href="https://m.academy/courses/requirejs-javascript-components"
+              target="_blank"
+            >
+              Check it out
+            </StickyButton>
+          </Sticky>
           <StaticQuery
             query={layoutQuery}
             render={data => (
