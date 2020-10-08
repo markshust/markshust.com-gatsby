@@ -78,12 +78,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-feed`,
@@ -180,5 +174,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-force-trailing-slashes`,
+    `gatsby-plugin-postcss`,
   ],
 }

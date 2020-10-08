@@ -1,20 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-
-import Logo from "@components/logo"
 import Layout from "@components/layout"
 import SEO from "@components/seo"
 import { rhythm } from "@utils/typography"
 import shareOnTwitter from "@assets/share-on-twitter.png"
 import styled from "styled-components"
 import Newsletter from "@components/newsletter"
-import MagentoNewsletter from "../components/magentonewsletter"
-
-const Header = styled.header`
-  @media only screen and (max-width: 768px) {
-    padding-top: 1em;
-  }
-`
 
 const DateWrapper = styled.p`
   display: block;
@@ -36,7 +27,6 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const postTitle = post.frontmatter.title
     const tags = post.frontmatter.tags
-    const isMagentoPost = tags.filter(tag => tag === "magento").length > 0
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -47,14 +37,7 @@ class BlogPostTemplate extends React.Component {
           canonical={post.frontmatter.canonical}
         />
         <article>
-          <Header>
-            <Logo />
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
+            <h1 className="tracking-tight text-3xl lg:text-5xl font-extrabold text-gray-900 mt-8 leading-none">
               {postTitle}
             </h1>
             <DateWrapper>
@@ -72,15 +55,10 @@ class BlogPostTemplate extends React.Component {
                 Edit on GitHub
               </EditOnGitHubLink>
             </DateWrapper>
-          </Header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
-          <footer>
-            <section
-              style={{
-                textAlign: "center",
-                margin: `0 0 ${rhythm(2)}`,
-              }}
-            >
+              <section
+                  className="prose text-gray-700 prose-lg"
+                  dangerouslySetInnerHTML={{ __html: post.html }}
+              />
               <a
                 href={
                   "https://twitter.com/intent/tweet/?text=" +
@@ -90,33 +68,18 @@ class BlogPostTemplate extends React.Component {
                   "&via=" +
                   this.props.data.site.siteMetadata.social.twitter
                 }
-                style={{ boxShadow: "none" }}
               >
                 <img
                   src={shareOnTwitter}
                   alt="Share On Twitter"
                   style={{
-                    marginTop: rhythm(1),
-                    marginBottom: 0,
                     width: 320,
-                    maxWidth: "100%",
                   }}
+                  className="max-w-full mt-20 mb-0 mx-auto"
                 />
-                <div>Let others know about this article</div>
+                <div className="text-center mb-6">Let others know about this article</div>
               </a>
-            </section>
-            <section
-              style={{
-                textAlign: "center",
-                margin: `0 -${rhythm(1)}`,
-                backgroundImage:
-                  "linear-gradient(to bottom right, rgba(84, 165, 224, 0.9), rgba(54, 115, 74, 0.9))",
-                lineHeight: "1.25rem",
-              }}
-            >
-              {isMagentoPost ? <MagentoNewsletter /> : <Newsletter />}
-            </section>
-          </footer>
+            <Newsletter />
         </article>
       </Layout>
     )

@@ -1,48 +1,10 @@
 import React, { Component } from "react"
-import styled from "styled-components"
-import { rhythm } from "@utils/typography"
 import * as EmailValidator from "email-validator"
-
-const Form = styled.form`
-  border: none;
-  margin: 0 auto;
-  padding: 20px;
-`
-
-const H4 = styled.h4`
-  color: #fff;
-  font-size: ${rhythm(1)};
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: normal;
-`
-
-const NameInput = styled.input`
-  color: rgb(81, 81, 81);
-  margin-bottom: 10px !important;
-`
-
-const EmailInput = styled.input`
-  color: rgb(81, 81, 81);
-`
-
-const Submit = styled.button`
-  color: rgb(255, 255, 255);
-  background-color: #2680c2;
-  border-radius: 25px;
-  font-weight: 700;
-`
 
 class Newsletter extends Component {
   state = {
     email: "",
     emailError: "",
-    name: "",
-    nameError: "",
-  }
-
-  handleNameChange = event => {
-    this.setState({ name: event.target.value, nameError: "" })
   }
 
   handleEmailChange = event => {
@@ -70,67 +32,68 @@ class Newsletter extends Component {
 
   render() {
     return (
-      <Form
-        action="https://app.convertkit.com/forms/844000/subscriptions"
+      <form
+        action="https://app.convertkit.com/forms/1080992/subscriptions"
         className="seva-form formkit-form"
         method="post"
-        data-sv-form="844000"
-        data-uid="46337bc252"
+        data-sv-form="1080992"
+        data-uid="5d9cc72515"
         data-format="inline"
         data-version="5"
         data-options='{"settings":{"after_subscribe":{"action":"redirect","redirect_url":"https://markshust.com/confirm/","success_message":"Success! Now check your email to confirm your subscription."},"return_visitor":{"action":"show","custom_content":""},"recaptcha":{"enabled":false}}}'
         minWidth="400 500 600 700 800"
         onSubmit={this.handleSubmit}
       >
-        <div data-style="minimal">
-          <H4 className="formkit-header" data-element="header">
-            Join the Newsletter
-          </H4>
-          <ul
-            className="formkit-alert formkit-alert-error"
-            data-element="errors"
-            data-group="alert"
-          />
-          <div
-            data-element="fields"
-            data-stacked="false"
-            className="seva-fields formkit-fields"
-          >
-            <div className="formkit-field">
-              <NameInput
-                className="formkit-input"
-                name="fields[first_name]"
-                placeholder="Your first name"
-                aria-label="Your first name"
-                type="text"
-                value={this.state.name}
-                onChange={this.handleNameChange}
-              />
-              <EmailInput
-                className="formkit-input"
-                name="email_address"
-                placeholder="Your email address"
-                required=""
-                type="text"
-                value={this.state.email}
-                onChange={this.handleEmailChange}
-              />
-              <div style={{ color: "red" }}>{this.state.emailError}</div>
-            </div>
-            <Submit
-              data-element="submit"
-              className="formkit-submit formkit-submit"
-            >
-              <div className="formkit-spinner">
-                <div />
-                <div />
-                <div />
+        
+        <div className="bg-white">
+          <div className="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+            <div className="px-6 py-6 bg-blue-600 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:items-center">
+              <h2 className="text-2xl leading-8 font-extrabold tracking-tight text-white sm:text-3xl sm:leading-9 font-sans">
+                Are you a Magento geek?
+              </h2>
+              <p className="mt-3 mb-6 max-w-3xl text-lg leading-6 text-indigo-200" id="newsletter-headline">
+                Signup for my newsletter and I'll let you know about <span className="inline-block">Magento-related</span> blogs, courses & more.
+              </p>
+              <div className="mt-8 sm:w-full sm:max-w-lg xl:mt-0">
+                <ul
+                    className="formkit-alert formkit-alert-error"
+                    data-element="errors"
+                    data-group="alert"
+                />
+                <div
+                    data-element="fields"
+                    data-stacked="false"
+                    className="seva-fields formkit-fields grid grid-cols-1 lg:grid-cols-5"
+                >
+                  <div className="formkit-field col-span-3">
+                    <input
+                        className="formkit-input w-full appearance-none px-5 py-3 border border-transparent text-base leading-6 rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
+                        name="email_address"
+                        placeholder="Your email address"
+                        required=""
+                        type="text"
+                        value={this.state.email}
+                        onChange={this.handleEmailChange}
+                    />
+                    <div style={{ color: "red" }}>{this.state.emailError}</div>
+                  </div>
+                  <button type="submit"
+                      data-element="submit"
+                      className="formkit-submit formkit-submit mt-4 lg:mt-0 lg:ml-3 px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-orange-500 hover:bg-orange-400 focus:outline-none focus:bg-orange-400 transition duration-150 ease-in-out col-span-2"
+                  >
+                    <div className="formkit-spinner">
+                      <div />
+                      <div />
+                      <div />
+                    </div>
+                    <span>Get Magento Info</span>
+                  </button>
+                </div>
               </div>
-              <span>Get Notified</span>
-            </Submit>
+            </div>
           </div>
         </div>
-      </Form>
+      </form>
     )
   }
 }

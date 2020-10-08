@@ -7,11 +7,10 @@ const SubscribedPage = ({ data, location }) => {
 
   return (
     <Layout location={location} subtitle={description} title={title}>
-      <h1>Preferences Confirmed</h1>
-      <p>
-        Thanks! I updated your newsletter preferences and saved them to your
-        profile.
-      </p>
+        <h1 className="mb-8 py-8 text-3xl text-center font-extrabold tracking-tight text-gray-900 sm:text-5xl pb-4">Preferences confirmed</h1>
+        <p className="text-gray-700 prose-lg mb-4">
+            Thanks! I updated your newsletter preferences and saved them to your profile.
+        </p>
       <div
         style={{
           width: "100%",
@@ -19,6 +18,7 @@ const SubscribedPage = ({ data, location }) => {
           paddingBottom: "42%",
           position: "relative",
         }}
+        className="mb-12"
       >
         <iframe
           src="https://giphy.com/embed/JDYE3DpqrW6mQ"

@@ -9,13 +9,15 @@ const SubscribedPage = ({ data, location }) => {
 
   return (
     <Layout location={location} subtitle={description} title={title}>
-      <h1>Thank you for subscribing</h1>
-      <p>
-        Your email is now confirmed! I'll keep you in the loop as I create new
-        content.
-      </p>
-      <p>In the mean time... may I interest you in a blog post?</p>
-      <ul className="tags">
+        <h1 className="mb-8 py-8 text-3xl text-center font-extrabold tracking-tight text-gray-900 sm:text-5xl pb-4">Thank you for subscribing</h1>
+        <p className="text-gray-700 prose-lg mb-4">
+            Your email is now confirmed! I'll keep you in the loop as I create new
+            content.
+        </p>
+    <p className="text-gray-700 prose-lg mb-10">
+        In the mean time... may I interest you in a blog post?
+    </p>
+      <ul className="tags mb-12">
         {group.map(tag => (
           <li key={tag.fieldValue}>
             <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>

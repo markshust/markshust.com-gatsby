@@ -30,7 +30,7 @@ class AboutPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="About" />
-        <h1>Hi there! I'm Mark</h1>
+          <h1 className="mb-8 text-3xl pt-8 pb-4 text-center font-extrabold tracking-tight text-gray-900 sm:text-5xl">About Me</h1>
         <Wrapper>
           <div>
             <StyledImage
@@ -40,7 +40,7 @@ class AboutPage extends React.Component {
               height="375"
             />
           </div>
-          <div>
+          <div className="prose text-gray-700 prose-lg">
             <p>
               My passion over the last decade has revolved entirely around
               Magento. Starting with the early days of Magento 0.8, I've had a
@@ -112,7 +112,8 @@ class AboutPage extends React.Component {
             </p>
           </div>
         </Wrapper>
-        <h2>Certifications</h2>
+        <h2 className="text-3xl font-semibold mt-20 mb-6">Certifications</h2>
+        <div className="prose text-gray-700 prose-lg mb-16">
         <p>
           I hold a few certifications revolving around my focus of PHP and
           Magento:
@@ -163,6 +164,7 @@ class AboutPage extends React.Component {
             <em>(April 2019)</em>
           </li>
         </ul>
+        </div>
       </Layout>
     )
   }
