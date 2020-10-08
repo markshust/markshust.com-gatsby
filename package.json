@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "@types/react": "^16.9.51",
     "bufferutil": "^4.0.1",
     "email-validator": "^2.0.4",
