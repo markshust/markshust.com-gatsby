@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
           canonical={post.frontmatter.canonical}
         />
         <article>
-            <h1 className="tracking-tight text-3xl lg:text-5xl font-extrabold text-gray-900 mt-8">
+            <h1 className="tracking-tight text-3xl lg:text-5xl font-extrabold text-gray-900 mt-8 leading-none">
               {postTitle}
             </h1>
             <DateWrapper>
