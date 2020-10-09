@@ -6,6 +6,19 @@ main a {
 }
 .gatsby-highlight {
     font-size: 1rem;
+    background: #272822;
+}
+@media (min-width: 1024px) {
+    .gatsby-highlight {
+        width: 100vw;
+        margin-left: calc(-100vw / 2 + 43.4rem / 2);
+        margin-right: calc(-100vw / 2 + 43.4rem / 2);
+    }
+    pre[class*=language-] {
+        margin: 2rem auto 3rem !important;
+        max-width: calc(100vw - 20%);
+        padding: 2rem -0 !important;
+    }
 }
 .prose code::before,
 .prose code::after,
