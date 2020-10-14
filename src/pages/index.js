@@ -27,7 +27,13 @@ class IndexIndex extends React.Component {
                       On the flight home, I knew I’d be involved with Magento for a long time. I wanted to deliver exceptional work to my clients, so I learned everything I could. I created a number of Magento modules, gained experience as a solution architect, and even gave a speech at Magento Imagine in Las Vegas.
                   </p>
                   <p>
-                      Years passed, and my passion has only grown since those early years. I got quite involved with Docker in my early years of trying to setup Magento 2 on my Mac, which eventually became <a href="https://github.com/markshust/docker-magento" target="_blank" rel="noreferrer">the most popular development environment for Magento 2</a>.
+                      Years passed, and my passion has only grown since those early years, eventually becoming an <a
+                      href="https://www.youracclaim.com/users/mark-shust"
+                      target="_blank"
+                      rel="noreferrer"
+                  >
+                      Adobe Certified Professional & Expert
+                  </a>. I got quite involved with Docker in my early years of trying to setup Magento 2 on my Mac, which eventually became <a href="https://github.com/markshust/docker-magento" target="_blank" rel="noreferrer">the most popular development environment for Magento 2</a>.
                   </p>
                   <p>
                       As the repository grew in popularity, I became quite versed with <a href="https://courses.m.academy/p/build-twelve-factor-node-js-app-docker" target="_blank" rel="noreferrer">building 12 Factor Apps with Docker</a>, and even gave another speech at Meet Magento in New York.

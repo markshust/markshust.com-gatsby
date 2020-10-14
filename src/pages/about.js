@@ -81,11 +81,11 @@ class AboutPage extends React.Component {
               </a>{" "}
               and{" "}
               <a
-                href="https://u.magento.com/certification/directory/dev/883/"
+                href="https://www.youracclaim.com/users/mark-shust"
                 target="_blank"
                 rel="noreferrer"
               >
-                3x Magento Certified Developer
+                Adobe Certified Professional & Expert
               </a>
               . I love open-source software, and have maintained{" "}
               <a
@@ -121,14 +121,25 @@ class AboutPage extends React.Component {
         <ul>
           <li>
             <a
-              href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
-              target="_blank"
-              rel="noreferrer"
+                href="https://www.youracclaim.com/earner/earned/badge/69c13212-d83b-4041-aeb2-04bee554bc41"
+                target="_blank"
+                rel="noreferrer"
             >
-              Zend Certified Engineer (PHP5)
+              Adobe Certified Professional (ACP) - Magento Commerce Developer
             </a>
             <br />
-            <em>(July 2010)</em>
+            <em>(April 2019)</em>
+          </li>
+          <li>
+            <a
+                href="https://www.youracclaim.com/earner/earned/badge/7411e8f8-e682-4360-b8c7-056f0b7d4b6f"
+                target="_blank"
+                rel="noreferrer"
+            >
+              Adobe Certified Expert (ACP) - Magento Commerce Business Practitioner
+            </a>
+            <br />
+            <em>(February 2019)</em>
           </li>
           <li>
             <a
@@ -143,25 +154,14 @@ class AboutPage extends React.Component {
           </li>
           <li>
             <a
-              href="https://u.magento.com/certification/directory/dev/883/"
-              target="_blank"
-              rel="noreferrer"
+                href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
+                target="_blank"
+                rel="noreferrer"
             >
-              Magento 2 Certified Solution Specialist
+              Zend Certified Engineer (PHP5)
             </a>
             <br />
-            <em>(February 2019)</em>
-          </li>
-          <li>
-            <a
-              href="https://u.magento.com/certification/directory/dev/883/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Magento 2 Certified Associate Developer
-            </a>
-            <br />
-            <em>(April 2019)</em>
+            <em>(July 2010)</em>
           </li>
         </ul>
         </div>
