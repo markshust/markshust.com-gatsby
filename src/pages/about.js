@@ -85,7 +85,7 @@ class AboutPage extends React.Component {
                 target="_blank"
                 rel="noreferrer"
               >
-                Adobe Certified Professional & Expert
+                Adobe Certified Magento Developer
               </a>
               . I love open-source software, and have maintained{" "}
               <a

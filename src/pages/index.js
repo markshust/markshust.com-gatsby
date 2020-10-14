@@ -32,7 +32,7 @@ class IndexIndex extends React.Component {
                       target="_blank"
                       rel="noreferrer"
                   >
-                      Adobe Certified Professional & Expert
+                      Adobe Certified Magento Developer
                   </a>. I got quite involved with Docker in my early years of trying to setup Magento 2 on my Mac, which eventually became <a href="https://github.com/markshust/docker-magento" target="_blank" rel="noreferrer">the most popular development environment for Magento 2</a>.
                   </p>
                   <p>
