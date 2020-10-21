@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "@components/layout"
 import SEO from "@components/seo"
 import styled from "styled-components"
-import markshustPhoto from "@assets/mark-640x960.jpg"
+import markshustPhoto from "@assets/markshust-avatar.jpg"
 
 const Wrapper = styled.div`
   display: grid;
@@ -30,7 +30,9 @@ class AboutPage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="About" />
-          <h1 className="mb-8 text-3xl pt-8 pb-4 text-center font-extrabold tracking-tight text-gray-900 sm:text-5xl">About Me</h1>
+        <h1 className="mb-8 text-3xl pt-8 pb-4 text-center font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+          About Me
+        </h1>
         <Wrapper>
           <div>
             <StyledImage
@@ -114,56 +116,57 @@ class AboutPage extends React.Component {
         </Wrapper>
         <h2 className="text-3xl font-semibold mt-20 mb-6">Certifications</h2>
         <div className="prose text-gray-700 prose-lg mb-16">
-        <p>
-          I hold a few certifications revolving around my focus of PHP and
-          Magento:
-        </p>
-        <ul>
-          <li>
-            <a
+          <p>
+            I hold a few certifications revolving around my focus of PHP and
+            Magento:
+          </p>
+          <ul>
+            <li>
+              <a
                 href="https://www.youracclaim.com/earner/earned/badge/69c13212-d83b-4041-aeb2-04bee554bc41"
                 target="_blank"
                 rel="noreferrer"
-            >
-              Adobe Certified Professional (ACP) - Magento Commerce Developer
-            </a>
-            <br />
-            <em>(April 2019)</em>
-          </li>
-          <li>
-            <a
+              >
+                Adobe Certified Professional (ACP) - Magento Commerce Developer
+              </a>
+              <br />
+              <em>(April 2019)</em>
+            </li>
+            <li>
+              <a
                 href="https://www.youracclaim.com/earner/earned/badge/7411e8f8-e682-4360-b8c7-056f0b7d4b6f"
                 target="_blank"
                 rel="noreferrer"
-            >
-              Adobe Certified Expert (ACP) - Magento Commerce Business Practitioner
-            </a>
-            <br />
-            <em>(February 2019)</em>
-          </li>
-          <li>
-            <a
-              href="https://u.magento.com/certification/directory/dev/883/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Magento 1 Certified Developer Plus
-            </a>
-            <br />
-            <em>(March 2012)</em>
-          </li>
-          <li>
-            <a
+              >
+                Adobe Certified Expert (ACP) - Magento Commerce Business
+                Practitioner
+              </a>
+              <br />
+              <em>(February 2019)</em>
+            </li>
+            <li>
+              <a
+                href="https://u.magento.com/certification/directory/dev/883/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Magento 1 Certified Developer Plus
+              </a>
+              <br />
+              <em>(March 2012)</em>
+            </li>
+            <li>
+              <a
                 href="https://www.zend-zce.com/en/yellow-pages/ZEND014633"
                 target="_blank"
                 rel="noreferrer"
-            >
-              Zend Certified Engineer (PHP5)
-            </a>
-            <br />
-            <em>(July 2010)</em>
-          </li>
-        </ul>
+              >
+                Zend Certified Engineer (PHP5)
+              </a>
+              <br />
+              <em>(July 2010)</em>
+            </li>
+          </ul>
         </div>
       </Layout>
     )
