@@ -28,6 +28,11 @@ main a {
 .prose blockquote p:last-of-type::after {
     content: "";
 }
+@media (max-width: 1023px) {
+  .prose >p >code[class*="language-"], .prose >p >pre[class*="language-"] {
+    word-break: break-all;
+  }
+}
 .prose >p >code[class*="language-"], .prose >p >pre[class*="language-"] {
     font-size: 1rem;
     padding-left: 8px;
