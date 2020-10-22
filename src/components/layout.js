@@ -8,17 +8,25 @@ class Layout extends React.Component {
     const { children } = this.props
     let header = (
       <div className="flex py-8">
-        <Link to="/" className="flex justify-center items-center">
-          <img
-            className="rounded-full h-16 w-16 mb-0 ml-8 lg:ml-0"
-            src={markshustAvatar}
-            alt="Mark Shust"
-          />
-          <div className="p-4 text-lg flex justify-center items-center tracking-tight font-extrabold text-gray-900">
-            Mark Shust
-          </div>
-        </Link>
-        <nav className="ml-6 justify-left items-center grid lg:flex">
+        {window.location.pathname !== "/" && (
+          <Link to="/" className="flex justify-center items-center">
+            <img
+              className="rounded-full h-16 w-16 mb-0 ml-8 lg:ml-0"
+              src={markshustAvatar}
+              alt="Mark Shust"
+            />
+            <div className="p-4 text-lg flex justify-center items-center tracking-tight font-extrabold text-gray-900">
+              Mark Shust
+            </div>
+          </Link>
+        )}
+        <nav
+          className={
+            window.location.pathname === "/"
+              ? "items-center grid lg:flex mx-auto text-center"
+              : "items-center grid lg:flex ml-6 justify-left"
+          }
+        >
           <Link className="px-2 py-1 mx-4" to="/blog">
             Blog
           </Link>
