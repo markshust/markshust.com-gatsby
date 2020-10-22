@@ -27,21 +27,37 @@ class Layout extends React.Component {
               : "items-center grid lg:flex ml-6 justify-left"
           }
         >
-          <Link className="px-2 py-1 mx-4" to="/blog">
+          <Link className="px-2 py-1 mx-2" to="/blog">
             Blog
           </Link>
-          <Link className="px-2 py-1 mx-4" to="/about">
-            About
-          </Link>
           <a
-            className="px-2 py-1 mx-4"
+            className="px-2 py-1 mx-2"
             href="https://m.academy"
             target="_blank"
             rel="noreferrer"
           >
             Courses
           </a>
-          <a className="px-2 py-1 mx-4" href="mailto:mark@shust.com">
+          <a
+            className="px-2 py-1 mx-2"
+            href="https://github.com/markshust"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            className="px-2 py-1 mx-2"
+            href="https://www.youtube.com/channel/UC3MdXXeF48RN-mqMkJlGn0Q"
+            target="_blank"
+            rel="noreferrer"
+          >
+            YouTube
+          </a>
+          <Link className="px-2 py-1 mx-2" to="/about">
+            About
+          </Link>
+          <a className="px-2 py-1 mx-2" href="mailto:mark@shust.com">
             Contact
           </a>
         </nav>
@@ -61,18 +77,7 @@ class Layout extends React.Component {
             render={data => (
               <div className="grid grid-cols-3">
                 <a
-                  href="https://github.com/markshust"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 mx-4 text-center"
-                >
-                  <Image
-                    fixed={data.githubIcon.childImageSharp.fixed}
-                    alt="GitHub"
-                  />
-                </a>
-                <a
-                  href="https://twitter.com/markshust"
+                  href="https://twitter.com/MarkShust"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 mx-4 text-center"
@@ -80,6 +85,17 @@ class Layout extends React.Component {
                   <Image
                     fixed={data.twitterIcon.childImageSharp.fixed}
                     alt="Twitter"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/MarkShust/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 mx-4 text-center"
+                >
+                  <Image
+                    fixed={data.linkedinIcon.childImageSharp.fixed}
+                    alt="LinkedIn"
                   />
                 </a>
                 <Link
@@ -103,7 +119,7 @@ export default Layout
 
 const layoutQuery = graphql`
   query LayoutQuery {
-    githubIcon: file(absolutePath: { regex: "/github-icon.png/" }) {
+    linkedinIcon: file(absolutePath: { regex: "/linkedin-icon.png/" }) {
       childImageSharp {
         fixed(width: 25, height: 25) {
           ...GatsbyImageSharpFixed
