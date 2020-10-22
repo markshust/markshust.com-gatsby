@@ -3,6 +3,8 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import markshustAvatar from "@assets/markshust-avatar.jpg"
 
+const window = typeof window !== "undefined" && window
+
 class Layout extends React.Component {
   render() {
     const { children } = this.props
