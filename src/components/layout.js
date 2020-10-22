@@ -3,14 +3,20 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import markshustAvatar from "@assets/markshust-avatar.jpg"
 
-const window = typeof window !== "undefined" && window
-
 class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+    this.pathname = null
+  }
+  componentDidMount() {
+    this.pathname = window.location.pathname ?? ""
+    this.forceUpdate()
+  }
   render() {
     const { children } = this.props
     let header = (
       <div className="flex py-8">
-        {window.location.pathname !== "/" && (
+        {this.pathname !== "/" && (
           <Link to="/" className="flex justify-center items-center">
             <img
               className="rounded-full h-16 w-16 mb-0 ml-8 lg:ml-0"
@@ -24,7 +30,7 @@ class Layout extends React.Component {
         )}
         <nav
           className={
-            window.location.pathname === "/"
+            this.pathname === "/"
               ? "items-center grid lg:flex mx-auto text-center"
               : "items-center grid lg:flex ml-6 justify-left"
           }
