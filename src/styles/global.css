@@ -50,6 +50,15 @@ main a {
 h1, h2, h3, h4, h5, h6 {
     font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
+.gatsby-highlight-code-line {
+  background-color: #363636;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1.25em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.5em solid #2680C2;
+}
 /*
 body {
   background-color: #fff;
@@ -97,16 +106,6 @@ h1, h2, h3, h4, h5, h6 {
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
   border-bottom: 2px solid #000;
-}
-
-.gatsby-highlight-code-line {
-  background-color: #363636;
-  display: block;
-  margin-right: -1em;
-  margin-left: -1.25em;
-  padding-right: 1em;
-  padding-left: 0.75em;
-  border-left: 0.5em solid #2680C2;
 }
 
 main :not(pre) > code[class*="language-"], main code[class="language-text"] {
