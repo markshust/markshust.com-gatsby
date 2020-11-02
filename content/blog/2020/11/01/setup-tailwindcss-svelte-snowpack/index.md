@@ -22,7 +22,7 @@ Next, you'll need to create the standard TailwindCSS CSS import file at `src/tai
 @import 'tailwindcss/dist/utilities.css';
 ```
 
-Finally, open `src/App.svelte`, or whatever component you are using for the global layout in Svelte, and import the CSS the following within it's script tag:
+Finally, open `src/App.svelte`, or whatever component you are using for the global layout in Svelte, and import the CSS file within it's script tag:
 
 ```js
 <script>
