@@ -16,7 +16,7 @@ Let's go ahead and create your module, and setup all of the appropriate XML.
 
 <div class="gatsby-code-title">app/etc/modules/Foo_Bar.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -30,7 +30,7 @@ Let's go ahead and create your module, and setup all of the appropriate XML.
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/etc/config.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -73,7 +73,7 @@ This is our custom layout XML file. We look in `app/design/frontend/base/default
 
 <div class="gatsby-code-title">app/design/frontend/base/default/layout/foo/bar.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <layout>
     <catalog_product_view>
@@ -89,7 +89,7 @@ Now that our XML is all taken care of, let's create our baz object by defining i
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Model/Baz.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Model_Baz extends Varien_Object
 {
@@ -102,7 +102,7 @@ We then create our custom block, where we will reference the baz object we just 
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Catalog/Product/View.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Block_Catalog_Product_View extends Mage_Catalog_Block_Product_View
 {
@@ -121,7 +121,7 @@ The final step is to retrieve the object and the appropriate variable assigned t
 
 <div class="gatsby-code-title">app/design/frontend/base/default/template/foo/bar/catalog/product/view.phtml</div>
 
-```php{numberLines: true}
+```php
 <?php
 /**
  * Magento

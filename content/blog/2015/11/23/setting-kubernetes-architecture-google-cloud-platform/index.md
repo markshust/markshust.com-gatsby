@@ -54,7 +54,7 @@ Pods manage the containers within our infrastructure. This process is very simil
 
 <div class="gatsby-code-title">pod.yml</div>
 
-```yaml{numberLines: true}
+```yaml
 apiVersion: v1
 kind: Pod 
 metadata:
@@ -91,7 +91,7 @@ Create a new local file with the following contents:
 
 <div class="gatsby-code-title">pc.yml</div>
 
-```yaml{numberLines: true}
+```yaml
 apiVersion: v1
 kind: ReplicationController
 metadata:
@@ -136,7 +136,7 @@ Getting a service running is the last step in completing our Kubernetes architec
 
 <div class="gatsby-code-title">service.yml</div>
 
-```yaml{numberLines: true}
+```yaml
 apiVersion: v1
 kind: Service
 metadata:

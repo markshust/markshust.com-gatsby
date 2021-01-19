@@ -130,7 +130,7 @@ All that explaned, here is our final class:
 
 <div class="gatsby-code-title">app/code/Acme/Foo/Setup/Patch/Data/AddAlternativeColorAttribute.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 namespace Acme\Foo\Setup\Patch\Data;
 

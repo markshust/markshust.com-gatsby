@@ -39,7 +39,7 @@ Migrating took a little bit of time, but was more of a slow & redundant process 
 ```js:title=this/is/my/file.js
 
 // This isn't possible!
-```js:{numberLines: true}title=this/is/my/file.js
+```js:title=this/is/my/file.js
 
 // y no liek dis?
 ```js:{numberLines: true, title: "this/is/my/file.js"}
@@ -50,7 +50,7 @@ Migrating took a little bit of time, but was more of a slow & redundant process 
 ```
 <div class="gatsby-code-title">this/is/my/file.js</div>
 
-```js{numberLines: true}
+```js
 // code goes here...
 ```
 

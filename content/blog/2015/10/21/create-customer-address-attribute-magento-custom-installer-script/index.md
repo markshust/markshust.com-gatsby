@@ -8,7 +8,7 @@ Recently, I needed to create a custom customer address attribute, and needed a r
 
 <div class="gatsby-code-title">app/etc/modules/Foo_Bar.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <!--
  * @category    Foo
@@ -28,7 +28,7 @@ Then, we'll create our config XML. Here, we are defining version 0.1.0, and simp
 
 <div class="gatsby-code-title">app/code/local/Foo/Bar/etc/config.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <!--
  * @category    Foo
@@ -59,7 +59,7 @@ Finally, we'll create our installer script in PHP. The location and naming of th
 
 <div class="gatsby-code-title">app/code/local/Foo/Bar/sql/foo_bar_setup/mysql4-install-0.1.0.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 /**
  * @category    Foo

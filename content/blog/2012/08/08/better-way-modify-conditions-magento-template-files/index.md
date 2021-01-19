@@ -10,7 +10,7 @@ There is a special case regarding code blocks within conditional logic in which 
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/controllers/Adminhtml/BazController.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 /**
  * Magento
@@ -94,7 +94,7 @@ You are going through the project specifications, and realize that the product z
 
 The easiest/quickest way to do this would be to remove the following lines, presented in this diff:
 
-```diff{numberLines: true}
+```diff
 diff --git a/media.phtml b/media.phtml
 index a2f1eea..df61be5 100644
 --- a/media.phtml
@@ -150,7 +150,7 @@ This method, while verbose, does work just fine. However, look how many lines ha
 
 I like to handle *removing* these conditional logic blocks a different way, by adding in a 'false' to the conditional logic statement.
 
-```diff{numberLines: true}
+```diff
 diff --git a/media.phtml b/media.phtml
 index a2f1eea..e26c9fa 100644
 --- a/media.phtml

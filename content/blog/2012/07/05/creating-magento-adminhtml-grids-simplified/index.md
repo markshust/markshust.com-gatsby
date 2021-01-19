@@ -14,7 +14,7 @@ Let's go ahead and get started by creating your base module definition file and 
 
 <div class="gatsby-code-title">app/etc/modules/Foo_Bar.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -28,7 +28,7 @@ Let's go ahead and get started by creating your base module definition file and 
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/etc/config.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config>
     <modules>
@@ -110,7 +110,7 @@ Now, we can create our Adminhtml XML which defines where our URL shows up in the
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/etc/adminhtml.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config>
     <menu>
@@ -155,7 +155,7 @@ Now, we can create our Adminhtml XML which defines where our URL shows up in the
 
 <div class="gatsby-code-title">app/design/adminhtml/default/default/layout/foo/bar.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <layout>
     <!-- Here, we reference the XML node path of our route -->
@@ -174,7 +174,7 @@ We need to create a php file for our helper. There won't be anything in it, but 
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Helper/Data.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Helper_Data extends Mage_Core_Helper_Abstract
 {
@@ -187,7 +187,7 @@ Our grid needs some data, so let's go ahead and setup a very small database tabl
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Helper/Data.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 /* @var $installer Mage_Core_Model_Resource_Setup */
 $installer = $this;
@@ -220,7 +220,7 @@ Now that our foo_bar_baz table has been created, we'll create a base model, then
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Model/Baz.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Model_Baz extends Mage_Core_Model_Abstract
 {
@@ -233,7 +233,7 @@ class Foo_Bar_Model_Baz extends Mage_Core_Model_Abstract
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Model/Mysql4/Baz.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Model_Mysql4_Baz extends Mage_Core_Model_Mysql4_Abstract
 {
@@ -246,7 +246,7 @@ class Foo_Bar_Model_Mysql4_Baz extends Mage_Core_Model_Mysql4_Abstract
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Model/Mysql4/Baz/Collection.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Model_Mysql4_Baz_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
 {
@@ -265,7 +265,7 @@ First, we'll setup our block grid container, which will kick off our grid render
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Adminhtml/Baz.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Block_Adminhtml_Baz extends Mage_Adminhtml_Block_Widget_Grid_Container
 {
@@ -286,7 +286,7 @@ After the grid container is setup, we create the class housing our actual grid c
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Adminhtml/Baz/Grid.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Block_Adminhtml_Baz_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
@@ -350,7 +350,7 @@ And also create an Edit.php file along with an Edit/Form.php file, which both co
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Adminhtml/Baz/Edit.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Block_Adminhtml_Baz_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
 {
@@ -387,7 +387,7 @@ class Foo_Bar_Block_Adminhtml_Baz_Edit extends Mage_Adminhtml_Block_Widget_Form_
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/Block/Adminhtml/Baz/Edit/Form.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Block_Adminhtml_Baz_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
@@ -448,7 +448,7 @@ Now, our admin routing was setup before, which told Magento to look in Packagena
 
 <div class="gatsby-code-title">app/code/community/Foo/Bar/controllers/Adminhtml/BazController.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Adminhtml_BazController extends Mage_Adminhtml_Controller_Action
 {

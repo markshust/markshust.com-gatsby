@@ -16,7 +16,7 @@ In this case, we want to call the `isLoggedIn()` method of the `Magento\Customer
 
 <div class="gatsby-code-title">app/code/Foo/Customer/registration.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 use Magento\Framework\Component\ComponentRegistrar;
 
@@ -25,7 +25,7 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Foo_Customer', __DIR__
 
 <div class="gatsby-code-title">app/code/Foo/Customer/etc/module.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Foo_Customer" setup_version="1.0.0"/>
@@ -36,7 +36,7 @@ This module will be simple and contain just one ViewModel for this demo:
 
 <div class="gatsby-code-title">app/code/Foo/Customer/ViewModel/Session.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 namespace Foo\Customer\ViewModel;
 

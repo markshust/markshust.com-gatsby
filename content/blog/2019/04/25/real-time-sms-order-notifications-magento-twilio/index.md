@@ -32,7 +32,7 @@ Let's create our `registration.php` file at `app/code/Acme/Twilio/registration.p
 
 <div class="gatsby-code-title">app/code/Acme/Twilio/registration.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 use Magento\Framework\Component\ComponentRegistrar;
 
@@ -45,7 +45,7 @@ Next we'll create a file at `app/code/Acme/Twilio/etc/module.xml` with the follo
 
 <div class="gatsby-code-title">app/code/Acme/OrderNotifications/etc/module.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Acme_Twilio" setup_version="1.0.0" />
@@ -110,7 +110,7 @@ Create an `Observer` directory within our module structure, and then a file name
 
 <div class="gatsby-code-title">app/code/Acme/Twilio/Observer/SendOrderNotification.php</div>
 
-```php{numberLines: true}
+```php
 namespace Acme\Twilio\Observer;
 
 use Magento\Framework\Event\Observer;
@@ -157,7 +157,7 @@ Our `Observer` class will now look like this:
 
 <div class="gatsby-code-title">app/code/Acme/Twilio/Observer/SendOrderNotification.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 namespace Acme\Twilio\Observer;
 
@@ -233,7 +233,7 @@ Since it's possible `create` could throw an exception, let's wrap this call with
 
 <div class="gatsby-code-title">app/code/Acme/Twilio/Observer/SendOrderNotification.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 namespace Acme\OrderNot<?php
 namespace Acme\Twilio\Observer;

@@ -29,7 +29,7 @@ After creating and configuring a new LAMP stack, there are times where the php m
 
 - Test the mail function using a good sendmail.php script, such as the following:
 
-```php{numberLines: true}
+```php
 <!--
 This is a script, written and designed to test the functionality of the
 PHP mail() function on a web hosting account. I offer no warrenty with

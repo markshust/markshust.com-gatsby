@@ -8,7 +8,7 @@ For some reason no one can explain, it appears that the event observer `checkout
 
 Anyways, it's fairly easy to go ahead and dispatch this event. Just add this to your module's config.xml to rewrite the checkout/cart model:
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0">
 <config>
     ...
@@ -29,7 +29,7 @@ Anyways, it's fairly easy to go ahead and dispatch this event. Just add this to 
 
 Then create your model that adds in the dispatch event to trigger the observers:
 
-```php{numberLines: true}
+```php
 <?php
 class Foo_Bar_Model_Checkout_Cart extends Mage_Checkout_Model_Cart
 {

@@ -43,7 +43,7 @@ Magento 2 is now aware of our module, so let's create our block class. We'll do 
 
 <div class="gatsby-code-title">app/code/Foo/Bar/Block/Baz.php</div>
 
-```php{numberLines: true}
+```php
 <?php
 namespace Foo\Bar\Block;
 
@@ -73,7 +73,7 @@ Then create a layout XML file:
 
 <div class="gatsby-code-title">app/code/Foo/Bar/view/frontend/layout/cms_index_index.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>

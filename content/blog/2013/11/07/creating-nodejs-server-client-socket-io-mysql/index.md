@@ -45,7 +45,7 @@ Now we want to create our `server.js` file and put in our backend code to run th
 
 <div class="gatsby-code-title">server.js</div>
 
-```js{numberLines: true}
+```js
 var mysql = require('mysql')
 // Let’s make node/socketio listen on port 3000
 var io = require('socket.io').listen(3000)
@@ -125,7 +125,7 @@ Create a client-side html file which will load jQuery, socket.io, as well as our
 
 <div class="gatsby-code-title">index.html</div>
 
-```html{numberLines: true}
+```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script>

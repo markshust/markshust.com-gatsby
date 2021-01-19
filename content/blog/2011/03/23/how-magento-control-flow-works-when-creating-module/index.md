@@ -27,7 +27,7 @@ Controller files will obviously go in the `controllers` folder, and your xml fil
 
 First, you need to make Magento aware of your new module; just creating the files doesn't do that. Create a file with the following:
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
@@ -43,7 +43,7 @@ This file alone makes Magento aware of your module and adds it to the active lis
 
 Now, create your module config xml file. Remember: this config.xml file will eventually be merged with all of the other xml files, so it has to follow a specific structure format. Set something up like this:
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
@@ -69,7 +69,7 @@ Looks like a ridiculous amount of code for adding in a custom router, but in act
 
 What happens when we now to go http://magentoinstall.localhost/helloworld is that it is going to check the xml file for a 'helloworld' router. Given the above, it'll find it! The config is telling the helloworld router to look for the controller in Company/Helloworld/controllers and execute it. Well, I guess we need a file there. Throw something up like this:
 
-```php{numberLines: true}
+```php
 <?php
 class Company_Helloworld_IndexController extends Mage_Core_Controller_Front_Action
 {

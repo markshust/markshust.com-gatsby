@@ -12,7 +12,7 @@ Another option is to target the product type layout handle, and add a separate C
 
 <div class="gatsby-code-title">app/design/frontend/yourpackage/default/layout/local.xml</div>
 
-```xml{numberLines: true}
+```xml
 <?xml version="1.0"?>
 <layout version="0.1.0">
     ...
