@@ -311,7 +311,7 @@ In the event your SMS messages are not being sent, the first thing to do would b
 
 If after diagnosing your code throws an exception with a message such as:
 
-```
+```bash
 main.CRITICAL: Error message {"exception":"[object] (Twilio\\Exceptions\\RestException(code: 20404): [HTTP 404] Unable to create record: The requested resource /2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages.json was not found at /var/www/html/vendor/twilio/sdk/Twilio/Version.php:85)"} []
 ```
 
@@ -319,7 +319,7 @@ It means that your Account SID was not found or is incorrect. Double-check that 
 
 Similarly, if you receive a response such as:
 
-```
+```bash
 main.CRITICAL: Error message {"exception":"[object] (Twilio\\Exceptions\\RestException(code: 20003): [HTTP 401] Unable to create record: Authenticate at /var/www/html/vendor/twilio/sdk/Twilio/Version.php:85)"} []
 ```
 

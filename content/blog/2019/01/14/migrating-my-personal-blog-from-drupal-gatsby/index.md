@@ -34,7 +34,7 @@ I also love the idea of my website being open source. Notice a typo on my site? 
 
 Migrating took a little bit of time, but was more of a slow & redundant process versus it being difficult. At first I was going to write a bash script that connected to MySQL to dump out posts -- then just figured it would be a good time to have a stroll through my blogging history, and manually clean up the posts while doing so. I'm glad I did, as some of the code examples in blog posts were thrown severely out of whack from the WYSIWYG editor, and some of the syntax highlighting was totally whacked on certain blog posts. Gatsby's <a href="https://www.gatsbyjs.org/packages/gatsby-remark-prismjs/" target="_blakn">built-in syntax highlighter for prism and related documentation</a> was wonderful, and I quickly found and added the <a href="https://www.gatsbyjs.org/packages/gatsby-remark-code-titles/" target="_blank">code titles plugin for prism</a>. The formatting of the code title plugin was a bit awkard, and it doesn't allow for integration with config options such as `numberLines`:
 
-```
+```js
 // recommended usage (no options...)
 ```js:title=this/is/my/file.js
 
@@ -47,7 +47,7 @@ Migrating took a little bit of time, but was more of a slow & redundant process 
 
 ...however the ability to just define a `div` right above it is working for the time being:
 
-```
+```js
 <div class="gatsby-code-title">this/is/my/file.js</div>
 
 ```js

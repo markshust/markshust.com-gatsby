@@ -72,7 +72,7 @@ I kept the prefix of the files (dev/stage/prod) after the .xml extension so that
 
 You could just copy your `local.xml.dev` file over to `app/etc/local.xml`, but then you have replicated data. And I hate replicated data because it always leads to confusion down the line. So I create a shortcut to local.xml:
 
-```meta
+```bash
 cd app/etc
 ln -s local.xml.prod local.xml
 ```
@@ -83,7 +83,7 @@ Now, I do in fact go ahead and commit the symlink that goes to local.prod.xml. W
 
 I then tell git to ignore future local file changes in both dev and stage:
 
-```meta
+```bash
 git update-index --assume-unchanged app/etc/local.xml
 ```
 

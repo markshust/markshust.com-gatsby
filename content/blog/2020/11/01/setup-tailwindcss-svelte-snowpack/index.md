@@ -10,7 +10,7 @@ Luckily, it is quite easy if you keep Postfix and any other build tools out of t
 
 The first step is to install TailwindCSS with npm:
 
-```
+```bash
 npm install tailwindcss
 ```
 

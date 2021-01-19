@@ -12,7 +12,7 @@ There's a neat trick for GitHub we can use to get a related patch file for this 
 
 Next, we will download this patch file to our local filesystem. Projects based on Magento Cloud have access to a special helper directory named `m2-hotfixes`. Any patch files located within this directory will be automatically applied to the source code at the time of deployment. If you do not currently have a folder named `m2-hotfixes` or do not use Magento Cloud, no worries! Just create a directory of this name within the Magento root. Afterwards, go into that directory and download the patch file:
 
-```
+```bash
 curl -O https://github.com/magento/magento2/pull/23656.patch
 ```
 
@@ -36,7 +36,7 @@ Once the file is updated and saved, commit it and Magento Cloud will automatical
 
 If you aren't using Magento Cloud, you can <a href="https://devdocs.magento.com/guides/v2.3/cloud/project/project-patch.html" target="_blank">apply custom patches</a> directly to the codebase. The command to manually apply this patch is:
 
-```
+```bash
 git apply m2-hotfixes/23656.patch
 ```
 

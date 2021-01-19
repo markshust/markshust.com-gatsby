@@ -12,7 +12,7 @@ A real nice Node community is forming (and for that matter, has already formed),
 
 Node works with it's own repository of packages called npm (node package manager), sort of like Ubuntu's apt repository. Let's go ahead and install our required packages for the server, and use homebrew to install node:
 
-```meta
+```bash
 brew install node
 npm install socket.io mysql
 ```

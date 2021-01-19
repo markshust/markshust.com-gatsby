@@ -43,7 +43,7 @@ module.exports = () => ({
 
 Next, install the Tailwind CSS and Gatsby PostCSS Plugins npm packages:
 
-```
+```bash
 npm install gatsby-plugin-postcss tailwindcss
 ```
 

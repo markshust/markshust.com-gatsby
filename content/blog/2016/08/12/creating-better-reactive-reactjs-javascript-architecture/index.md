@@ -38,7 +38,7 @@ export default {
 
 This lays the groundwork for the module. Within this module, the directory structure is as so:
 
-```meta
+```bash
 /actions
 /components
 /containers

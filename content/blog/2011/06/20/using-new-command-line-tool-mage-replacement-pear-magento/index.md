@@ -12,7 +12,7 @@ Your first step in using 'mage' is to set the proper permissions to make it exec
 
 Then, to run it, just type `./mage` in shell. You will be presented with a list of arguments to pass to it:
 
-```
+```bash
 Connect commands available:
 ===========================
 channel-add          Add a Channel       

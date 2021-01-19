@@ -14,7 +14,7 @@ The only way to diagnose a gateway error is to inspect the web server logs. The 
 
 Near the end of the log output I noticed this being logged:
 
-```meta
+```bash
 2020/01/02 23:39:03 [error] 6#6: *2 upstream sent too big header while reading response header from upstream, client: 172.18.0.1, server: mydomain.test, request: "GET /catalogsearch/result/?q=test HTTP/1.1", upstream: "fastcgi://unix:/sock/docker.sock:", host: "mydomain.test"
 ```
 
@@ -22,7 +22,7 @@ This is telling us the upstream (PHP-FPM) sent too big a header while responding
 
 If I look at the web server config at `/etc/nginx/conf.d/default.conf`, the upstream proxy is defined with:
 
-```meta
+```bash
 upstream fastcgi_backend {
   server unix:/sock/docker.sock;
 }
@@ -32,7 +32,7 @@ I'm using a `fastcgi_backend` that points back to a unix socket, but yours may i
 
 There is also a website-specific Nginx configuration file. For Magento, this is typically defined within the project root at `nginx.conf`, but yours may be in a `sites-available` folder. The goal here is to find the section of this file which deals with the request you're having trouble with. In scanning through the file I eventually stumbled upon this location directive:
 
-```meta
+```bash
 ...
 # PHP entry point for main application
 location ~ ^/(index|get|static|errors/report|errors/404|errors/503|health_check)\.php$ {
@@ -67,7 +67,7 @@ The buffer size controls how much memory the response buffer can allocate. The d
 
 Within the section but near the end, let's add this directive:
 
-```meta
+```bash
 ...
     fastcgi_param  MAGE_RUN_TYPE    $MAGE_RUN_TYPE;
     fastcgi_param  MAGE_RUN_CODE    $MAGE_RUN_CODE;
@@ -80,7 +80,7 @@ Within the section but near the end, let's add this directive:
 
 Now all we need to do is restart Nginx (or in my case, the Nginx Docker container), and our updates will be applied. You can confirm the value was set properly by running:
 
-```meta
+```bash
 nginx -T | grep buffer_size
 ```
 

@@ -8,7 +8,7 @@ Heroku is a very powerful application deployment system that was initially creat
 
 Your first step is to unzip your fresh Magento install and get it on git.
 
-```meta
+```bash
 ~/Sites/$ cd magento
 $ git init
 $ git add .
@@ -23,13 +23,13 @@ One thing you need to remember to do is patch through the ip of your heroku inst
 
 Just add the following ip command to the DB Security Groups portion of your RDS control panel for your default security group. This will allow all IP's to access this instance.
 
-```meta
+```bash
 CIDR: 0.0.0.0/0
 ```
 
 You can then test your connection locally by using something like the following command line. Of course replace your host/user/pass with the credentials you used to signup for your RDS instance:
 
-```meta
+```bash
 mysql -h oasis.cv8auujxhwjj.us-east-1.rds.amazonaws.com -u magento -pmagento sheltered_oasis_3460
 ```
 
@@ -39,7 +39,7 @@ Next, make sure you have your <a href="http://www.heroku.com/" target="_blank">H
 
 After that's setup, let's go back to our web directory and push up our new app.
 
-```meta
+```bash
 $ heroku create
 Creating sheltered-oasis-3460... done, stack is cedar
 http://sheltered-oasis-3460 herokuapp.com/ | git@heroku.com:sheltered-oasis-3460.git
@@ -48,13 +48,13 @@ Git remote heroku added
 
 You wil need to then add the <a href="https://addons.heroku.com/amazon_rds" target="_blank">Amazon RDS Add-On</a> to your account. Just use the web interface to do this as it's a lot easier. Then go to your app under My Apps, click on the Amazon RDS Add-On, then enter your mysql string. It will be the exact same info as the above, but put into URL form.
 
-```meta
+```bash
 Database URL: mysql://magento:magento@oasis.cv8auujxhwjj.us-east-1.rds.amazonaws.com/sheltered_oasis_3460
 ```
 
 Once this is setup, go ahead and complete the install of Magento on your local environment. Once it has been installed and is now working, go ahead and commit your app/etc/local.xml file (along with any other changes you made). You then need to push up your git repo to this new app for things to push upstream.
 
-```meta
+```bash
 $ git push heroku master
 The authenticity of host 'heroku.com (50.19.85.132)' can't be established.
 RSA key fingerprint is 8b:48:5e:67:0e:c9:16:47:32:f2:87:0c:1f:c8:60:ad.
@@ -83,7 +83,7 @@ To git@heroku.com:sheltered-oasis-3460.git
 
 Yay! Our git repo has now been pushed upstream to Heroku and is deployed. You can open your URL by visiting the above URL provided or by the command:
 
-```meta
+```bash
 $ heroku open
 ```
 

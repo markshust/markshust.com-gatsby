@@ -131,13 +131,13 @@ setup:
 
 ### Step 2: Install Magento 2
 
-```meta
+```bash
 docker-compose run --rm setup
 ```
 
 ### Step 3: Start Magento 2 Application
 
-```meta
+```bash
 docker-compose up -d app
 ```
 

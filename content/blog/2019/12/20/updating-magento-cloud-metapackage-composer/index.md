@@ -8,7 +8,7 @@ The <a href="https://devdocs.magento.com/" target="_blank">Magento DevDocs</a> c
 
 First, open your `composer.json` file and look for the line that looks like:
 
-```
+```js
  "magento/magento-cloud-metapackage": ">=2.3.1 <2.3.2",
  ```
 
@@ -16,19 +16,19 @@ This is the line which controls which version of Magento Cloud you are running. 
 
 Update the version constraint so that it instead references your desired version. In this case I want to upgrade from version 2.3.1 to 2.3.3, so I will update it to:
 
-```
+```js
 "magento/magento-cloud-metapackage": ">=2.3.3 <2.3.4",
 ```
 
 Our next step is to usually run:
 
-```
+```bash
 composer update
 ```
 
 However when doing so, I received the following error:
 
-```
+```bash
 Fatal error: Uncaught LogicException: Module 'Yotpo_Yotpo' from '/var/www/html/app/code/Yotpo/Yotpo' has been already defined in '/var/www/html/vendor/yotpo/magento2-module-yotpo-reviews'. in /var/www/html/vendor/magento/framework/Component/ComponentRegistrar.php:50
 ```
 
@@ -38,13 +38,13 @@ After doing so, Composer will update all of the appropriate packages to bring yo
 
 Next, I'll make sure all of the caches are purged by running:
 
-```
+```bash
 bin/magento cache:flush
 ```
 
 After that I will run all of the setup upgrade scripts contained in the code to bring the Magento database up to the desired version by running:
 
-```
+```bash
 bin/magento setup:upgrade
 ```
 

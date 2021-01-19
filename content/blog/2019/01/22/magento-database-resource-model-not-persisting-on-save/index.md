@@ -70,7 +70,7 @@ Naturally, I assumed I was doing something wrong and scoured over my code for ty
 
 After lunch I came back with a fresh set of burrito eyes (today, for some reason they were not sleeping behind the abyss of tortilla carbs). I set a breakpoint and cracked open Xdebug, and... still nothing. Determined, I started reading through the result of the `$this->cacheResource->save($cache)` line and, low and behold, noticed this property:
 
-```
+```php
 _isPkAutoIncrement = false
 ```
 
