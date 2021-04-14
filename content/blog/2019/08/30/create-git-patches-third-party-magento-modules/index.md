@@ -28,23 +28,21 @@ After updating Magento to 2.3.2, I noticed the builds failing for one of my proj
     [2019-08-29 14:27:40] CRITICAL: 
       Compilation was started.
       %message% 0/7 [>---------------------------]   0% < 1 sec 76.5 MiB
-%message% 0/7 [>---------------------------]   0% < 1 sec 76.5 MiB
-Proxies code generation... 0/7 [>------------------------]   0% < 1 sec 76.5 MiB
-Proxies code generation... 1/7 [===>---------------------]  14% 1 sec 82.5 MiB
-Repositories code generation... 1/7 [===>------------------]  14% 1 sec 82.5 MiBPHP Fatal error:  Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
-      
-      Fatal error: Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97  
+      %message% 0/7 [>---------------------------]   0% < 1 sec 76.5 MiB
+      Proxies code generation... 0/7 [>------------------------]   0% < 1 sec 76.5 MiB
+      Proxies code generation... 1/7 [===>---------------------]  14% 1 sec 82.5 MiB
+      Repositories code generation... 1/7 [===>------------------]  14% 1 sec 82.5 MiB
+      PHP Fatal error:  Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
     [2019-08-29 14:27:40] CRITICAL: Command php ./bin/magento setup:di:compile  --ansi --no-interaction returned code 255  
-  
-  E: Error building project: Step failed with status code 255.
-
-E: Error: Unable to build application, aborting.
+      E: Error building project: Step failed with status code 255.
+      E: Error: Unable to build application, aborting.
 ```
 
 The line we care about here is:
 
 ```bash
-Repositories code generation... 1/7 [===>------------------]  14% 1 sec 82.5 MiBPHP Fatal error:  Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
+Repositories code generation... 1/7 [===>------------------]  14% 1 sec 82.5 MiB
+PHP Fatal error:  Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /app/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
 ```
 
 ### Return type declarations
@@ -87,7 +85,7 @@ You'll want to checkout the same branch locally which was throwing the deploymen
 bin/magento setup:di:compile --ansi --no-interaction
 Compilation was started.
 Repositories code generation... 1/7 [====>-----------------------]  14% < 1 sec 94.5 MiB
-Fatal error: Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /var/www/html/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
+PHP Fatal error: Declaration of Firebear\ConfigurableProducts\Block\Product\View\Type\Bundle\Type\Select::getValuesHtml() must be compatible with Magento\Catalog\Block\Product\View\Options\Type\Select::getValuesHtml(): string in /var/www/html/vendor/firebear/configurableproducts/Block/Product/View/Type/Bundle/Type/Select.php on line 97
 ```
 
 > What's great about the process we are going through is that you need not care if an update or fix is in place already from the third-party module, and you aren't reliant on their response times. In full disclosure, I did not check with Firebear to see if an update was even available for this module. I'm also not putting any blame on Firebear for this code, as this was just a good example for me to use to demonstrate how to cleanly update third-party module code. This was the only item erroring out in my build, so I chose to just move forward with a very simple patch, and to figure out how to do this in the future so I'm not relying on the response of third-parties which could potentially hault the ability to work on a project.
