@@ -4,7 +4,7 @@ date: "2020-08-04T08:00:00.000Z"
 tags: ["convertkit"]
 ---
 
-I use [ConvertKit](https://convertkit.com?lmref=H-B-iA) to manage my newsletter email subscriptions. Part of using the service is ConvertKit's "Sequence" functionality for my ["tips & tricks"](https://m.academy/magento-2-tips-tricks) emails. Every few days, I send out an email to subscribers about a new programming tip.
+I use [ConvertKit](https://convertkit.com?lmref=H-B-iA) to manage my newsletter email subscriptions. Part of using the service is ConvertKit's "Sequence" functionality for my ["tips & tricks"](https://m.academy/newsletter/) emails. Every few days, I send out an email to subscribers about a new programming tip.
 
 In order to make sure my subscribers receive content that is appropriate for them, I ask them what their skill level is during a welcome email. When they click the appropriate link in the email, a combination of tags & automated triggers are executed to add the appropriate tag to the subscriber's record.
 
