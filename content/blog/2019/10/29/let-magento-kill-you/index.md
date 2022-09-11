@@ -61,6 +61,6 @@ This means **drowning** yourself into it. **Jump into the deep end.** Become cap
 
 I'll leave with this quote from perhaps my favorite movie documentary ever, the inspirational "Jiro Dreams of Sushi". Take this, apply it to Magento, and let it kill you. I know I am.
 
-> "Once you decide on your occupation...you must immerse yourself in your work. You have to fall in love with your work. Never complain about your job. You must dedicate your life to mastering your skill. That's the secret of success...and is the key to being regarded honorably." -- Jino Ono
+> "Once you decide on your occupation...you must immerse yourself in your work. You have to fall in love with your work. Never complain about your job. You must dedicate your life to mastering your skill. That's the secret of success...and is the key to being regarded honorably." -- Jiro Ono
 
 ![Piece of suchi](sushi.jpg)
